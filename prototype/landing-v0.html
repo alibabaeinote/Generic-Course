@@ -1,0 +1,615 @@
+<title>دیزاینر بین دو دنیا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
+
+<style>
+:root{
+  --paper:#F2F2EF; --surface:#FFFFFF; --surface-2:#E9E9E4;
+  --ink:#111214; --ink-2:#3A3C3E; --muted:#6E7072;
+  --rule:#DEDED8; --rule-2:#C6C6BE;
+  --accent:#9A5F17; --accent-2:#B8791F; --accent-soft:#F5EBDA;
+  --night:#0B0C0E; --night-2:#141618; --lamp:#FFD79A; --night-ink:#F3EFE8; --night-muted:#8A8B8C;
+  --btn-bg:#111214; --btn-ink:#FAFAF8;
+  --display:"Vazirmatn",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --shadow:0 1px 2px rgba(17,18,20,.04),0 16px 40px -28px rgba(17,18,20,.4);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F1113; --surface:#171A1C; --surface-2:#1E2225;
+  --ink:#ECEBE7; --ink-2:#C5C6C4; --muted:#8E9092;
+  --rule:#262A2D; --rule-2:#393E42;
+  --accent:#E0A45C; --accent-2:#F0BA7B; --accent-soft:#241C10;
+  --btn-bg:#ECEBE7; --btn-ink:#0F1113;
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 18px 46px -32px rgba(0,0,0,.9);
+}}
+:root[data-theme="dark"]{
+  --paper:#0F1113; --surface:#171A1C; --surface-2:#1E2225;
+  --ink:#ECEBE7; --ink-2:#C5C6C4; --muted:#8E9092;
+  --rule:#262A2D; --rule-2:#393E42;
+  --accent:#E0A45C; --accent-2:#F0BA7B; --accent-soft:#241C10;
+  --btn-bg:#ECEBE7; --btn-ink:#0F1113;
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 18px 46px -32px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--display);font-weight:400;font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{margin:0;font-weight:900;line-height:1.28;letter-spacing:-.015em;text-wrap:balance}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:4px}
+.wrap{max-width:72rem;margin-inline:auto;padding-inline:clamp(1.1rem,4vw,3rem)}
+.eyebrow{font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.mono{font-family:var(--mono);font-weight:700}
+
+/* ============ HERO (night) ============ */
+.hero{position:relative;background:var(--night);color:var(--night-ink);overflow:hidden;isolation:isolate}
+.hero__noise{position:absolute;inset:0;z-index:0;pointer-events:none;
+  -webkit-mask-image:radial-gradient(circle 190px at var(--mx,50%) var(--my,42%),#000 0%,rgba(0,0,0,.55) 45%,transparent 72%);
+  mask-image:radial-gradient(circle 190px at var(--mx,50%) var(--my,42%),#000 0%,rgba(0,0,0,.55) 45%,transparent 72%)}
+.hero__glow{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(circle 260px at var(--mx,50%) var(--my,42%),rgba(255,215,154,.10) 0%,transparent 70%)}
+.noise-word{position:absolute;font-size:clamp(.8rem,1.6vw,1.05rem);color:var(--lamp);opacity:.55;white-space:nowrap;font-weight:300}
+.hero__inner{position:relative;z-index:1;padding-block:clamp(5rem,16vh,9rem) clamp(4rem,10vh,6.5rem);display:flex;flex-direction:column;gap:1.6rem;align-items:flex-start}
+.hero .eyebrow{color:var(--lamp)}
+.hero h1{font-size:clamp(2.2rem,7.2vw,4.6rem);max-width:20ch}
+.hero h1 .dim{color:var(--night-muted);font-weight:200}
+.hero__sub{font-size:clamp(1.02rem,2.3vw,1.28rem);font-weight:300;color:#D4D0C9;max-width:46ch;line-height:1.8}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-block-start:.6rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--lamp);color:#141210;padding:.85rem 1.6rem;border-radius:999px;font-weight:700;font-size:.98rem;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease;box-shadow:0 0 0 0 rgba(255,215,154,.5)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -12px rgba(255,215,154,.55)}
+.btn--ghost{background:transparent;color:var(--night-ink);border:1px solid #3A3C3E}
+.btn--ghost:hover{border-color:var(--lamp);box-shadow:none}
+.btn--solid{background:var(--btn-bg);color:var(--btn-ink)}
+.btn--solid:hover{box-shadow:0 12px 30px -14px rgba(17,18,20,.6)}
+.hero__facts{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-size:.85rem;color:var(--night-muted);font-family:var(--mono);font-weight:400}
+.hero__hint{position:absolute;inset-block-end:1.2rem;inset-inline-start:50%;transform:translateX(50%);font-size:.72rem;color:var(--night-muted);z-index:1;font-family:var(--mono)}
+@media (hover:none){
+  .hero__noise,.hero__glow{animation:sweep 9s ease-in-out infinite alternate}
+  .hero__hint{display:none}
+}
+@keyframes sweep{0%{--mx:28%;--my:34%}100%{--mx:72%;--my:56%}}
+@property --mx{syntax:'<percentage>';inherits:true;initial-value:50%}
+@property --my{syntax:'<percentage>';inherits:true;initial-value:42%}
+
+/* ============ generic sections ============ */
+section{padding-block:clamp(3.5rem,9vw,6rem)}
+.sec-label{display:flex;align-items:baseline;gap:.8rem;margin-block-end:1.4rem}
+.sec-label .n{font-family:var(--mono);font-size:.72rem;color:var(--muted);font-weight:700}
+h2{font-size:clamp(1.6rem,4.4vw,2.5rem);max-width:22ch}
+.lead{font-size:clamp(1rem,2.1vw,1.15rem);color:var(--ink-2);font-weight:300;max-width:58ch;margin-block-start:1rem;line-height:1.85}
+.kicker{font-size:clamp(1.15rem,3vw,1.6rem);font-weight:700;line-height:1.6;max-width:26ch}
+
+/* mirror */
+.mirror{background:var(--surface)}
+.signs{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem;margin-block-start:2.5rem}
+.sign{border-top:2px solid var(--ink);padding-block-start:1.1rem;display:flex;flex-direction:column;gap:.6rem}
+.sign b{font-size:1.02rem;font-weight:700}
+.sign p{font-size:.94rem;color:var(--ink-2);font-weight:300;line-height:1.8}
+.knot{margin-block-start:2.8rem;padding:1.6rem 1.8rem;background:var(--accent-soft);border-radius:3px;font-size:clamp(1.05rem,2.6vw,1.4rem);font-weight:700;line-height:1.65;max-width:44ch}
+.knot span{color:var(--accent)}
+
+/* contract */
+.contract{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-block-start:2.2rem}
+.col{background:var(--surface);padding:1.7rem}
+.col h3{font-size:1.05rem;margin-block-end:1.1rem;display:flex;align-items:center;gap:.5rem}
+.col li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;font-size:.94rem;color:var(--ink-2);font-weight:300;padding-block:.5rem;line-height:1.75}
+.col li::before{content:"";width:.4rem;height:.4rem;margin-block-start:.72rem;border-radius:50%}
+.col--is li::before{background:var(--accent)}
+.col--not li::before{background:var(--rule-2)}
+.col--not li{color:var(--muted)}
+.contract-note{margin-block-start:1.6rem;font-size:.95rem;color:var(--ink-2);font-weight:300;max-width:52ch;border-inline-start:2px solid var(--accent);padding-inline-start:1rem}
+
+/* gap diagram */
+.gapviz{display:grid;grid-template-columns:1fr auto 1fr;gap:.75rem;align-items:stretch;margin-block-start:2.4rem}
+.gapbox{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:1.3rem;text-align:center}
+.gapbox b{display:block;font-size:.98rem;margin-block-end:.4rem}
+.gapbox p{font-size:.85rem;color:var(--muted);font-weight:300;line-height:1.7}
+.gapbox--mid{background:var(--ink);color:var(--paper);border-color:var(--ink);display:flex;flex-direction:column;justify-content:center;min-width:9rem}
+.gapbox--mid b{color:var(--paper)}
+.gapbox--mid p{color:#A8A9A6}
+@media (max-width:40rem){.gapviz{grid-template-columns:1fr}}
+
+/* path */
+.path{background:var(--surface)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.2rem;margin-block-start:2.4rem;counter-reset:s}
+.step{position:relative;padding:1.5rem 1.4rem;border:1px solid var(--rule);border-radius:3px;background:var(--paper)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--mono);font-size:2.4rem;font-weight:700;color:transparent;-webkit-text-stroke:1px var(--rule-2);display:block;margin-block-end:.4rem;line-height:1}
+.step b{font-size:1.05rem;display:block;margin-block-end:.4rem}
+.step p{font-size:.9rem;color:var(--ink-2);font-weight:300;line-height:1.75}
+
+/* modules accordion */
+.acc{margin-block-start:2.2rem;border-top:1px solid var(--rule)}
+.acc details{border-bottom:1px solid var(--rule)}
+.acc summary{list-style:none;cursor:pointer;padding-block:1.15rem;display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center}
+.acc summary::-webkit-details-marker{display:none}
+.acc .idx{font-family:var(--mono);font-size:.75rem;color:var(--accent);font-weight:700}
+.acc .ttl{font-size:clamp(1rem,2.6vw,1.3rem);font-weight:700}
+.acc .sign-i{width:1.4rem;height:1.4rem;position:relative;flex-shrink:0}
+.acc .sign-i::before,.acc .sign-i::after{content:"";position:absolute;background:var(--muted);inset-block-start:50%;inset-inline-start:0;width:100%;height:1.5px;transform:translateY(-50%);transition:transform .22s ease}
+.acc .sign-i::after{transform:translateY(-50%) rotate(90deg)}
+.acc details[open] .sign-i::after{transform:translateY(-50%) rotate(0)}
+.acc .body{padding-block-end:1.4rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem 2rem}
+.acc .body p{font-size:.95rem;color:var(--ink-2);font-weight:300;line-height:1.85}
+.acc .out{font-size:.9rem;color:var(--ink);font-weight:500;border-inline-start:2px solid var(--accent);padding-inline-start:.9rem;line-height:1.8}
+
+/* focus chips */
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-block-start:2rem}
+.chip{background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:.55rem 1.05rem;font-size:.9rem;font-weight:500;display:inline-flex;align-items:center;gap:.5rem}
+.chip i{width:.42rem;height:.42rem;border-radius:50%;background:var(--accent);font-style:normal}
+
+/* practice */
+.practice{background:var(--surface)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;margin-block-start:2.2rem}
+.pcard{border:1px solid var(--rule);border-radius:3px;padding:1.4rem;background:var(--paper);display:flex;flex-direction:column;gap:.5rem}
+.pcard .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.pcard b{font-size:1rem}
+.pcard p{font-size:.9rem;color:var(--ink-2);font-weight:300;line-height:1.75}
+.quote{margin-block-start:2.4rem;font-size:clamp(1.05rem,2.7vw,1.45rem);font-weight:700;line-height:1.6;max-width:34ch;color:var(--ink)}
+
+/* audience switcher */
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-block-start:2rem}
+.tab{border:1px solid var(--rule);background:var(--surface);border-radius:999px;padding:.55rem 1.1rem;font-size:.9rem;font-weight:500;transition:background .18s,color .18s,border-color .18s}
+.tab:hover{border-color:var(--rule-2)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.panel{margin-block-start:1.6rem;background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:1.8rem;min-height:11rem}
+.panel[hidden]{display:none}
+.panel .who{font-size:1.15rem;font-weight:700;margin-block-end:.7rem}
+.panel .get{font-size:.96rem;color:var(--ink-2);font-weight:300;line-height:1.85;max-width:52ch}
+.panel .fit{margin-block-start:1.1rem;font-family:var(--mono);font-size:.75rem;font-weight:700;letter-spacing:.06em;color:var(--accent);text-transform:uppercase}
+
+/* critiques */
+.crit{display:grid;gap:.8rem;margin-block-start:2.2rem}
+.critrow{border:1px solid var(--rule);border-radius:3px;background:var(--surface);overflow:hidden}
+.critrow summary{list-style:none;cursor:pointer;padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.9rem;font-weight:700;font-size:1rem}
+.critrow summary::-webkit-details-marker{display:none}
+.critrow .q{font-family:var(--mono);font-size:.72rem;color:var(--muted);font-weight:700;letter-spacing:.1em}
+.critrow .ans{padding:0 1.4rem 1.3rem;font-size:.94rem;color:var(--ink-2);font-weight:300;line-height:1.85;max-width:60ch}
+.critrow[open] summary{border-bottom:1px dashed var(--rule)}
+
+/* details table */
+.dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-block-start:2.2rem}
+.dl div{background:var(--surface);padding:1.2rem 1.3rem}
+.dl dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-block-end:.4rem}
+.dl dd{margin:0;font-size:1rem;font-weight:500}
+.dl dd.tbd{color:var(--muted);font-weight:300}
+
+/* final cta */
+.final{background:var(--night);color:var(--night-ink)}
+.final h2{color:var(--night-ink);max-width:24ch}
+.final p{color:#C9C5BE;font-weight:300;max-width:48ch;margin-block-start:1rem;font-size:1.05rem}
+.final .row{display:flex;flex-wrap:wrap;gap:.8rem;margin-block-start:2rem;align-items:center}
+.final small{display:block;margin-block-start:1.6rem;color:var(--night-muted);font-size:.82rem}
+
+/* sticky cta */
+.sticky{position:fixed;inset-inline:0;inset-block-end:0;z-index:50;background:var(--surface);border-top:1px solid var(--rule);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem;transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 -8px 30px -20px rgba(0,0,0,.5)}
+.sticky.on{transform:translateY(0)}
+.sticky b{font-size:.92rem}
+.sticky span{display:block;font-size:.76rem;color:var(--muted);font-weight:300}
+.sticky .btn{padding:.6rem 1.2rem;font-size:.88rem}
+@media (max-width:30rem){.sticky .txt{display:none}.sticky{justify-content:center}}
+
+/* footer */
+footer.site{border-top:1px solid var(--rule);padding-block:2.2rem 5.5rem;font-size:.85rem;color:var(--muted)}
+footer.site .row{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;justify-content:space-between}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .btn,.sticky{transition:none}
+  .hero__noise,.hero__glow{animation:none}
+  .hero__noise{-webkit-mask-image:none;mask-image:none}
+  .noise-word{opacity:.16}
+}
+</style>
+
+<div dir="rtl" lang="fa">
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="hero">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__noise" aria-hidden="true">
+    <span class="noise-word" style="top:12%;right:8%">رودمپ ۲۰۲۶</span>
+    <span class="noise-word" style="top:22%;left:12%">فیگما در ۳۰ روز</span>
+    <span class="noise-word" style="top:38%;right:18%">پرسونا</span>
+    <span class="noise-word" style="top:52%;left:8%">وایرفریم</span>
+    <span class="noise-word" style="top:66%;right:6%">کیس‌استادی</span>
+    <span class="noise-word" style="top:74%;left:22%">دیزاین سیستم</span>
+    <span class="noise-word" style="top:30%;left:38%">A/B تست</span>
+    <span class="noise-word" style="top:84%;right:34%">بوت‌کمپ</span>
+    <span class="noise-word" style="top:16%;left:52%">پورتفولیو</span>
+    <span class="noise-word" style="top:60%;right:46%">هیوریستیک</span>
+    <span class="noise-word" style="top:46%;left:60%">AI برای دیزاین</span>
+    <span class="noise-word" style="top:90%;left:44%">جاب‌ردی</span>
+  </div>
+
+  <div class="wrap hero__inner">
+    <span class="eyebrow">دورهٔ آنلاین دو ماهه · User-Centered Product Design</span>
+    <h1>نه دیزاینرِ فقط‌بصری،<br><span class="dim">نه دیزاینرِ فقط‌تئوری.</span></h1>
+    <p class="hero__sub">بین این دو یک شکاف هست. این دوره برای همان شکاف ساخته شده — مهارت‌آموزی فشرده و تمرین‌محور، برای کسی که تازه وارد شده و دنبال یک مسیر روشن است.</p>
+    <div class="hero__cta">
+      <a class="btn" href="#enroll">ثبت‌نام در دوره</a>
+      <a class="btn btn--ghost" href="#modules">اول سرفصل‌ها را ببینم</a>
+    </div>
+    <div class="hero__facts">
+      <span>۲ ماه</span><span>آنلاین</span><span>تمرین هر سه‌شنبه</span><span>پروژهٔ پایانی</span>
+    </div>
+  </div>
+  <span class="hero__hint" aria-hidden="true">↑ نشانگر را حرکت بده</span>
+</header>
+
+<!-- ================= 1. MIRROR ================= -->
+<section class="mirror" id="mirror">
+  <div class="wrap">
+    <div class="sec-label"><span class="n">۰۱</span><span class="eyebrow">آشنا به نظر می‌رسد؟</span></div>
+    <h2 class="rv">مشکل، کمبود آموزش نیست.</h2>
+    <p class="lead rv">همین حالا هم بیشتر از آنچه بتوانی ببینی آموزش رایگان هست. اگر هنوز گیر کرده‌ای، مسئله جای دیگری است.</p>
+
+    <div class="signs">
+      <article class="sign rv">
+        <b>مسیرها زیادند، شروع نیست.</b>
+        <p>هر هفته یک رودمپ جدید می‌بینی، یک دورهٔ جدید سیو می‌کنی، یک لیست ابزار جدید. تعداد چیزهایی که «باید یاد بگیری» هر روز بیشتر می‌شود و روزی که واقعاً شروع کنی، هر روز دورتر.</p>
+      </article>
+      <article class="sign rv">
+        <b>ابزار را بلدی، تصمیم را نه.</b>
+        <p>فیگما را بلدی. اما وقتی کسی می‌پرسد «چرا این دکمه اینجاست؟»، جواب محکمی نداری. چیزی که یاد گرفته‌ای ساختن بوده، نه تصمیم گرفتن.</p>
+      </article>
+      <article class="sign rv">
+        <b>معیار نداری، پس نمی‌دانی کِی آماده‌ای.</b>
+        <p>نمی‌دانی کارت خوب است یا نه، نمی‌دانی چقدر مانده، و نمی‌دانی آن‌طرف میز مصاحبه دنبال چه می‌گردد. این نبودِ معیار، از خودِ ندانستن خسته‌کننده‌تر است.</p>
+      </article>
+    </div>
+
+    <p class="knot rv">آنچه نداری <span>مسیر</span> است و <span>معیار</span> — نه محتوای بیشتر.</p>
+  </div>
+</section>
+
+<!-- ================= 2. CONTRACT ================= -->
+<section id="contract">
+  <div class="wrap">
+    <div class="sec-label"><span class="n">۰۲</span><span class="eyebrow">قبل از هر چیز</span></div>
+    <h2 class="rv">بگذار اول بگویم چه نیستم.</h2>
+    <p class="lead rv">قبل از اینکه یک کلمه دربارهٔ سرفصل‌ها بخوانی، منصفانه است بدانی این دوره چه چیزی هست و چه چیزی نیست.</p>
+
+    <div class="contract rv">
+      <div class="col col--is">
+        <h3>این هست</h3>
+        <ul>
+          <li>یک دورهٔ <b>مهارت‌آموزی</b>؛ تمرین‌محور و فشرده.</li>
+          <li><b>نقطهٔ آغاز</b> مسیر حرفه‌ای تو.</li>
+          <li>هماهنگ با آنچه بازار کار امروز واقعاً می‌خواهد.</li>
+          <li>ترکیبی از دانش و مهارت، نه فقط یکی از این دو.</li>
+        </ul>
+      </div>
+      <div class="col col--not">
+        <h3>این نیست</h3>
+        <ul>
+          <li>سرویس <b>کاریابی</b> یا وعدهٔ Job-Ready شدن.</li>
+          <li>ماشین تحویل دیزاینرِ آماده به سازمان‌ها.</li>
+          <li>یک دورهٔ <b>ابزارمحور</b>. ابزار یاد می‌گیری، اما موضوع دوره ابزار نیست.</li>
+          <li>جایگزین تجربهٔ واقعی کار در تیم.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="contract-note rv">مسیر شغلی این حوزه پویاست و آیندهٔ آن معلوم نیست. کاری که من می‌کنم مهارت‌آموزی برای همان آیندهٔ نامعلوم است — نه فروختن نقشه‌ای که مقصدش را کسی نمی‌داند.</p>
+  </div>
+</section>
+
+<!-- ================= 3. THE GAP ================= -->
+<section class="mirror" id="gap">
+  <div class="wrap">
+    <div class="sec-label"><span class="n">۰۳</span><span class="eyebrow">جای این دوره کجاست</span></div>
+    <h2 class="rv">دیزاینری که بین دو دنیا ایستاده.</h2>
+    <p class="lead rv">در این حوزه یک شکاف واقعی هست: از یک طرف دیزاینرهایی که خوب می‌سازند اما نمی‌توانند تصمیمشان را توضیح دهند، از طرف دیگر دیزاینرهایی که خوب حرف می‌زنند اما خروجی قابل استفاده‌ای ندارند. هدف من تربیت دیزاینری است که بین این دو می‌ایستد.</p>
+
+    <div class="gapviz rv">
+      <div class="gapbox"><b>دیزاینر بصری</b><p>ماهر در ساختن، ضعیف در استدلال. زیبا می‌سازد، اما نمی‌داند چرا.</p></div>
+      <div class="gapbox gapbox--mid"><b>اینجا</b><p>می‌سازد و می‌تواند دفاع کند.</p></div>
+      <div class="gapbox"><b>دیزاینر تئوری</b><p>مسلط به چارچوب‌ها، دور از اجرا. می‌داند چرا، اما نمی‌سازد.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. MODEL ================= -->
+<section class="path" id="model">
+  <div class="wrap">
+    <div class="sec-label"><span class="n">۰۴</span><span class="eyebrow">مدل دوره</span></div>
+    <h2 class="rv">آگاهی، مهارت، میدان.</h2>
+    <p class="lead rv">هیچ دوره‌ای هر سه را نمی‌دهد و هر کس ادعا کند، صادق نیست. بخشی از یادگیری بیرون از میدان جلو می‌رود و بخشی فقط داخل میدان کامل می‌شود. سهم من، دوتای اول است.</p>
+
+    <div class="steps">
+      <article class="step rv"><b>آگاهی</b><p>می‌فهمی این حرفه واقعاً چیست، دیزاینر محصول در سازمان چه مسئولیتی دارد و از تو چه انتظاری می‌رود.</p></article>
+      <article class="step rv"><b>مهارت</b><p>روی مسئله‌های واقعی تمرین می‌کنی، بازخورد می‌گیری و معیار پیدا می‌کنی — تا بدانی کارت در چه سطحی است.</p></article>
+      <article class="step rv"><b>میدان</b><p>بخشی که فقط با کار واقعی در تیم به دست می‌آید. دوره تو را برای ورود به آن آماده می‌کند، جایش را نمی‌گیرد.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. MODULES ================= -->
+<section id="modules">
+  <div class="wrap">
+    <div class="sec-label"><span class="n">۰۵</span><span class="eyebrow">مسیر یادگیری</span></div>
+    <h2 class="rv">شش بخش، به ترتیبی که یک مسئله واقعاً حل می‌شود.</h2>
+    <p class="lead rv">سرفصل‌ها را نه بر اساس ابزار، که بر اساس وظایف واقعی یک دیزاینر محصول در سازمان چیده‌ام.</p>
+
+    <div class="acc rv">
+      <details open>
+        <summary><span class="idx">۰۱</span><span class="ttl">پژوهش دیزاین</span><span class="sign-i" aria-hidden="true"></span></summary>
+        <div class="body">
+          <p>پژوهش اکتشافی، مصاحبه، و خواندن داده — تا تصمیم‌هایت از حدس در نیایند. یاد می‌گیری چه وقت پژوهش لازم است و چه وقت اتلاف وقت است.</p>
+          <p class="out">بعد از این بخش: به‌جای حدس زدن دربارهٔ کاربر، می‌توانی از او بپرسی و از جوابش نتیجه بگیری.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="idx">۰۲</span><span class="ttl">دیزاین ارزش پیشنهادی</span><span class="sign-i" aria-hidden="true"></span></summary>
+        <div class="body">
+          <p>تعریف مسئله، تناسب مسئله و راه‌حل، و تفکر مبتنی بر نتیجه. اینجا از «چه بسازیم» به «چرا اصلاً بسازیم» می‌رسی.</p>
+          <p class="out">بعد از این بخش: می‌توانی بگویی محصول قرار است چه ارزشی بدهد و چرا کسی باید آن را بخواهد.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="idx">۰۳</span><span class="ttl">دیزاین تعامل</span><span class="sign-i" aria-hidden="true"></span></summary>
+        <div class="body">
+          <p>جریان کار کاربر، ساختار اطلاعات، و منطق رابط — پیش از آنکه به سراغ رنگ و فاصله بروی.</p>
+          <p class="out">بعد از این بخش: به‌جای طراحی صفحه، جریان طراحی می‌کنی.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="idx">۰۴</span><span class="ttl">دیزاین بصری</span><span class="sign-i" aria-hidden="true"></span></summary>
+        <div class="body">
+          <p>سبک بصری، رابط کاربری، پروتوتایپ، دیزاین سیستم و مستندسازی — به‌همراه فهم سمت فنی، تا خروجی‌ات قابل ساخت باشد.</p>
+          <p class="out">بعد از این بخش: چیزی می‌سازی که هم درست به نظر می‌رسد، هم تیم فنی می‌تواند بسازدش.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="idx">۰۵</span><span class="ttl">آزمایش</span><span class="sign-i" aria-hidden="true"></span></summary>
+        <div class="body">
+          <p>تست کاربر و سنجش فرض‌ها. یاد می‌گیری نتیجهٔ هر روش به شرایط وابسته است و چطور آن شرایط را بخوانی.</p>
+          <p class="out">بعد از این بخش: می‌دانی کدام فرضت درست بود — نه اینکه صرفاً امیدوار باشی.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="idx">۰۶</span><span class="ttl">پروژه، تیم و بازار کار</span><span class="sign-i" aria-hidden="true"></span></summary>
+        <div class="body">
+          <p>مدیریت پروژهٔ دیزاین، هم‌طراحی و کار تیمی، ارتباطات، و آماده شدن برای فرصت شغلی — با نگاه به آنچه آگهی‌های واقعی می‌خواهند.</p>
+          <p class="out">بعد از این بخش: می‌توانی در تیم محصول کار کنی و از تصمیمت دفاع کنی.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. FOCUS THIS YEAR ================= -->
+<section class="mirror" id="focus">
+  <div class="wrap">
+    <div class="sec-label"><span class="n">۰۶</span><span class="eyebrow">به‌روز با بازار</span></div>
+    <h2 class="rv">چیزهایی که امسال پررنگ‌تر شده‌اند.</h2>
+    <p class="lead rv">محتوای دوره ثابت نیست. هر دوره با تغییرات بازار — چه سازمان‌های بالغ، چه پروژه‌های کوچک‌تر — بازبینی می‌شود. این‌ها چیزهایی‌اند که امروز تمرکز بیشتری گرفته‌اند:</p>
+    <div class="chips rv">
+      <span class="chip"><i></i>هوش مصنوعی در کار روزمرهٔ دیزاینر</span>
+      <span class="chip"><i></i>فیگما در سطح حرفه‌ای</span>
+      <span class="chip"><i></i>شناخت دومین و حوزهٔ کاری</span>
+      <span class="chip"><i></i>سمت فنی رابط کاربری</span>
+      <span class="chip"><i></i>دیزاین سیستم و مستندسازی</span>
+      <span class="chip"><i></i>کار با دیتای آماری</span>
+      <span class="chip"><i></i>استخدام و شناخت بازار کار</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. PRACTICE ================= -->
+<section class="practice" id="practice">
+  <div class="wrap">
+    <div class="sec-label"><span class="n">۰۷</span><span class="eyebrow">تمرین‌محور یعنی چه</span></div>
+    <h2 class="rv">«تمرین‌محور» را همه می‌گویند. این یعنی دقیقاً چه؟</h2>
+
+    <div class="pgrid">
+      <article class="pcard rv"><span class="k">محتوا</span><b>ویدیو و وبینار</b><p>ویدیوهای آماده برای یادگیری با ریتم خودت، و وبینار زنده برای پرسش، بحث و بازبینی مشترک.</p></article>
+      <article class="pcard rv"><span class="k">تمرین</span><b>تحویل هر سه‌شنبه</b><p>تمرین‌های موردی مرتبط با موضوع هر هفته، با راهنمایی روشن یا نمونه — و تکرار آن‌هایی که واقعاً ضروری‌اند.</p></article>
+      <article class="pcard rv"><span class="k">پروژه</span><b>یک پروژهٔ واقعی تا انتها</b><p>یک مسئله که از پژوهش تا خروجی نهایی همراهت می‌آید. شاخص اصلی موفقیت دوره، همین تحویل است.</p></article>
+      <article class="pcard rv"><span class="k">گفتگو</span><b>پرسش‌وپاسخ در تلگرام</b><p>جایی برای پرسیدن، بحث کردن و دیدن مسئله‌های بقیه — چون بخشی از یادگیری از سؤال دیگران می‌آید.</p></article>
+    </div>
+
+    <p class="quote rv">تمرین دیزاین، کپی‌برداری از نمونهٔ استاد نیست. مسئله‌ای است که خودت باید حلش کنی.</p>
+  </div>
+</section>
+
+<!-- ================= 8. AUDIENCE ================= -->
+<section id="audience">
+  <div class="wrap">
+    <div class="sec-label"><span class="n">۰۸</span><span class="eyebrow">برای چه کسی</span></div>
+    <h2 class="rv">کدامشان تویی؟</h2>
+    <p class="lead rv">این دوره برای شش موقعیت مختلف نوشته شده، اما به یک اندازه برای همه مفید نیست. انتخاب کن تا صادقانه بگویم چه چیزی از آن می‌گیری.</p>
+
+    <div class="tabs rv" role="tablist" aria-label="انتخاب مخاطب">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">تازه‌وارد جدی</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2">در حال امتحان کردن</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3">دیزاینر در حال رشد</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p4" id="t4">غیر دیزاینر</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p5" id="t5">دیزاینر باسابقه</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p6" id="t6">دنبال چالش بالاتر</button>
+    </div>
+
+    <div class="panel" id="p1" role="tabpanel" aria-labelledby="t1">
+      <p class="who">تصمیمت را گرفته‌ای و می‌خواهی وارد بازار کار شوی.</p>
+      <p class="get">این دوره دقیقاً برای تو ساخته شده. یک مسیر جمع‌وجور از پژوهش تا خروجی، تمرین هفتگی، و معیاری که با آن بفهمی کجای راه ایستاده‌ای. اما یادت باشد: خروجی این دوره «آمادگی اولیه» است، نه استخدام.</p>
+      <p class="fit">مخاطب اصلی دوره</p>
+    </div>
+    <div class="panel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+      <p class="who">می‌خواهی ببینی این راه به دردت می‌خورد یا نه.</p>
+      <p class="get">در دو ماه می‌فهمی این حرفه واقعاً چه شکلی است — نه آن چیزی که در شبکه‌های اجتماعی نشان داده می‌شود. اگر جوابت «نه» بود، همان هم نتیجهٔ ارزشمندی است؛ خیلی زودتر از آنکه سال‌ها هدر بدهی.</p>
+      <p class="fit">مناسب برای تصمیم‌گیری</p>
+    </div>
+    <div class="panel" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+      <p class="who">کار می‌کنی و می‌خواهی پژوهش و تجربهٔ کاربر را جدی‌تر یاد بگیری.</p>
+      <p class="get">بخش‌های پژوهش، ارزش پیشنهادی و آزمایش برای تو پرمغزترین قسمت‌اند. اگر تا حالا بیشتر سمت اجرا بوده‌ای، اینجا نیمهٔ گم‌شدهٔ کارت را پیدا می‌کنی.</p>
+      <p class="fit">تکمیل‌کنندهٔ مهارت فعلی</p>
+    </div>
+    <div class="panel" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
+      <p class="who">مدیر محصول، کارآفرین، بازاریاب یا تولیدکنندهٔ محتوایی.</p>
+      <p class="get">قرار نیست دیزاینر شوی. اما می‌فهمی دیزاینر محصول چه کاری می‌کند، چه چیزی از او بخواهی، و چطور با او حرف بزنی. برای کسی که با تیم دیزاین کار می‌کند، همین کافی است.</p>
+      <p class="fit">آشنایی، نه حرفه‌ای شدن</p>
+    </div>
+    <div class="panel" id="p5" role="tabpanel" aria-labelledby="t5" hidden>
+      <p class="who">سال‌هاست کار می‌کنی و دنبال فهم دقیق‌تر و استانداردتری هستی.</p>
+      <p class="get">بخش‌های نظری و چارچوب‌ها می‌توانند آنچه را تجربی یاد گرفته‌ای منظم کنند. اما رک باشم: بخش‌های ابتدایی برایت تکراری خواهد بود، چون دوره برای شروع مسیر طراحی شده.</p>
+      <p class="fit">با انتظار واقع‌بینانه</p>
+    </div>
+    <div class="panel" id="p6" role="tabpanel" aria-labelledby="t6" hidden>
+      <p class="who">دنبال چالش‌های سطح بالاتر و کار با ابزارهای جدیدی.</p>
+      <p class="get">بخش هوش مصنوعی و کار با ابزارهای امروزی برایت جذاب‌ترین قسمت است. اما این دوره یک دورهٔ تخصصی پیشرفته نیست؛ عمق محتوا به پرسش‌های گروه و نیاز بازار وابسته است.</p>
+      <p class="fit">بخشی از دوره، نه همهٔ آن</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9. CRITIQUES ================= -->
+<section class="mirror" id="critiques">
+  <div class="wrap">
+    <div class="sec-label"><span class="n">۰۹</span><span class="eyebrow">حرف‌های ناگفته</span></div>
+    <h2 class="rv">می‌دانم به دوره‌ها چه نقدهایی هست.</h2>
+    <p class="lead rv">این نقدها را شنیده‌ام، بخشی‌شان درست است و بخشی‌شان نه. بهتر است اینجا بخوانی‌شان تا جای دیگر.</p>
+
+    <div class="crit rv">
+      <details class="critrow">
+        <summary><span class="q">نقد</span>«دوره‌ها تئوری‌اند.»</summary>
+        <p class="ans">بخشی‌اش درست است. اما مبانی فرایند دیزاین همان چیزی است که مهارت حل مسئله را می‌سازد؛ بدون آن، فقط اجرای دستور یاد می‌گیری. کاری که من می‌کنم این است که هر مفهوم بلافاصله به یک تمرین و یک مثال وصل شود.</p>
+      </details>
+      <details class="critrow">
+        <summary><span class="q">نقد</span>«دور از واقعیت بازار است.»</summary>
+        <p class="ans">این نقد معمولاً به دوره‌هایی برمی‌گردد که سال‌هاست به‌روز نشده‌اند. محتوای این دوره با آگهی‌های شغلی واقعی و مسئولیت‌های امروزی دیزاینر محصول سنجیده می‌شود — نه با کتاب‌ها.</p>
+      </details>
+      <details class="critrow">
+        <summary><span class="q">نقد</span>«مهارت‌های نرم آموزش داده نمی‌شود.»</summary>
+        <p class="ans">ارتباطات، کار تیمی و دفاع از تصمیم بخشی از دوره‌اند. اما صادق باشم: بخش بزرگی از مهارت نرم فقط در محیط واقعی و در تعامل با آدم‌های واقعی ساخته می‌شود. هیچ دوره‌ای نمی‌تواند جای آن را بگیرد.</p>
+      </details>
+      <details class="critrow">
+        <summary><span class="q">نقد</span>«مثال واقعی کم دارد.»</summary>
+        <p class="ans">درست است و برای همین دوره مثال‌محور طراحی شده. هر جلسه با نمونه‌های واقعی پیش می‌رود، نه با سناریوهای ساختگی.</p>
+      </details>
+      <details class="critrow">
+        <summary><span class="q">نکته</span>«چرا اینجا تعریف و تمجید دانشجوها را نمی‌بینم؟»</summary>
+        <p class="ans">چون بازخورد هیجانی، دلیل خوبی برای انتخاب یک دورهٔ دو ماهه نیست. آدم‌ها بلافاصله بعد از دوره احساس خوبی دارند و این احساس لزوماً به مهارت ترجمه نمی‌شود. ترجیح می‌دهم به‌جای تعریف، خودِ فرایند را نشانت بدهم و بگذارم خودت قضاوت کنی.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10. DETAILS ================= -->
+<section id="details">
+  <div class="wrap">
+    <div class="sec-label"><span class="n">۱۰</span><span class="eyebrow">جزئیات</span></div>
+    <h2 class="rv">قبل از تصمیم، این‌ها را بدان.</h2>
+
+    <dl class="dl rv">
+      <div><dt>مدت دوره</dt><dd>دو ماه</dd></div>
+      <div><dt>شکل برگزاری</dt><dd>آنلاین — ویدیو و وبینار</dd></div>
+      <div><dt>تحویل تمرین</dt><dd>هر سه‌شنبه</dd></div>
+      <div><dt>پروژه</dt><dd>یک پروژهٔ کامل تا انتها</dd></div>
+      <div><dt>پشتیبانی</dt><dd>پرسش‌وپاسخ در تلگرام</dd></div>
+      <div><dt>پیش‌نیاز</dt><dd class="tbd">در حال تکمیل</dd></div>
+      <div><dt>تاریخ شروع</dt><dd class="tbd">به‌زودی اعلام می‌شود</dd></div>
+      <div><dt>ظرفیت</dt><dd class="tbd">به‌زودی اعلام می‌شود</dd></div>
+      <div><dt>هزینه</dt><dd class="tbd">به‌زودی اعلام می‌شود</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ================= 11. FINAL CTA ================= -->
+<section class="final" id="enroll">
+  <div class="wrap">
+    <h2>اگر تا اینجا خوانده‌ای، احتمالاً همان کسی هستی که این دوره برایش ساخته شده.</h2>
+    <p>قدم بعدی، ثبت‌نام است. اگر هنوز مطمئن نیستی، سؤالت را بپرس — جواب می‌دهم.</p>
+    <div class="row">
+      <a class="btn" href="#" data-enroll>ثبت‌نام در دوره</a>
+      <a class="btn btn--ghost" href="#">یک سؤال دارم</a>
+    </div>
+    <small>ثبت‌نام در سایت دیگری انجام می‌شود و در تب جدید باز خواهد شد.</small>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap row">
+    <span>دورهٔ آنلاین مهارت‌های دیزاینر محصول — Ali Babaei</span>
+    <span class="mono">پیش‌نویس لندینگ · v0</span>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="txt"><b>دورهٔ دو ماههٔ مهارت‌های دیزاینر محصول</b><span>آنلاین · تمرین‌محور · پروژهٔ پایانی</span></div>
+  <a class="btn btn--solid" href="#enroll">ثبت‌نام در دوره</a>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* flashlight */
+  var hero = document.getElementById('hero');
+  if(hero && window.matchMedia('(hover: hover)').matches){
+    var raf = null, px = 50, py = 42;
+    hero.addEventListener('pointermove', function(e){
+      var r = hero.getBoundingClientRect();
+      px = ((e.clientX - r.left) / r.width) * 100;
+      py = ((e.clientY - r.top) / r.height) * 100;
+      if(raf) return;
+      raf = requestAnimationFrame(function(){
+        hero.style.setProperty('--mx', px.toFixed(2) + '%');
+        hero.style.setProperty('--my', py.toFixed(2) + '%');
+        raf = null;
+      });
+    });
+  }
+
+  /* scroll reveal */
+  var items = document.querySelectorAll('.rv');
+  if(reduce || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  /* audience tabs */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  function select(i){
+    tabs.forEach(function(t, j){
+      var on = i === j;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(i); });
+    t.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowLeft' ? 1 : e.key === 'ArrowRight' ? -1 : 0;
+      if(!d) return;
+      e.preventDefault();
+      var n = (i + d + tabs.length) % tabs.length;
+      tabs[n].focus(); select(n);
+    });
+  });
+
+  /* sticky cta after hero */
+  var sticky = document.getElementById('sticky');
+  var final = document.getElementById('enroll');
+  if(sticky && hero && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){
+      sticky.classList.toggle('on', !e[0].isIntersecting);
+    }, { threshold: 0 }).observe(hero);
+    new IntersectionObserver(function(e){
+      if(e[0].isIntersecting) sticky.classList.remove('on');
+    }, { threshold: 0.2 }).observe(final);
+  }
+})();
+</script>
