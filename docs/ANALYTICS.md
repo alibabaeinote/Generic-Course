@@ -18,8 +18,8 @@ track(name: EventName, props?: Record<string, string | number | boolean>)
 | رویداد | زمان ارسال | props مجاز |
 |---|---|---|
 | `view_landing` | بارگذاری صفحهٔ اصلی | `course_status` |
-| `click_primary_cta` | کلیک روی CTA اصلی | `location` (hero/sticky/footer)، `course_status` |
-| `submit_waitlist` | نتیجهٔ ارسال فرم | `result` (success/duplicate/invalid/error)، `source` |
+| `click_primary_cta` | کلیک روی CTA اصلی | `location` (hero/sticky/footer)، `course_status`، `destination` (`external_enroll` در v1) |
+| `submit_waitlist` | نتیجهٔ ارسال فرم — **از فاز ۲** | `result` (success/duplicate/invalid/error)، `source` |
 | `faq_open` | باز شدن آیتم FAQ | `question_id` |
 | `scroll_depth` | عبور از ۲۵/۵۰/۷۵/۱۰۰ درصد | `depth` |
 
@@ -45,9 +45,16 @@ track(name: EventName, props?: Record<string, string | number | boolean>)
 
 ## قیف اصلی که هفتگی بررسی می‌شود
 
+**v1 (ثبت‌نام بیرونی):**
 ```
-view_landing → click_primary_cta → submit_waitlist(success)
-             → view_course → start_checkout → payment_success
+view_landing → scroll_depth(75) → click_primary_cta(destination=external_enroll)
+```
+چون ثبت‌نام بیرون از سایت است، آخرین رویداد قابل مشاهدهٔ ما همان کلیک است. برای بستن قیف، لینک ثبت‌نام
+باید UTM داشته باشد تا نرخ تبدیل نهایی از سمت سایت ثبت‌نام قابل تطبیق باشد.
+
+**از فاز ۲ به بعد:**
+```
+view_landing → click_primary_cta → view_course → start_checkout → payment_success
 ```
 
 ## اهداف عملکرد و دسترسی‌پذیری
