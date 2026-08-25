@@ -1,0 +1,241 @@
+<title>جهت بصری د — White & Black</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;700;900&family=Schibsted+Grotesk:wght@400;500;700&display=swap">
+
+<style>
+:root{
+  /* light: white ground, black flip-sections */
+  --ground:#FFFFFF; --on-ground:#0A0A0A; --on-ground-2:#3B3B3D; --on-ground-3:#77797B;
+  --flip:#0A0A0A; --on-flip:#FAFAF9; --on-flip-2:#B9BAB9; --on-flip-3:#87888A;
+  --hair:#E6E6E3; --hair-2:#CFCFCB; --hair-flip:rgba(250,250,249,.18);
+  --live:#C8871B;
+  --fa:"Vazirmatn",system-ui,-apple-system,sans-serif;
+  --en:"Schibsted Grotesk","Vazirmatn",system-ui,sans-serif;
+  --measure:46ch;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0A0A0A; --on-ground:#FAFAF9; --on-ground-2:#BDBEBD; --on-ground-3:#86888A;
+  --flip:#F5F4F1; --on-flip:#0A0A0A; --on-flip-2:#3D3E40; --on-flip-3:#75777A;
+  --hair:#232324; --hair-2:#39393B; --hair-flip:rgba(10,10,10,.16);
+  --live:#E0A64A;
+}}
+:root[data-theme="dark"]{
+  --ground:#0A0A0A; --on-ground:#FAFAF9; --on-ground-2:#BDBEBD; --on-ground-3:#86888A;
+  --flip:#F5F4F1; --on-flip:#0A0A0A; --on-flip-2:#3D3E40; --on-flip-3:#75777A;
+  --hair:#232324; --hair-2:#39393B; --hair-flip:rgba(10,10,10,.16);
+  --live:#E0A64A;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--on-ground);font-family:var(--fa);font-size:17px;font-weight:300;line-height:2;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{margin:0;font-weight:900;line-height:1.04;letter-spacing:-.03em;text-wrap:balance}
+p{margin:0}ul{margin:0;padding:0;list-style:none}
+a{color:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.en{font-family:var(--en);font-weight:400;font-size:.95em;direction:ltr;unicode-bidi:isolate;letter-spacing:0}
+.wrap{max-width:80rem;margin-inline:auto;padding-inline:clamp(1.2rem,5vw,5rem)}
+section{padding-block:clamp(4.5rem,13vw,10rem)}
+.flip{background:var(--flip);color:var(--on-flip)}
+
+/* type scale */
+h1{font-size:clamp(2.7rem,10vw,7rem)}
+h2{font-size:clamp(2.1rem,6.6vw,4.4rem);max-width:15ch}
+.lead{font-weight:200;font-size:clamp(1.08rem,2.4vw,1.4rem);line-height:1.9;color:var(--on-ground-2);max-width:var(--measure);margin-block-start:clamp(1.6rem,4vw,2.4rem)}
+.flip .lead{color:var(--on-flip-2)}
+.body{font-weight:300;font-size:1.02rem;line-height:2;color:var(--on-ground-2);max-width:var(--measure)}
+.flip .body{color:var(--on-flip-2)}
+.eyebrow{font-family:var(--en);font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--on-ground-3);display:block;margin-block-end:clamp(1.8rem,5vw,3rem)}
+.flip .eyebrow{color:var(--on-flip-3)}
+
+/* links / buttons — underline, not boxes */
+.lnk{display:inline-flex;align-items:center;gap:.55rem;font-weight:500;font-size:1.02rem;text-decoration:none;padding-block-end:.35rem;border-block-end:1.5px solid var(--on-ground);transition:gap .2s ease,opacity .2s ease}
+.lnk:hover{gap:.95rem}
+.flip .lnk{border-block-end-color:var(--on-flip)}
+.lnk--q{border-block-end-color:var(--hair-2);color:var(--on-ground-2);font-weight:400}
+.lnk--q:hover{border-block-end-color:var(--on-ground);color:var(--on-ground)}
+.flip .lnk--q{border-block-end-color:var(--hair-flip);color:var(--on-flip-2)}
+.flip .lnk--q:hover{border-block-end-color:var(--on-flip);color:var(--on-flip)}
+.acts{display:flex;flex-wrap:wrap;gap:1.4rem 2.6rem;margin-block-start:clamp(2rem,5vw,3rem);align-items:center}
+
+/* hero */
+.hero{padding-block:clamp(5rem,16vh,11rem) clamp(4rem,10vw,8rem)}
+.state{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--en);font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--on-ground-3);margin-block-end:clamp(1.6rem,4vw,2.4rem)}
+.state i{width:.4rem;height:.4rem;border-radius:50%;background:var(--live);font-style:normal}
+.hero h1 .thin{font-weight:200;letter-spacing:-.02em}
+
+/* numbers — no boxes, just space */
+.nums{padding-block:clamp(3rem,8vw,5rem);border-block:1px solid var(--hair)}
+.nums ul{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(2rem,5vw,3rem) 1rem}
+@media (min-width:54rem){.nums ul{grid-template-columns:repeat(4,1fr)}}
+.nums .n{display:block;font-family:var(--en);font-weight:700;font-size:clamp(2.4rem,6.5vw,4.2rem);line-height:.9;letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.nums .c{display:block;margin-block-start:.9rem;font-size:.9rem;font-weight:300;color:var(--on-ground-3);line-height:1.7;max-width:16ch}
+
+/* claims — thin rule list */
+.claims{margin-block-start:clamp(2.5rem,6vw,3.5rem);max-width:38ch}
+.claims li{padding-block:.85rem;border-block-end:1px solid var(--hair);font-weight:300;color:var(--on-ground-2);font-size:1rem;line-height:1.7}
+.claims li:last-child{border-block-end:none}
+
+/* signs — heavy head, thin body */
+.signs{display:grid;grid-template-columns:1fr;gap:clamp(2.5rem,6vw,4rem);margin-block-start:clamp(3.5rem,9vw,6rem)}
+@media (min-width:60rem){.signs{grid-template-columns:repeat(3,1fr);gap:3.5rem}}
+.sign .i{font-family:var(--en);font-size:.72rem;font-weight:500;letter-spacing:.18em;color:var(--on-ground-3);display:block;margin-block-end:1.1rem}
+.sign h3{font-size:clamp(1.15rem,2.6vw,1.45rem);line-height:1.35;margin-block-end:.9rem;letter-spacing:-.02em}
+.sign p{font-weight:300;font-size:.98rem;line-height:1.95;color:var(--on-ground-2)}
+.knot{margin-block-start:clamp(3.5rem,9vw,6rem);font-weight:900;font-size:clamp(1.6rem,5vw,3.2rem);line-height:1.25;letter-spacing:-.03em;max-width:19ch}
+
+/* honest — flip */
+.honest .huge{font-weight:900;font-size:clamp(2.4rem,9.5vw,6.5rem);line-height:1;letter-spacing:-.035em;margin-block:clamp(2rem,5vw,3rem);max-width:13ch}
+.honest .tail{margin-block-start:clamp(2.5rem,6vw,4rem);font-weight:900;font-size:clamp(1.3rem,3.6vw,2.2rem);line-height:1.3;letter-spacing:-.025em;max-width:20ch}
+
+/* briefs — hairline rows, one inverted */
+.briefs{margin-block-start:clamp(3rem,8vw,5rem);border-block-start:1px solid var(--hair)}
+.bf{display:grid;grid-template-columns:1fr;gap:.5rem 3rem;padding-block:clamp(1.6rem,3.5vw,2.4rem);border-block-end:1px solid var(--hair);transition:padding-inline .25s ease}
+@media (min-width:56rem){.bf{grid-template-columns:9rem 1fr 22rem;align-items:baseline;gap:0 3rem}}
+.bf .k{font-family:var(--en);font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--on-ground-3)}
+.bf h3{font-size:clamp(1.1rem,2.5vw,1.5rem);line-height:1.4;letter-spacing:-.02em;font-weight:700}
+.bf p{font-weight:300;font-size:.95rem;line-height:1.9;color:var(--on-ground-3)}
+.bf:hover{padding-inline:1.2rem}
+.bf--x{background:var(--flip);color:var(--on-flip);padding-inline:clamp(1rem,2.5vw,1.6rem);border-block-end-color:transparent}
+.bf--x .k{color:var(--on-flip-3)}
+.bf--x p{color:var(--on-flip-2)}
+.bf--x:hover{padding-inline:clamp(1.6rem,3.5vw,2.4rem)}
+.chain{margin-block-start:clamp(3rem,7vw,4.5rem);font-weight:200;font-size:clamp(1.05rem,2.6vw,1.5rem);line-height:1.9;max-width:34ch}
+.chain b{font-weight:900;letter-spacing:-.02em}
+
+/* enroll */
+.enroll h2{max-width:17ch}
+.enroll .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1.6rem;margin-block-start:clamp(3rem,7vw,4.5rem);padding-block-start:2rem;border-block-start:1px solid var(--hair-flip)}
+.enroll .meta dt{font-family:var(--en);font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--on-flip-3);margin-block-end:.5rem}
+.enroll .meta dd{margin:0;font-size:1.05rem;font-weight:300;color:var(--on-flip-2)}
+footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,7vw,4.5rem);font-size:.85rem}
+footer .r{display:flex;flex-wrap:wrap;gap:.8rem 2rem;justify-content:space-between;align-items:baseline;padding-block-start:clamp(2rem,5vw,3rem);border-block-start:1px solid var(--hair-flip)}
+footer b{color:var(--on-flip);font-weight:900;font-size:clamp(1.05rem,2.4vw,1.35rem);letter-spacing:-.02em}
+footer b i{font-style:normal;font-weight:200}
+
+.flag{position:fixed;inset-block-start:0;inset-inline-end:0;z-index:99;background:var(--flip);color:var(--on-flip);font-family:var(--en);font-size:.62rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .8rem}
+
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .lnk,.bf{transition:none}
+  .lnk:hover{gap:.55rem}
+  .bf:hover{padding-inline:0}
+  .bf--x:hover{padding-inline:clamp(1rem,2.5vw,1.6rem)}
+}
+</style>
+
+<div dir="rtl" lang="fa">
+<span class="flag">Direction D</span>
+
+<header class="hero wrap">
+  <span class="state"><i></i>ثبت‌نام باز است · دورهٔ آنلاین دو ماهه</span>
+  <h1>دیزاین را از کجا<br><span class="thin">باید شروع کرد؟</span></h1>
+  <p class="lead">منبع زیاده. ابزار زیاده. مسیر هم مدام تغییر می‌کنه. این دوره برای این ساخته شده که اول بفهمی چه چیزی ارزش یادگرفتن داره، چرا، و بعد چطور باید تمرینش کنی.</p>
+  <div class="acts">
+    <a class="lnk" href="#practice">ببین این دوره چه مسیری دارد <span aria-hidden="true">↓</span></a>
+    <a class="lnk lnk--q" href="#practice">نمونهٔ تمرین‌ها</a>
+  </div>
+</header>
+
+<div class="nums">
+  <div class="wrap">
+    <ul>
+      <li><span class="n">+۲۰</span><span class="c">سال تجربهٔ دیزاین</span></li>
+      <li><span class="n">+۹</span><span class="c">سال آموزش و منتورینگ</span></li>
+      <li><span class="n">+۳۰۰۰</span><span class="c">مهارت‌آموز</span></li>
+      <li><span class="n">+۴۰</span><span class="c">دوره، کارگاه و بوت‌کمپ</span></li>
+    </ul>
+  </div>
+</div>
+
+<section id="problem">
+  <div class="wrap">
+    <span class="eyebrow rv">۰۱ — مسئله</span>
+    <h2 class="rv">مشکل، کمبود آموزش نیست.</h2>
+    <p class="lead rv">همین حالا هم بیشتر از آنچه بتوانی ببینی آموزش هست. مسئله جای دیگری است — هر کسی از یک چیز حرف می‌زند:</p>
+
+    <ul class="claims rv">
+      <li>یکی می‌گوید <span class="en">Figma</span> یاد بگیر.</li>
+      <li>یکی می‌گوید <span class="en">UX</span> یعنی <span class="en">Research</span>.</li>
+      <li>یکی <span class="en">Portfolio</span> می‌خواهد.</li>
+      <li>یکی <span class="en">Business Thinking</span>.</li>
+      <li>یکی می‌گوید فقط پروژهٔ واقعی مهم است.</li>
+      <li>حالا <span class="en">AI</span> هم وارد ماجرا شده.</li>
+    </ul>
+
+    <div class="signs">
+      <article class="sign rv"><span class="i">۰۱</span><h3>مسیرها زیادند، شروع نیست.</h3><p>هر هفته یک رودمپ جدید می‌بینی و یک دورهٔ جدید سیو می‌کنی. فهرست «باید یاد بگیرم» بلندتر می‌شود و روز شروع، دورتر.</p></article>
+      <article class="sign rv"><span class="i">۰۲</span><h3>ابزار را بلدی، تصمیم را نه.</h3><p>فیگما را بلدی. اما وقتی می‌پرسند «چرا این دکمه اینجاست؟»، جواب محکمی نداری. یاد گرفته‌ای بسازی، نه تصمیم بگیری.</p></article>
+      <article class="sign rv"><span class="i">۰۳</span><h3>معیار نداری، پس نمی‌دانی کِی آماده‌ای.</h3><p>نمی‌دانی کارت خوب است یا نه و چقدر مانده. این نبودِ معیار، از خودِ ندانستن خسته‌کننده‌تر است.</p></article>
+    </div>
+
+    <p class="knot rv">مسئله، پیدا کردن مسیر درست وسط این‌همه آموزش است.</p>
+  </div>
+</section>
+
+<section class="flip honest">
+  <div class="wrap">
+    <span class="eyebrow rv">۰۲ — موضع صادقانه</span>
+    <h2 class="rv" style="max-width:18ch">یک نکتهٔ مهم، قبل از هر چیز.</h2>
+    <p class="huge rv">دو ماهه دیزاینر نمی‌شوی.</p>
+    <p class="body rv" style="max-width:52ch">هیچ دوره‌ای نمی‌تواند تجربهٔ واقعی کار در یک تیم محصول، محدودیت فنی، اختلاف‌نظر، شکست، تصمیم‌های سخت و پیچیدگی سازمان را کاملاً شبیه‌سازی کند. اما می‌تواند کمک کند وقتی وارد آن میدان شدی، خیلی کمتر سردرگم باشی.</p>
+    <p class="tail rv">این دوره نقطهٔ شروع است، نه خط پایان.</p>
+  </div>
+</section>
+
+<section id="practice">
+  <div class="wrap">
+    <span class="eyebrow rv">۰۳ — تمرین</span>
+    <h2 class="rv">جواب تمرین را از روی دست من کپی نمی‌کنی.</h2>
+    <p class="lead rv">تمرین‌ها مسئله‌هایی هستند که باید حل‌شان کنی. چند نمونه از بریف‌های واقعی دوره:</p>
+
+    <div class="briefs">
+      <article class="bf bf--x rv"><span class="k">Negative UX</span><h3>تجربهٔ کارت‌به‌کارت را عمداً بدتر کن.</h3><p>ساده‌ترین راه فهمیدن اینکه چه چیزی تجربه را خراب می‌کند: خودت خرابش کن. بعد برگرد و توضیح بده چرا کار کرد.</p></article>
+      <article class="bf rv"><span class="k">Research Plan</span><h3>برای همراه‌کارت یک <span class="en">Research Plan</span> طراحی کن.</h3><p>قبل از پرسیدن، مشخص کن برای چه تصمیمی داری تحقیق می‌کنی.</p></article>
+      <article class="bf rv"><span class="k">Journey Map</span><h3><span class="en">Journey</span> خرید بلیت تهران تا استانبول را بررسی کن.</h3><p>یک مسیر واقعی، با تمام اصطکاکی که کاربر تحمل می‌کند.</p></article>
+      <article class="bf rv"><span class="k">Usability Test</span><h3>روی یک سرویس واقعی <span class="en">Usability Test</span> انجام بده.</h3><p>با کاربر واقعی، نه با فرضی که در ذهنت ساخته‌ای.</p></article>
+      <article class="bf rv"><span class="k">Redesign</span><h3>یک رابط را <span class="en">Redesign</span> کن و از تصمیم‌هایت دفاع کن.</h3><p>بازطراحی بدون استدلال، فقط سلیقه است.</p></article>
+      <article class="bf rv"><span class="k">Evaluation</span><h3><span class="en">User Flow</span> بساز و <span class="en">Heuristic Evaluation</span> انجام بده.</h3><p>یاد می‌گیری با معیار نگاه کنی، نه با حس.</p></article>
+    </div>
+
+    <p class="chain rv">مسئله را می‌گیری. <b>فکر می‌کنی.</b> تصمیم می‌گیری. <b>می‌سازی.</b> بازخورد می‌گیری. <b>دفاع می‌کنی.</b></p>
+  </div>
+</section>
+
+<section class="flip enroll">
+  <div class="wrap">
+    <span class="eyebrow rv">۰۴ — ثبت‌نام</span>
+    <h2 class="rv">اگر آماده‌ای جدی‌تر شروع کنی.</h2>
+    <p class="lead rv">دورهٔ بعدی از <span class="en">[تاریخ]</span> شروع می‌شود. ظرفیت محدود است.</p>
+    <div class="acts rv">
+      <a class="lnk" href="#">ثبت‌نام در دوره <span aria-hidden="true">↖</span></a>
+      <a class="lnk lnk--q" href="#">سرفصل کامل را ببین</a>
+    </div>
+    <dl class="meta rv">
+      <div><dt>تاریخ شروع</dt><dd>—</dd></div>
+      <div><dt>ظرفیت</dt><dd>—</dd></div>
+      <div><dt>هزینه</dt><dd>—</dd></div>
+      <div><dt>شرایط پرداخت</dt><dd>—</dd></div>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap r">
+    <b>آگاهی <i>—</i> مهارت <i>—</i> میدان</b>
+    <span>© Ali Babaei · جهت بصری د</span>
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var rv=document.querySelectorAll('.rv');
+  if(reduce||!('IntersectionObserver' in window)){rv.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.05});
+  rv.forEach(function(e){io.observe(e)});
+})();
+</script>
