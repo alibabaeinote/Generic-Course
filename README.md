@@ -23,7 +23,7 @@
 | [`docs/content/content-guidelines.md`](docs/content/content-guidelines.md) | **راهنمای لحن و محتوا برای همهٔ صفحه‌ها و قابلیت‌ها** |
 | [`docs/content/voice.md`](docs/content/voice.md) | تصمیم‌های لحن و جدول قبل/بعد بازنویسی |
 | [`docs/content/visual-directions.md`](docs/content/visual-directions.md) | مقایسهٔ جهت‌های بصری (هنوز انتخاب نشده) |
-| [`docs/design-system/step-0.md`](docs/design-system/step-0.md) | **قدم صفر دیزاین سیستم — مستقل از سبک بصری** |
+| [`docs/design-system/step-0.md`](docs/design-system/step-0.md) | قدم صفر دیزاین سیستم — ⏸ متوقف تا وجود استایل‌گاید |
 
 ## اصل حاکم بر پروژه
 
