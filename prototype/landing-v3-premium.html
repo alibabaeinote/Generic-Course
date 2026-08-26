@@ -65,6 +65,7 @@ h3{font-size:clamp(1.08rem,2.3vw,1.32rem);font-weight:700;line-height:1.45;lette
 .void .copy{color:var(--v2)}
 .eyebrow{font-family:var(--lat);font-size:.68rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--t3);display:flex;align-items:center;gap:.9rem;margin-block-end:clamp(1.8rem,4.5vw,2.8rem)}
 .void .eyebrow{color:var(--v3)}
+.void .state{color:var(--v3)}
 .eyebrow::after{content:"";height:1px;flex:1;max-width:5rem;background:currentColor;opacity:.4;transform-origin:right;transform:scaleX(0);transition:transform 1s var(--e-out) .2s}
 .in .eyebrow::after,.eyebrow.in::after{transform:scaleX(1)}
 
@@ -253,13 +254,9 @@ h3{font-size:clamp(1.08rem,2.3vw,1.32rem);font-weight:700;line-height:1.45;lette
 
 /* ═══════════ footer ═══════════ */
 footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5rem)}
-.fnav{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:2.2rem;padding-block-start:clamp(2.2rem,5vw,3.2rem);border-block-start:1px solid var(--line-v)}
-.fnav h4{font-family:var(--lat);font-size:.62rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--v3);margin-block-end:1rem}
-.fnav li{padding-block:.3rem;font-weight:300;font-size:.92rem}
-.fnav a{position:relative}
-.fnav a::after{content:"";position:absolute;inset-block-end:-2px;inset-inline:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .45s var(--e-out)}
-.fnav a:hover{color:var(--on-void)}
-.fnav a:hover::after{transform:scaleX(1);transform-origin:right}
+.flinks{display:flex;flex-wrap:wrap;gap:.6rem 1.8rem;padding-block-start:clamp(2.2rem,5vw,3.2rem);border-block-start:1px solid var(--line-v)}
+.flinks li{font-weight:300;font-size:.92rem;color:var(--v2)}
+.flinks a:hover{color:var(--on-void)}
 .fend{margin-block-start:clamp(2.8rem,6vw,4rem);padding-block-start:1.8rem;border-block-start:1px solid var(--line-v);display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:baseline}
 .fend b{color:var(--on-void);font-family:var(--disp);font-weight:800;font-size:clamp(1.05rem,2.5vw,1.4rem);letter-spacing:-.02em}
 .fend b i{font-style:normal;font-weight:500;color:var(--v3)}
@@ -312,7 +309,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
       <p class="lede rise" style="--d:620ms;margin-block-start:0">منبع زیاده. ابزار زیاده. مسیر هم هر چند وقت عوض می‌شه. این دوره ساخته شده که اول بفهمی چی ارزش یادگرفتن داره، چرا — و بعد چطور باید تمرینش کنی.</p>
       <div class="acts rise" style="--d:760ms">
         <a class="cta" href="#s-curriculum" data-magnet>ببین چه مسیری داره<span class="ar">↓</span></a>
-        <a class="quiet" href="#s-practice">نمونهٔ تمرین‌ها</a>
+        <a class="quiet" href="#s-skills">چی یاد می‌گیری</a>
       </div>
     </div>
 
@@ -379,21 +376,12 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
   </div>
 </section>
 
-<!-- ══ 03 HONESTY — the moment ══ -->
-<section class="void moment" id="s-honest" data-label="حرف راست">
-  <div class="wrap">
-    <span class="eyebrow">۰۳ — حرف راست</span>
-    <h2 style="max-width:20ch"><span class="ln"><i>قبل از هر چیز، یه حرف راست.</i></span></h2>
-    <p class="mega"><span class="ln"><i>دو ماهه</i></span><span class="ln"><i>دیزاینر نمی‌شی.</i></span></p>
-    <p class="copy rise" style="max-width:54ch">هیچ دوره‌ای نمی‌تونه کار واقعی توی یه تیم محصول رو شبیه‌سازی کنه: محدودیت فنی، اختلاف‌نظر، شکست، تصمیم سخت، پیچیدگی سازمان. ولی می‌تونه کاری کنه وقتی پات به میدان باز شد، خیلی کمتر گیج باشی.</p>
-    <p class="tail"><span class="ln"><i>این دوره خط شروعه، نه خط پایان.</i></span></p>
-  </div>
-</section>
+
 
 <!-- ══ 04 SKILLS ══ -->
 <section id="s-skills" data-label="مهارت‌ها">
   <div class="wrap">
-    <span class="eyebrow">۰۴ — چی یاد می‌گیری</span>
+    <span class="eyebrow">۰۳ — چی یاد می‌گیری</span>
     <h2><span class="ln"><i>چیزایی که واقعاً به کارت میان.</i></span></h2>
     <div class="clus rise">
       <div><h3>فهم کاربر</h3><p>User Research · Interview · Journey Mapping · Usability Testing</p></div>
@@ -406,32 +394,12 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
   </div>
 </section>
 
-<!-- ══ 05 PRACTICE ══ -->
-<section id="s-practice" data-label="تمرین">
-  <div class="wrap">
-    <span class="eyebrow">۰۵ — تمرین</span>
-    <div class="two">
-      <h2><span class="ln"><i>اینجا جواب رو از رو</i></span><span class="ln"><i>دست من نمی‌نویسی.</i></span></h2>
-      <p class="lede" style="margin-block-start:0">تمرین‌ها مسئله‌ان، نه تکلیف. چندتا از بریف‌های واقعی دوره:</p>
-    </div>
 
-    <div class="briefs">
-      <article class="bf bf--x rise"><span class="k">Negative UX</span><h3>تجربهٔ کارت‌به‌کارت رو عمداً خراب کن.</h3><p>سریع‌ترین راه فهمیدن اینکه چی یه تجربه رو خراب می‌کنه: خودت خرابش کن. بعد برگرد و بگو چرا جواب داد.</p></article>
-      <article class="bf rise"><span class="k">Research Plan</span><h3>برای همراه‌کارت یه <span class="lat">Research Plan</span> بنویس.</h3><p>قبل از اینکه بپرسی، معلوم کن داری برای کدوم تصمیم تحقیق می‌کنی.</p></article>
-      <article class="bf rise"><span class="k">Journey Map</span><h3><span class="lat">Journey</span> خرید بلیت تهران تا استانبول رو در بیار.</h3><p>یه مسیر واقعی، با همهٔ اصطکاکی که کاربر بی‌صدا تحملش می‌کنه.</p></article>
-      <article class="bf rise"><span class="k">Usability Test</span><h3>رو یه سرویس واقعی <span class="lat">Usability Test</span> بگیر.</h3><p>با کاربر واقعی — نه با اون کاربری که تو ذهنت ساختی و همیشه باهات موافقه.</p></article>
-      <article class="bf rise"><span class="k">Redesign</span><h3>یه رابط رو <span class="lat">Redesign</span> کن و ازش دفاع کن.</h3><p>بازطراحی بدون استدلال، اسمش سلیقه‌ست نه دیزاین.</p></article>
-      <article class="bf rise"><span class="k">Evaluation</span><h3><span class="lat">User Flow</span> بساز و <span class="lat">Heuristic Evaluation</span> انجام بده.</h3><p>یاد می‌گیری با معیار نگاه کنی، نه با حس.</p></article>
-    </div>
-
-    <p class="chainline rise">مسئله رو می‌گیری. <b>فکر می‌کنی.</b> تصمیم می‌گیری. <b>می‌سازی.</b> بازخورد می‌گیری. <b>دفاع می‌کنی.</b></p>
-  </div>
-</section>
 
 <!-- ══ 06 LOOP ══ -->
 <section id="s-loop" data-label="یادگیری">
   <div class="wrap">
-    <span class="eyebrow">۰۶ — تجربهٔ یادگیری</span>
+    <span class="eyebrow">۰۴ — تجربهٔ یادگیری</span>
     <div class="two">
       <h2><span class="ln"><i>خبری از ویدیو نیست.</i></span><span class="ln"><i>باید لایو با هم مشورت کنیم.</i></span></h2>
       <p class="lede" style="margin-block-start:0">اینجا جایی نیست که یه سری ویدئو بخری و تنها بذاریمت. هر هفته زنده می‌شینیم، مسئله رو باز می‌کنیم و با هم تصمیم می‌گیریم.</p>
@@ -451,7 +419,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 <!-- ══ 07 FIT ══ -->
 <section id="s-fit" data-label="برای کی">
   <div class="wrap">
-    <span class="eyebrow">۰۷ — برای کی</span>
+    <span class="eyebrow">۰۵ — برای کی</span>
     <h2><span class="ln"><i>احتمالاً جای درستی اومدی، اگه…</i></span></h2>
     <div class="cols3" style="margin-block-start:clamp(2.5rem,6vw,4rem)">
       <article class="blk rise"><h3>می‌خوای وارد دیزاین بشی</h3><p>و دنبال یه شروع جدی و ساختارمندی، نه یه دورهٔ دیگه که فقط لیست کارها رو بلندتر کنه.</p></article>
@@ -475,7 +443,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 <!-- ══ 08 BRIDGE ══ -->
 <section id="s-different" data-label="تفاوت">
   <div class="wrap">
-    <span class="eyebrow">۰۸ — چه فرقی داره</span>
+    <span class="eyebrow">۰۶ — چه فرقی داره</span>
     <div class="two">
       <h2><span class="ln"><i>نه فقط تئوری.</i></span><span class="ln"><i>نه فقط ابزار.</i></span></h2>
       <p class="lede" style="margin-block-start:0">بیشتر دوره‌ها توی یکی از این سه دنیا گیر می‌کنن. کاری که اینجا می‌کنیم پل زدن بینشونه.</p>
@@ -501,7 +469,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 <!-- ══ 11 OUTCOMES ══ -->
 <section class="void" id="s-outcomes" data-label="خروجی">
   <div class="wrap">
-    <span class="eyebrow">۰۹ — آخر دو ماه</span>
+    <span class="eyebrow">۰۷ — آخر دو ماه</span>
     <h2><span class="ln"><i>آخرش چی برمی‌داری با خودت؟</i></span></h2>
     <p class="lede">قرار نیست همه‌چیز رو بلد باشی. ولی این‌ها رو با خودت می‌بری:</p>
     <div class="cols3">
@@ -519,7 +487,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 <!-- ══ 12 ABOUT ══ -->
 <section id="s-about" data-label="مدرس">
   <div class="wrap">
-    <span class="eyebrow">۱۰ — دربارهٔ من</span>
+    <span class="eyebrow">۰۸ — دربارهٔ من</span>
     <h2><span class="ln"><i>این دوره رو از رو کتاب نساختم.</i></span></h2>
     <div class="bio rise">
       <div class="slot slot--img"><span class="lab">تصویر</span><p>پرترهٔ مدرس — در انتظار فایل</p></div>
@@ -535,7 +503,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 <!-- ══ 13 CURRICULUM ══ -->
 <section id="s-curriculum" data-label="سرفصل">
   <div class="wrap">
-    <span class="eyebrow">۱۱ — مشخصات و سرفصل</span>
+    <span class="eyebrow">۰۹ — مشخصات و سرفصل</span>
     <h2><span class="ln"><i>خب، خودِ دوره چه شکلیه؟</i></span></h2>
 
     <dl class="specs rise">
@@ -568,7 +536,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 <!-- ══ 14 FAQ ══ -->
 <section id="s-faq" data-label="سؤال‌ها">
   <div class="wrap">
-    <span class="eyebrow">۱۲ — سؤال‌های پرتکرار</span>
+    <span class="eyebrow">۱۰ — سؤال‌های پرتکرار</span>
     <h2><span class="ln"><i>شاید هنوز چندتا سؤال داشته باشی.</i></span></h2>
     <div class="acc" data-acc>
       <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۱</span><span class="acc__t">هیچ تجربه‌ای ندارم؛ به درد من می‌خوره؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tbd">در انتظار پاسخ.</p></div></div></div>
@@ -587,10 +555,11 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 <!-- ══ 15 ENROLL ══ -->
 <section class="void moment" id="s-enroll" data-label="ثبت‌نام" style="min-height:auto">
   <div class="wrap">
-    <span class="eyebrow">۱۳ — ثبت‌نام</span>
+    <span class="eyebrow">۱۱ — ثبت‌نام</span>
     <div data-state="open">
       <h2 style="max-width:19ch"><span class="ln"><i>اگه می‌خوای جدی شروع کنی.</i></span></h2>
       <p class="lede">دورهٔ بعدی از <span class="lat">[تاریخ]</span> شروع می‌شه. ظرفیت محدوده.</p>
+      <span class="state" data-state="open" style="margin-block-start:1.4rem"><i></i>دوره فعاله</span>
       <div class="acts" style="margin-block-start:clamp(2.2rem,5vw,3rem)">
         <a class="cta" href="#" data-magnet data-enroll>ثبت‌نام در دوره<span class="ar">↖</span></a>
         <a class="quiet" href="#s-curriculum">اول سرفصل کامل رو ببینم</a>
@@ -598,8 +567,10 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
       <dl class="specs">
         <div><dt>تاریخ شروع</dt><dd>—</dd></div>
         <div><dt>ظرفیت باقی‌مانده</dt><dd>—</dd></div>
+        <!-- هزینه و شرایط پرداخت: فعلاً خاموش — قیمت‌گذاری هنوز تصمیم نگرفته شده (D8/D5 در docs/DECISIONS.md)
         <div><dt>هزینه</dt><dd>—</dd></div>
         <div><dt>شرایط پرداخت</dt><dd>—</dd></div>
+        -->
       </dl>
       <p class="copy" style="margin-block-start:1.8rem;font-size:.88rem">ثبت‌نام تو یه سایت دیگه انجام می‌شه و تو تب جدید باز می‌شه.</p>
     </div>
@@ -624,12 +595,15 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 
 <footer>
   <div class="wrap">
-    <div class="fnav">
-      <div><h4>دوره</h4><ul><li><a href="#s-philosophy">فلسفه</a></li><li><a href="#s-curriculum">سرفصل‌ها</a></li><li><a href="#s-practice">تمرین‌ها</a></li><li><a href="#s-faq">سؤال‌ها</a></li><li><a href="#s-enroll">ثبت‌نام</a></li></ul></div>
-      <div><h4>علی بابایی</h4><ul><li><a href="#s-about">دربارهٔ من</a></li><li><a href="#">مشاوره</a></li><li><a href="#">منتورینگ</a></li><li><a href="#">نوشته‌ها</a></li></ul></div>
-      <div><h4>شبکه‌ها</h4><ul><li><a href="#" class="lat">LinkedIn</a></li><li><a href="#" class="lat">Instagram</a></li><li><a href="#" class="lat">X</a></li><li><a href="#" class="lat">Substack</a></li></ul></div>
-      <div><h4>قوانین</h4><ul><li><a href="#">قوانین ثبت‌نام</a></li><li><a href="#">حریم خصوصی</a></li><li><a href="#">شرایط استفاده</a></li></ul></div>
-    </div>
+    <ul class="flinks">
+      <li><a href="#">حریم خصوصی</a></li>
+      <li><a href="#">شرایط استفاده</a></li>
+      <li><a href="#">قوانین ثبت‌نام</a></li>
+      <li><a href="#" class="lat">LinkedIn</a></li>
+      <li><a href="#" class="lat">Instagram</a></li>
+      <li><a href="#" class="lat">X</a></li>
+      <li><a href="#" class="lat">Substack</a></li>
+    </ul>
     <div class="fend">
       <b>آگاهی <i>—</i> مهارت <i>—</i> میدان</b>
       <span>© Ali Babaei · Premium draft v3</span>
