@@ -1,4 +1,4 @@
-<title>دیزاین را از کجا شروع کنیم</title>
+<title>اردوی آنلاین مهارت‌آموزی دیزاین‌آگاهی</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;700;800&family=Vazirmatn:wght@200;300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap">
@@ -66,6 +66,8 @@ h3{font-size:clamp(1.08rem,2.3vw,1.32rem);font-weight:700;line-height:1.45;lette
 .eyebrow{font-family:var(--lat);font-size:.68rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--t3);display:flex;align-items:center;gap:.9rem;margin-block-end:clamp(1.8rem,4.5vw,2.8rem)}
 .void .eyebrow{color:var(--v3)}
 .void .state{color:var(--v3)}
+.gloss{display:block;font-family:var(--lat);font-weight:300;font-size:.6em;letter-spacing:.05em;color:var(--t3);margin-block-start:.4em;direction:ltr;unicode-bidi:isolate;text-align:right}
+.void .gloss{color:var(--v3)}
 .eyebrow::after{content:"";height:1px;flex:1;max-width:5rem;background:currentColor;opacity:.4;transform-origin:right;transform:scaleX(0);transition:transform 1s var(--e-out) .2s}
 .in .eyebrow::after,.eyebrow.in::after{transform:scaleX(1)}
 
@@ -128,7 +130,7 @@ h3{font-size:clamp(1.08rem,2.3vw,1.32rem);font-weight:700;line-height:1.45;lette
 /* ═══════════ figures ═══════════ */
 .figs{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(2rem,5vw,3.5rem) 1rem;padding-block:clamp(3rem,8vw,5rem);border-block:1px solid var(--line)}
 @media (min-width:56rem){.figs{grid-template-columns:repeat(4,1fr)}}
-.fig .n{display:block;font-family:var(--lat);font-weight:500;font-size:clamp(2.6rem,7vw,4.8rem);line-height:.86;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.fig .n{display:block;font-family:var(--lat);font-weight:300;font-size:clamp(2.6rem,7vw,4.8rem);line-height:.86;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
 .fig .c{display:block;margin-block-start:1rem;font-size:.87rem;font-weight:300;color:var(--t3);line-height:1.7;max-width:15ch}
 
 /* ═══════════ editorial grid ═══════════ */
@@ -243,6 +245,8 @@ h3{font-size:clamp(1.08rem,2.3vw,1.32rem);font-weight:700;line-height:1.45;lette
 .slot .lab{font-family:var(--lat);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--t3)}
 .slot p{font-size:.88rem;font-weight:300;line-height:1.8}
 .slot--img{aspect-ratio:3/4;align-items:center;text-align:center}
+.recos{display:grid;grid-template-columns:1fr;gap:.9rem;margin-block-start:clamp(2.2rem,5vw,3.5rem)}
+@media (min-width:56rem){.recos{grid-template-columns:repeat(3,1fr)}}
 
 /* ═══════════ enroll ═══════════ */
 [data-state]{display:none}
@@ -297,8 +301,9 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
   </div>
 
   <div class="wrap hero__in">
-    <span class="state rise" data-state="open" style="--d:120ms"><i></i>ثبت‌نام بازه · دورهٔ آنلاین دو ماهه</span>
-    <span class="state rise" data-state="closed" style="--d:120ms"><i style="background:var(--t3);animation:none;box-shadow:none"></i>ثبت‌نام بسته‌ست · دورهٔ آنلاین دو ماهه</span>
+    <span class="eyebrow rise" style="--d:60ms;margin-block-end:1.1rem">اردوی آنلاین مهارت‌آموزی دیزاین‌آگاهی<i class="gloss">Design Awareness Bootcamp</i></span>
+    <span class="state rise" data-state="open" style="--d:120ms"><i></i>ثبت‌نام بازه · اردوی آنلاین دو ماهه</span>
+    <span class="state rise" data-state="closed" style="--d:120ms"><i style="background:var(--t3);animation:none;box-shadow:none"></i>ثبت‌نام بسته‌ست · اردوی آنلاین دو ماهه</span>
 
     <h1>
       <span class="ln"><i>دیزاین رو از کجا</i></span>
@@ -306,10 +311,10 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
     </h1>
 
     <div class="hero__foot">
-      <p class="lede rise" style="--d:620ms;margin-block-start:0">منبع زیاده. ابزار زیاده. مسیر هم هر چند وقت عوض می‌شه. این دوره ساخته شده که اول بفهمی چی ارزش یادگرفتن داره، چرا — و بعد چطور باید تمرینش کنی.</p>
+      <p class="lede rise" style="--d:620ms;margin-block-start:0">منبع زیاده. ابزار زیاده. مسیر هم هر چند وقت عوض می‌شه. این اردو ساخته شده که اول با هم بفهمیم چی ارزش یادگرفتن داره، چرا — و بعد چطور باید تمرینش کنیم.</p>
       <div class="acts rise" style="--d:760ms">
-        <a class="cta" href="#s-curriculum" data-magnet>ببین چه مسیری داره<span class="ar">↓</span></a>
-        <a class="quiet" href="#s-skills">چی یاد می‌گیری</a>
+        <a class="cta" href="#s-curriculum" data-magnet>ببینیم چه مسیری داره<span class="ar">↓</span></a>
+        <a class="quiet" href="#s-skills">چی یاد می‌گیریم</a>
       </div>
     </div>
 
@@ -336,7 +341,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
         <h2><span class="ln"><i>کم نیاوردی.</i></span><span class="ln"><i>زیاد آوردی.</i></span></h2>
       </div>
       <div>
-        <p class="lede" style="margin-block-start:0">هیچ‌وقت به‌اندازهٔ الان آموزش رایگان نبوده. پس اگه هنوز گیر کردی، مشکل نبودِ محتوا نیست. هر کسی از یه چیز حرف می‌زنه:</p>
+        <p class="lede" style="margin-block-start:0">هیچ‌وقت به‌اندازهٔ الان آموزش رایگان نبوده. پس اگه هنوز گیر کرده باشیم، مشکل نبودِ محتوا نیست. هر کسی از یه چیز حرف می‌زنه:</p>
         <ul class="claims">
           <li>یکی می‌گه <span class="lat">Figma</span> یاد بگیر.</li>
           <li>یکی می‌گه <span class="lat">UX</span> یعنی <span class="lat">Research</span>.</li>
@@ -349,12 +354,12 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
     </div>
 
     <div class="cols3">
-      <article class="blk rise"><span class="i">۰۱</span><h3>مسیر زیاده، شروع نیست.</h3><p>هر هفته یه رودمپ جدید می‌بینی، یه دوره سیو می‌کنی، یه لیست ابزار. فهرست «باید بلد باشم» هر روز بلندتر می‌شه و روزی که واقعاً شروع کنی، هر روز دورتر.</p></article>
-      <article class="blk rise"><span class="i">۰۲</span><h3>ابزار رو بلدی، تصمیم رو نه.</h3><p>فیگما رو بلدی. ولی تا یکی می‌پرسه «چرا این دکمه اینجاست؟»، جوابت می‌شه سلیقه. یاد گرفتی بسازی؛ یاد نگرفتی انتخاب کنی.</p></article>
-      <article class="blk rise"><span class="i">۰۳</span><h3>معیار نداری، پس نمی‌دونی کِی آماده‌ای.</h3><p>نمی‌دونی کارت خوبه یا نه، نمی‌دونی چقدر مونده، نمی‌دونی اون‌ور میز مصاحبه دنبال چیه. این بی‌معیاری از خودِ ندونستن خسته‌کننده‌تره.</p></article>
+      <article class="blk rise"><span class="i">۰۱</span><h3>مسیر زیاده، شروع نیست.</h3><p>هر هفته یه رودمپ جدید می‌بینیم، یه دوره سیو می‌کنیم، یه لیست ابزار. فهرست «باید بلد باشیم» هر روز بلندتر می‌شه و روزی که واقعاً شروع کنیم، هر روز دورتر.</p></article>
+      <article class="blk rise"><span class="i">۰۲</span><h3>ابزار رو بلدیم، تصمیم رو نه.</h3><p>فیگما رو بلدیم. ولی تا یکی می‌پرسه «چرا این دکمه اینجاست؟»، جوابمون می‌شه سلیقه. یاد گرفتیم بسازیم؛ یاد نگرفتیم انتخاب کنیم.</p></article>
+      <article class="blk rise"><span class="i">۰۳</span><h3>معیار نداریم، پس نمی‌دونیم کِی آماده‌ایم.</h3><p>نمی‌دونیم کارمون خوبه یا نه، نمی‌دونیم چقدر مونده، نمی‌دونیم اون‌ور میز مصاحبه دنبال چیه. این بی‌معیاری از خودِ ندونستن خسته‌کننده‌تره.</p></article>
     </div>
 
-    <p class="pull"><span class="ln"><i>چیزی که کم داری محتوا نیست.</i></span><span class="ln"><i>مسیره و معیار.</i></span></p>
+    <p class="pull"><span class="ln"><i>چیزی که کم داریم محتوا نیست.</i></span><span class="ln"><i>مسیره و معیار.</i></span></p>
   </div>
 </section>
 
@@ -363,7 +368,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
   <div class="wrap">
     <span class="eyebrow">۰۲ — فلسفهٔ دوره</span>
     <h2><span class="ln"><i>این کلاس <span class="lat">UI/UX</span> نیست.</i></span></h2>
-    <p class="lede">تجربهٔ کاربر لازمه؛ کافی نیست. قرار نیست یه مشت متد و ابزار حفظ کنی؛ قراره کل‌نگر فکر کنی، نه فقط قشنگش کنی. قراره ببینی یه دیزاینر محصول، وسط یه موقعیت واقعی، چطور فکر می‌کنه:</p>
+    <p class="lede">تجربهٔ کاربر لازمه؛ کافی نیست. قرار نیست یه مشت متد و ابزار حفظ کنیم؛ قراره کل‌نگر فکر کنیم، نه فقط قشنگش کنیم. قراره با هم ببینیم یه دیزاینر محصول، وسط یه موقعیت واقعی، چطور فکر می‌کنه:</p>
 
     <div class="cols3">
       <article class="blk rise"><span class="i">۰۱</span><h3>مسئله رو چطور می‌بینه</h3><p>قبل از اینکه دنبال راه‌حل بگرده، سؤال می‌پرسه: صورت‌مسئله چیه، و کدوم صورت‌مسئله اصلاً ارزش حل کردن داره؟</p></article>
@@ -371,8 +376,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
       <article class="blk rise"><span class="i">۰۳</span><h3>چطور می‌سازه و فرایند رو جلو می‌بره</h3><p>طراحی می‌کنه، فرضش رو تست می‌کنه، و تنها کار نمی‌کنه — با مهندس و مدیر محصول حرف می‌زنه، پای تصمیمش وایسه، و فرایند رو رهبری می‌کنه.</p></article>
     </div>
 
-    <p class="pull" style="max-width:26ch"><span class="ln"><i>آگاهی <span class="lat" style="font-weight:400;color:var(--t3)">—</span> مهارت <span class="lat" style="font-weight:400;color:var(--t3)">—</span> میدان</i></span></p>
-    <p class="copy rise" style="margin-block-start:1.6rem">دوتای اول کار منه؛ سومی فقط تو کار واقعی به دست میاد و هیچ دوره‌ای نمی‌تونه جاش رو بگیره. ولی هدف روشنه: دیزاینری که فقط رابط رو قشنگ نمی‌کنه، تصویر بزرگ‌تر و نتیجه رو می‌بینه.</p>
+    <p class="copy rise" style="margin-block-start:2rem">بخشی از این مسیر رو با هم می‌سازیم؛ بخشی دیگه فقط تو کار واقعی به دست میاد و هیچ اردویی نمی‌تونه جاش رو بگیره. ولی هدفمون روشنه: دیزاینری که فقط رابط رو قشنگ نمی‌کنه، تصویر بزرگ‌تر و نتیجه رو می‌بینه.</p>
   </div>
 </section>
 
@@ -381,8 +385,8 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 <!-- ══ 04 SKILLS ══ -->
 <section id="s-skills" data-label="مهارت‌ها">
   <div class="wrap">
-    <span class="eyebrow">۰۳ — چی یاد می‌گیری</span>
-    <h2><span class="ln"><i>چیزایی که واقعاً به کارت میان.</i></span></h2>
+    <span class="eyebrow">۰۳ — چی یاد می‌گیریم</span>
+    <h2><span class="ln"><i>چیزایی که واقعاً به کارمون میان.</i></span></h2>
     <div class="clus rise">
       <div><h3>فهم کاربر</h3><p>User Research · Interview · Journey Mapping · Usability Testing</p></div>
       <div><h3>حل مسئله</h3><p>Problem Framing · Divergence &amp; Convergence · Decision Making · Working with Uncertainty</p></div>
@@ -402,17 +406,17 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
     <span class="eyebrow">۰۴ — تجربهٔ یادگیری</span>
     <div class="two">
       <h2><span class="ln"><i>خبری از ویدیو نیست.</i></span><span class="ln"><i>باید لایو با هم مشورت کنیم.</i></span></h2>
-      <p class="lede" style="margin-block-start:0">اینجا جایی نیست که یه سری ویدئو بخری و تنها بذاریمت. هر هفته زنده می‌شینیم، مسئله رو باز می‌کنیم و با هم تصمیم می‌گیریم.</p>
+      <p class="lede" style="margin-block-start:0">اینجا جایی نیست که یه سری ویدئو بخریم و تنها بمونیم. هر هفته زنده می‌شینیم، مسئله رو باز می‌کنیم و با هم تصمیم می‌گیریم.</p>
     </div>
 
     <ol class="loop rise">
-      <li><span class="n">01</span><b>لایو مشورت می‌کنیم</b><p>وبینار زنده. مسئله رو با هم باز می‌کنیم، مثال می‌بینیم، نقد می‌کنیم. سؤال بقیه هم به کارت میاد.</p></li>
-      <li><span class="n">02</span><b>منابع رو می‌خونی</b><p>محتوای آموزشی و منابع تکمیلی — برای اینکه سر جلسهٔ بعد، حرف مشترک داشته باشیم.</p></li>
-      <li><span class="n">03</span><b>تمرین می‌کنی</b><p>تمرین‌های کوچیک هفتگی و پروژه‌های واقعی‌تر. یادگیری واقعی همین‌جا اتفاق می‌افته.</p></li>
-      <li><span class="n">04</span><b>بازخورد می‌گیری</b><p>بازخورد و راهنمایی روی همون چیزی که ساختی. نه نمره — معیار.</p></li>
-      <li><span class="n">05</span><b>دوباره فکر می‌کنی</b><p>اصلاح، تکرار، بازاندیشی. بعد دور بعد، این‌بار با نگاه عوض‌شده.</p></li>
+      <li><span class="n">01</span><b>لایو مشورت می‌کنیم</b><p>وبینار زنده. مسئله رو با هم باز می‌کنیم، مثال می‌بینیم، نقد می‌کنیم. سؤال بقیه هم به کارمون میاد.</p></li>
+      <li><span class="n">02</span><b>منابع رو می‌خونیم</b><p>محتوای آموزشی و منابع تکمیلی — برای اینکه سر جلسهٔ بعد، حرف مشترک داشته باشیم.</p></li>
+      <li><span class="n">03</span><b>تمرین می‌کنیم</b><p>تمرین‌های کوچیک هفتگی و پروژه‌های واقعی‌تر. یادگیری واقعی همین‌جا اتفاق می‌افته.</p></li>
+      <li><span class="n">04</span><b>بازخورد می‌گیریم</b><p>بازخورد و راهنمایی روی همون چیزی که ساختیم. نه نمره — معیار.</p></li>
+      <li><span class="n">05</span><b>دوباره فکر می‌کنیم</b><p>اصلاح، تکرار، بازاندیشی. بعد دور بعد، این‌بار با نگاه عوض‌شده.</p></li>
     </ol>
-    <p class="copy rise" style="margin-block-start:1.8rem">هر جلسه ضبط می‌شه و تو پنل دوره می‌مونه. ولی ضبط برای بازبینیه، نه جایگزینی — مشورت وقتی جواب می‌ده که سؤالت رو همون لحظه بپرسی.</p>
+    <p class="copy rise" style="margin-block-start:1.8rem">هر جلسه ضبط می‌شه و تو پنل اردو می‌مونه. ولی ضبط برای بازبینیه، نه جایگزینی — مشورت وقتی جواب می‌ده که سؤالمون رو همون لحظه بپرسیم.</p>
   </div>
 </section>
 
@@ -420,21 +424,21 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 <section id="s-fit" data-label="برای کی">
   <div class="wrap">
     <span class="eyebrow">۰۵ — برای کی</span>
-    <h2><span class="ln"><i>احتمالاً جای درستی اومدی، اگه…</i></span></h2>
+    <h2><span class="ln"><i>این اردو احتمالاً جای درستیه، برای…</i></span></h2>
     <div class="cols3" style="margin-block-start:clamp(2.5rem,6vw,4rem)">
-      <article class="blk rise"><h3>می‌خوای وارد دیزاین بشی</h3><p>و دنبال یه شروع جدی و ساختارمندی، نه یه دورهٔ دیگه که فقط لیست کارها رو بلندتر کنه.</p></article>
-      <article class="blk rise"><h3>یه مدتیه دیزاین می‌کنی</h3><p>ولی حس می‌کنی دانشت تیکه‌تیکه‌ست و بعضی پایه‌ها رو هیچ‌وقت درست یاد نگرفتی.</p></article>
-      <article class="blk rise"><h3>کنار دیزاینرها کار می‌کنی</h3><p><span class="lat">Product Manager</span>، <span class="lat">Founder</span> یا <span class="lat">Marketer</span> هستی و می‌خوای بفهمی از دیزاینر چی باید بخوای.</p></article>
+      <article class="blk rise"><h3>ورود جدی به دیزاین</h3><p>یه شروع جدی و ساختارمند، نه یه دورهٔ دیگه که فقط لیست کارهای نکرده رو بلندتر کنه.</p></article>
+      <article class="blk rise"><h3>دانشِ تیکه‌تیکه</h3><p>مدتیه دیزاین می‌کنیم، ولی حس می‌کنیم بعضی پایه‌ها رو هیچ‌وقت درست یاد نگرفتیم.</p></article>
+      <article class="blk rise"><h3>همکاری نزدیک با دیزاینرها</h3><p><span class="lat">Product Manager</span>، <span class="lat">Founder</span> یا <span class="lat">Marketer</span> هایی که می‌خوان بفهمن از دیزاینر چی باید بخوان.</p></article>
     </div>
 
     <div class="two" style="margin-block-start:clamp(3.5rem,8vw,5.5rem)">
-      <h3 style="font-family:var(--disp);font-weight:800;font-size:clamp(1.3rem,3.2vw,1.9rem);letter-spacing:-.025em">و احتمالاً جای درستی نیومدی، اگه…</h3>
+      <h3 style="font-family:var(--disp);font-weight:800;font-size:clamp(1.3rem,3.2vw,1.9rem);letter-spacing:-.025em">و شاید جای درستی نباشه، اگه هدف یکی از این‌هاست…</h3>
       <ul class="plain" style="margin-block-start:0">
-        <li>فقط دنبال یادگیری <span class="lat">Figma</span> هستی.</li>
-        <li>انتظار داری بعد دو ماه استخدامت تضمین بشه.</li>
-        <li>دنبال یه فرمول ثابت برای همهٔ پروژه‌هایی.</li>
-        <li>حاضر نیستی برای تمرین وقت بذاری.</li>
-        <li>فقط مدرک می‌خوای.</li>
+        <li>فقط یادگیری <span class="lat">Figma</span>.</li>
+        <li>تضمین استخدام بعد از دو ماه.</li>
+        <li>یه فرمول ثابت برای همهٔ پروژه‌ها.</li>
+        <li>رسیدن به نتیجه بدون وقت گذاشتن برای تمرین.</li>
+        <li>فقط گرفتن مدرک.</li>
       </ul>
     </div>
   </div>
@@ -455,7 +459,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
     </div>
     <ul class="plain rise" style="max-width:52ch;margin-block-start:clamp(2.8rem,6vw,4rem)">
       <li>محتوا با تغییرات بازار به‌روز می‌شه، نه با تقویم.</li>
-      <li>مثال‌ها از سرویس‌هایی میان که خودت هر روز استفاده می‌کنی.</li>
+      <li>مثال‌ها واقعی‌ان و از سرویس‌هایی میان که همه‌مون هر روز استفاده می‌کنیم.</li>
       <li>تمرکز روی وظایف واقعی <span class="lat">Product Designer</span>، نه عنوان‌های کتاب.</li>
       <li><span class="lat">AI</span> به‌عنوان بخشی از کار روزمره، نه یه سرفصل تزئینی.</li>
     </ul>
@@ -470,17 +474,17 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 <section class="void" id="s-outcomes" data-label="خروجی">
   <div class="wrap">
     <span class="eyebrow">۰۷ — آخر دو ماه</span>
-    <h2><span class="ln"><i>آخرش چی برمی‌داری با خودت؟</i></span></h2>
-    <p class="lede">قرار نیست همه‌چیز رو بلد باشی. ولی این‌ها رو با خودت می‌بری:</p>
+    <h2><span class="ln"><i>آخرش چی برمی‌داریم با خودمون؟</i></span></h2>
+    <p class="lede">قرار نیست همه‌چیز رو بلد باشیم. ولی این‌ها رو با خودمون می‌بریم:</p>
     <div class="cols3">
-      <article class="blk rise"><span class="i">۰۱</span><h3>یه نقشه</h3><p>می‌دونی الان کجایی و قدم بعدیت چیه.</p></article>
-      <article class="blk rise"><span class="i">۰۲</span><h3>یه زبون حرفه‌ای</h3><p>می‌تونی با تیم محصول هم‌زبون حرف بزنی و منظورت رو برسونی.</p></article>
-      <article class="blk rise"><span class="i">۰۳</span><h3>مهارت‌های تمرین‌شده</h3><p>فقط درباره‌شون نخوندی؛ انجامشون دادی و بازخوردشون رو گرفتی.</p></article>
+      <article class="blk rise"><span class="i">۰۱</span><h3>یه نقشه</h3><p>می‌دونیم الان کجاییم و قدم بعدیمون چیه.</p></article>
+      <article class="blk rise"><span class="i">۰۲</span><h3>یه زبون حرفه‌ای</h3><p>می‌تونیم با تیم محصول هم‌زبون حرف بزنیم و منظورمون رو برسونیم.</p></article>
+      <article class="blk rise"><span class="i">۰۳</span><h3>مهارت‌های تمرین‌شده</h3><p>فقط درباره‌شون نخوندیم؛ انجامشون دادیم و بازخوردشون رو گرفتیم.</p></article>
       <article class="blk rise"><span class="i">۰۴</span><h3>یه پروژه</h3><p>برای شروع یا کامل کردن <span class="lat">Portfolio</span>.</p></article>
-      <article class="blk rise"><span class="i">۰۵</span><h3>عادتِ نقد شنیدن</h3><p>یاد گرفتی نقد بگیری، اصلاح کنی و پای تصمیمت وایسی.</p></article>
-      <article class="blk rise"><span class="i">۰۶</span><h3>درک بازار</h3><p>می‌دونی سازمان‌ها از یه دیزاینر محصول چی می‌خوان.</p></article>
+      <article class="blk rise"><span class="i">۰۵</span><h3>عادتِ نقد شنیدن</h3><p>یاد گرفتیم نقد بگیریم، اصلاح کنیم و پای تصمیم‌مون وایسیم.</p></article>
+      <article class="blk rise"><span class="i">۰۶</span><h3>درک بازار</h3><p>می‌دونیم سازمان‌ها از یه دیزاینر محصول چی می‌خوان.</p></article>
     </div>
-    <p class="pull" style="max-width:20ch"><span class="ln"><i>حالا آماده‌تری بری تو میدان.</i></span></p>
+    <p class="pull" style="max-width:20ch"><span class="ln"><i>حالا آماده‌تریم بریم تو میدان.</i></span></p>
   </div>
 </section>
 
@@ -504,7 +508,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 <section id="s-curriculum" data-label="سرفصل">
   <div class="wrap">
     <span class="eyebrow">۰۹ — مشخصات و سرفصل</span>
-    <h2><span class="ln"><i>خب، خودِ دوره چه شکلیه؟</i></span></h2>
+    <h2><span class="ln"><i>خب، خودِ اردو چه شکلیه؟</i></span></h2>
 
     <dl class="specs rise">
       <div><dt>مدت</dt><dd>۲ ماه</dd></div>
@@ -519,16 +523,33 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 
     <h3 style="margin-block-start:clamp(3.5rem,8vw,5rem);font-family:var(--disp);font-weight:800;font-size:clamp(1.3rem,3.2vw,1.9rem);letter-spacing:-.025em">تو این دو ماه از چی حرف می‌زنیم؟</h3>
     <div class="acc" data-acc>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="true"><span class="acc__i">۰۱</span><span class="acc__t">مبانی دیزاین و حل مسئله</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p" data-open="1"><div><p class="inner tags">تفکر طراحی · حل مسئله · کار با ابهام · Problem Framing</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۲</span><span class="acc__t">پژوهش کاربر</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Research Planning · Interview · Generative Research · Usability Testing</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۳</span><span class="acc__t">محصول و ارزش</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Value Proposition · Product Thinking · Outcome-based Design</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۴</span><span class="acc__t">دیزاین تعامل</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">User Flow · Information Architecture · Interaction Patterns</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۵</span><span class="acc__t">رابط و دیزاین بصری</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Visual Hierarchy · Layout · Typography · Color · Responsive UI</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۶</span><span class="acc__t">فیگما و پروتوتایپ</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Figma · Components · Variables · Prototype</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۷</span><span class="acc__t">دیزاین سیستم</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Components · Tokens · Documentation · Governance basics</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۸</span><span class="acc__t">دیتا و آزمایش</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Product Metrics · Behavioral Data · Testing · Data-informed Design</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۹</span><span class="acc__t">دیزاین با کمک هوش مصنوعی</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">AI Workflow · Ideation · Research Support · Prototyping · Design-to-code Awareness</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۱۰</span><span class="acc__t">کار حرفه‌ای</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Portfolio · Teamwork · Communication · Market · Hiring · Working with PM &amp; Developers</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="true"><span class="acc__i" dir="ltr">Chapter 01</span><span class="acc__t">مبانی دیزاین و حل مسئله</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p" data-open="1"><div><p class="inner tags">تفکر طراحی · حل مسئله · کار با ابهام · Problem Framing</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i" dir="ltr">Chapter 02</span><span class="acc__t">پژوهش کاربر</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Research Planning · Interview · Generative Research · Usability Testing</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i" dir="ltr">Chapter 03</span><span class="acc__t">محصول و ارزش</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Value Proposition · Product Thinking · Outcome-based Design</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i" dir="ltr">Chapter 04</span><span class="acc__t">دیزاین تعامل</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">User Flow · Information Architecture · Interaction Patterns</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i" dir="ltr">Chapter 05</span><span class="acc__t">رابط و دیزاین بصری</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Visual Hierarchy · Layout · Typography · Color · Responsive UI</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i" dir="ltr">Chapter 06</span><span class="acc__t">فیگما و پروتوتایپ</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Figma · Components · Variables · Prototype</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i" dir="ltr">Chapter 07</span><span class="acc__t">دیزاین سیستم</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Components · Tokens · Documentation · Governance basics</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i" dir="ltr">Chapter 08</span><span class="acc__t">دیتا و آزمایش</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Product Metrics · Behavioral Data · Testing · Data-informed Design</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i" dir="ltr">Chapter 09</span><span class="acc__t">دیزاین با کمک هوش مصنوعی</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">AI Workflow · Ideation · Research Support · Prototyping · Design-to-code Awareness</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i" dir="ltr">Chapter 10</span><span class="acc__t">کار حرفه‌ای</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tags">Portfolio · Teamwork · Communication · Market · Hiring · Working with PM &amp; Developers</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RECOMMENDATIONS ══ -->
+<section id="s-recommendations" data-label="همراهان">
+  <div class="wrap">
+    <span class="eyebrow">همراهان قبلی<i class="gloss">Recommended by</i></span>
+    <h2><span class="ln"><i>دیزاینرهایی که قبلاً با ما همراه بودن.</i></span></h2>
+    <p class="lede">شش نفر از چهره‌های شناخته‌شدهٔ بازار که تو دوره‌ها یا کارگاه‌های قبلی شرکت کردن — در انتظار انتخاب و تأیید نهایی.</p>
+    <div class="recos rise">
+      <div class="slot"><span class="lab">دیزاینر ۰۱</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر ۰۲</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر ۰۳</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر ۰۴</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر ۰۵</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر ۰۶</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
     </div>
   </div>
 </section>
@@ -537,17 +558,17 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
 <section id="s-faq" data-label="سؤال‌ها">
   <div class="wrap">
     <span class="eyebrow">۱۰ — سؤال‌های پرتکرار</span>
-    <h2><span class="ln"><i>شاید هنوز چندتا سؤال داشته باشی.</i></span></h2>
+    <h2><span class="ln"><i>شاید هنوز چندتا سؤال داشته باشیم.</i></span></h2>
     <div class="acc" data-acc>
       <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۱</span><span class="acc__t">هیچ تجربه‌ای ندارم؛ به درد من می‌خوره؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tbd">در انتظار پاسخ.</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۲</span><span class="acc__t">بعدش می‌تونم استخدام بشم؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner">این دوره کاریابی نیست و استخدام رو تضمین نمی‌کنه. کاری که می‌کنه اینه که آمادگی اولیه‌ات رو بسازه. قدم آخر با خودته و با بازار.</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۲</span><span class="acc__t">بعدش می‌تونم استخدام بشم؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner">این اردو کاریابی نیست و استخدام رو تضمین نمی‌کنه. کاری که می‌کنه اینه که آمادگی اولیه‌مون رو بسازه. قدم آخر با خودمونه و با بازار.</p></div></div></div>
       <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۳</span><span class="acc__t"><span class="lat">Portfolio</span> می‌سازیم؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner">پروژهٔ پایانی دوره برای شروع یا کامل کردن <span class="lat">Portfolio</span> قابل استفاده‌ست.</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۴</span><span class="acc__t">فیگما هم درس می‌دی؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner">آره، سرفصل ۰۶ مال همینه. ولی موضوع دوره ابزار نیست؛ ابزار درِ ورودیه، نه مقصد.</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۵</span><span class="acc__t"><span class="lat">AI</span> چه نقشی داره؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner">سرفصل ۰۹ دربارهٔ کار با <span class="lat">AI</span> توی جریان کار روزمرهٔ دیزاینره: ایده‌پردازی، کمک به پژوهش، پروتوتایپ و آشنایی با <span class="lat">design-to-code</span>.</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۴</span><span class="acc__t">فیگما هم آموزش داده می‌شه؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner">آره، <span class="lat">Chapter 06</span> مال همینه. ولی موضوع اردو ابزار نیست؛ ابزار درِ ورودیه، نه مقصد.</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۵</span><span class="acc__t"><span class="lat">AI</span> چه نقشی داره؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner"><span class="lat">Chapter 09</span> دربارهٔ کار با <span class="lat">AI</span> توی جریان کار روزمرهٔ دیزاینره: ایده‌پردازی، کمک به پژوهش، پروتوتایپ و آشنایی با <span class="lat">design-to-code</span>.</p></div></div></div>
       <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۶</span><span class="acc__t">هفته‌ای چقدر وقت می‌خواد؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tbd">در انتظار پاسخ.</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۷</span><span class="acc__t">اگه یه جلسه رو از دست بدم چی؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner">ضبطش تو پنل هست، پس از مسیر عقب نمی‌مونی. ولی اون هفته یه چیزی رو از دست دادی که تو ضبط نیست: پرسیدن. سؤالت رو تو گروه بپرس تا جلسهٔ بعد جبران بشه.</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۸</span><span class="acc__t">ضبط جلسه‌ها در دسترسه؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner">آره. هر جلسه ضبط می‌شه و تو پنل دوره در اختیارته. این دوره ویدئوی از پیش ضبط‌شده نداره؛ چیزی که می‌بینی، همون جلسه‌ایه که خودت توش بودی.</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۹</span><span class="acc__t">مدرک هم می‌دی؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tbd">در انتظار پاسخ.</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۷</span><span class="acc__t">اگه یه جلسه رو از دست بدم چی؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner">ضبطش تو پنل هست، پس از مسیر عقب نمی‌مونیم. ولی اون هفته یه چیزی رو از دست دادیم که تو ضبط نیست: پرسیدن. سؤالمون رو تو گروه می‌پرسیم تا جلسهٔ بعد جبران بشه.</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۸</span><span class="acc__t">ضبط جلسه‌ها در دسترسه؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner">آره. هر جلسه ضبط می‌شه و تو پنل اردو در اختیارمونه تا هر وقت خواستیم دوباره بازبینیش کنیم. این اردو ویدئوی از پیش ضبط‌شده نداره؛ چیزی که می‌بینیم، همون جلسه‌ایه که خودمون توش بودیم.</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="acc__i">۰۹</span><span class="acc__t">مدرک هم داده می‌شه؟</span><span class="pm" aria-hidden="true"></span></button><div class="acc__p"><div><p class="inner tbd">در انتظار پاسخ.</p></div></div></div>
     </div>
   </div>
 </section>
@@ -557,12 +578,12 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
   <div class="wrap">
     <span class="eyebrow">۱۱ — ثبت‌نام</span>
     <div data-state="open">
-      <h2 style="max-width:19ch"><span class="ln"><i>اگه می‌خوای جدی شروع کنی.</i></span></h2>
-      <p class="lede">دورهٔ بعدی از <span class="lat">[تاریخ]</span> شروع می‌شه. ظرفیت محدوده.</p>
-      <span class="state" data-state="open" style="margin-block-start:1.4rem"><i></i>دوره فعاله</span>
+      <h2 style="max-width:19ch"><span class="ln"><i>وقتشه جدی شروع کنیم.</i></span></h2>
+      <p class="lede">اردوی بعدی از <span class="lat">[تاریخ]</span> شروع می‌شه. ظرفیت محدوده.</p>
+      <span class="state" data-state="open" style="margin-block-start:1.4rem"><i></i>اردو فعاله</span>
       <div class="acts" style="margin-block-start:clamp(2.2rem,5vw,3rem)">
-        <a class="cta" href="#" data-magnet data-enroll>ثبت‌نام در دوره<span class="ar">↖</span></a>
-        <a class="quiet" href="#s-curriculum">اول سرفصل کامل رو ببینم</a>
+        <a class="cta" href="#" data-magnet data-enroll>ثبت‌نام در اردو<span class="ar">↖</span></a>
+        <a class="quiet" href="#s-curriculum">سرفصل کامل رو ببینیم</a>
       </div>
       <dl class="specs">
         <div><dt>تاریخ شروع</dt><dd>—</dd></div>
@@ -576,8 +597,8 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
     </div>
 
     <div data-state="closed">
-      <h2 style="max-width:22ch"><span class="ln"><i>فعلاً درها بسته‌ست.</i></span><span class="ln"><i>ولی دورهٔ بعدی میاد.</i></span></h2>
-      <p class="lede">ایمیل یا شماره‌ات رو بذار تا وقتی ثبت‌نام دورهٔ بعد باز شد خبرت کنم.</p>
+      <h2 style="max-width:22ch"><span class="ln"><i>فعلاً درها بسته‌ست.</i></span><span class="ln"><i>ولی اردوی بعدی میاد.</i></span></h2>
+      <p class="lede">ایمیل یا شماره رو می‌ذاریم تا وقتی ثبت‌نام اردوی بعد باز شد خبر بدیم.</p>
       <div class="acts" style="margin-block-start:clamp(2.2rem,5vw,3rem)">
         <a class="cta" href="#" data-magnet>خبرم کن<span class="ar">↖</span></a>
         <a class="quiet" href="#s-curriculum">فعلاً سرفصل‌ها رو ببینم</a>
@@ -586,7 +607,7 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
     </div>
 
     <div class="toggle">
-      <span>پیش‌نمایش پیش‌نویس · وضعیت:</span>
+      <span>پیش‌نمایش پیش‌نویس · وضعیت اردو:</span>
       <button type="button" data-set="open" aria-pressed="true">باز</button>
       <button type="button" data-set="closed" aria-pressed="false">بسته</button>
     </div>
@@ -646,10 +667,9 @@ footer{background:var(--void);color:var(--v2);padding-block:0 clamp(3rem,7vw,5re
   }
 
   /* ── counters ── */
-  var fa = function(n){ return String(n).replace(/\d/g, function(d){ return '۰۱۲۳۴۵۶۷۸۹'[d]; }); };
   document.querySelectorAll('[data-count]').forEach(function(el){
     var target = parseInt(el.getAttribute('data-count'), 10), done = false;
-    var paint = function(v){ el.textContent = '+' + fa(v); };
+    var paint = function(v){ el.textContent = '+' + v; };
     if (R || !('IntersectionObserver' in window)) { paint(target); return; }
     paint(0);
     new IntersectionObserver(function(en, obs){

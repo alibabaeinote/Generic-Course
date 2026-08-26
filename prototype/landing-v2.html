@@ -1,4 +1,4 @@
-<title>دیزاین را از کجا شروع کنیم</title>
+<title>اردوی آنلاین مهارت‌آموزی دیزاین‌آگاهی</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;700;900&family=Schibsted+Grotesk:wght@400;500;700&display=swap">
@@ -61,13 +61,14 @@ h3{font-size:clamp(1.12rem,2.5vw,1.4rem);line-height:1.4;letter-spacing:-.02em;f
 .hero{padding-block:clamp(4.5rem,15vh,10rem) clamp(3.5rem,9vw,7rem)}
 .state{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--en);font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--on-3);margin-block-end:clamp(1.5rem,4vw,2.2rem)}
 .state i{width:.4rem;height:.4rem;border-radius:50%;background:var(--live);font-style:normal}
+.gloss{display:block;font-family:var(--en);font-weight:300;font-size:.68em;letter-spacing:.06em;color:var(--on-3);margin-block-start:.4em;direction:ltr;unicode-bidi:isolate;text-align:right}
 .hero h1 .thin{font-weight:200;letter-spacing:-.02em}
 
 /* numbers */
 .nums{padding-block:clamp(2.8rem,7vw,4.5rem);border-block:1px solid var(--hair)}
 .nums ul{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.8rem,5vw,3rem) 1rem}
 @media (min-width:54rem){.nums ul{grid-template-columns:repeat(4,1fr)}}
-.nums .n{display:block;font-family:var(--en);font-weight:700;font-size:clamp(2.3rem,6vw,4rem);line-height:.9;letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.nums .n{display:block;font-family:var(--en);font-weight:300;font-size:clamp(2.8rem,8vw,5.5rem);line-height:.9;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
 .nums .c{display:block;margin-block-start:.85rem;font-size:.88rem;font-weight:300;color:var(--on-3);line-height:1.7;max-width:16ch}
 
 /* claims */
@@ -178,6 +179,8 @@ details[open] .pm::after{transform:translateY(-50%) rotate(0)}
 .slot .lab{font-family:var(--en);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--on-3)}
 .slot p{font-size:.9rem;font-weight:300;line-height:1.8}
 .slot--img{aspect-ratio:3/4;align-items:center;text-align:center}
+.recos{display:grid;grid-template-columns:1fr;gap:.8rem;margin-block-start:clamp(2rem,5vw,3rem)}
+@media (min-width:56rem){.recos{grid-template-columns:repeat(3,1fr)}}
 
 /* enroll */
 [data-state]{display:none}
@@ -219,23 +222,24 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
 
 <!-- 01 HERO -->
 <header class="hero wrap">
-  <span class="state" data-state="open"><i></i>ثبت‌نام بازه · دورهٔ آنلاین دو ماهه</span>
-  <span class="state" data-state="closed"><i style="background:currentColor"></i>ثبت‌نام فعلاً بسته‌ست · دورهٔ آنلاین دو ماهه</span>
+  <span class="eyebrow" style="margin-block-end:1.1rem">اردوی آنلاین مهارت‌آموزی دیزاین‌آگاهی<i class="gloss">Design Awareness Bootcamp</i></span>
+  <span class="state" data-state="open"><i></i>ثبت‌نام بازه</span>
+  <span class="state" data-state="closed"><i style="background:currentColor"></i>ثبت‌نام فعلاً بسته‌ست</span>
   <h1>دیزاین رو از کجا<br><span class="thin">باید شروع کرد؟</span></h1>
-  <p class="lead">منبع زیاده. ابزار زیاده. مسیر هم هر چند وقت عوض می‌شه. این دوره ساخته شده که اول بفهمی چی ارزش یادگرفتن داره، چرا — و بعد چطور باید تمرینش کنی.</p>
+  <p class="lead">منبع زیاده. ابزار زیاده. مسیر هم هر چند وقت عوض می‌شه. این اردو ساخته شده که اول با هم بفهمیم چی ارزش یادگرفتن داره، چرا — و بعد چطور باید تمرینش کنیم.</p>
   <div class="acts">
-    <a class="lnk" href="#curriculum">ببین این دوره چه مسیری داره <span aria-hidden="true">↓</span></a>
-    <a class="lnk lnk--q" href="#skills">چی یاد می‌گیری</a>
+    <a class="lnk" href="#curriculum">ببینیم این اردو چه مسیری داره <span aria-hidden="true">↓</span></a>
+    <a class="lnk lnk--q" href="#skills">چی یاد می‌گیریم</a>
   </div>
 </header>
 
 <!-- 02 NUMBERS -->
 <div class="nums">
   <div class="wrap"><ul>
-    <li><span class="n">+۲۰</span><span class="c">سال کار دیزاین</span></li>
-    <li><span class="n">+۹</span><span class="c">سال آموزش و منتورینگ</span></li>
-    <li><span class="n">+۳۰۰۰</span><span class="c">مهارت‌آموز</span></li>
-    <li><span class="n">+۴۰</span><span class="c">دوره، کارگاه و بوت‌کمپ</span></li>
+    <li><span class="n">+20</span><span class="c">سال کار دیزاین</span></li>
+    <li><span class="n">+9</span><span class="c">سال آموزش و منتورینگ</span></li>
+    <li><span class="n">+3000</span><span class="c">مهارت‌آموز</span></li>
+    <li><span class="n">+40</span><span class="c">دوره، کارگاه و بوت‌کمپ</span></li>
   </ul></div>
 </div>
 
@@ -243,8 +247,8 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
 <section id="problem">
   <div class="wrap">
     <span class="eyebrow rv">۰۱ — مسئله</span>
-    <h2 class="rv">کم نیاوردی. زیاد آوردی.</h2>
-    <p class="lead rv">هیچ‌وقت به‌اندازهٔ الان آموزش رایگان نبوده. پس اگه هنوز گیر کردی، مشکل نبودِ محتوا نیست. هر کسی از یه چیز حرف می‌زنه:</p>
+    <h2 class="rv">کم نیاوردیم. زیاد آوردیم.</h2>
+    <p class="lead rv">هیچ‌وقت به‌اندازهٔ الان آموزش رایگان نبوده. پس اگه هنوز گیر کرده باشیم، مشکل نبودِ محتوا نیست. هر کسی از یه چیز حرف می‌زنه:</p>
 
     <ul class="claims rv">
       <li>یکی می‌گه <span class="en">Figma</span> یاد بگیر.</li>
@@ -256,12 +260,12 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
     </ul>
 
     <div class="cols3">
-      <article class="blk rv"><span class="i">۰۱</span><h3>مسیر زیاده، شروع نیست.</h3><p>هر هفته یه رودمپ جدید می‌بینی، یه دوره سیو می‌کنی، یه لیست ابزار. فهرست «باید بلد باشم» هر روز بلندتر می‌شه و روزی که واقعاً شروع کنی، هر روز دورتر.</p></article>
-      <article class="blk rv"><span class="i">۰۲</span><h3>ابزار رو بلدی، تصمیم رو نه.</h3><p>فیگما رو بلدی. ولی تا یکی می‌پرسه «چرا این دکمه اینجاست؟»، جوابت می‌شه سلیقه. یاد گرفتی بسازی؛ یاد نگرفتی انتخاب کنی.</p></article>
-      <article class="blk rv"><span class="i">۰۳</span><h3>معیار نداری، پس نمی‌دونی کِی آماده‌ای.</h3><p>نمی‌دونی کارت خوبه یا نه، نمی‌دونی چقدر مونده، نمی‌دونی اون‌ور میز مصاحبه دنبال چیه. این بی‌معیاری از خودِ ندونستن خسته‌کننده‌تره.</p></article>
+      <article class="blk rv"><span class="i">۰۱</span><h3>مسیر زیاده، شروع نیست.</h3><p>هر هفته یه رودمپ جدید می‌بینیم، یه دوره سیو می‌کنیم، یه لیست ابزار. فهرست «باید بلد باشیم» هر روز بلندتر می‌شه و روزی که واقعاً شروع کنیم، هر روز دورتر.</p></article>
+      <article class="blk rv"><span class="i">۰۲</span><h3>ابزار رو بلدیم، تصمیم رو نه.</h3><p>فیگما رو بلدیم. ولی تا یکی می‌پرسه «چرا این دکمه اینجاست؟»، جوابمون می‌شه سلیقه. یاد گرفتیم بسازیم؛ یاد نگرفتیم انتخاب کنیم.</p></article>
+      <article class="blk rv"><span class="i">۰۳</span><h3>معیار نداریم، پس نمی‌دونیم کِی آماده‌ایم.</h3><p>نمی‌دونیم کارمون خوبه یا نه، نمی‌دونیم چقدر مونده، نمی‌دونیم اون‌ور میز مصاحبه دنبال چیه. این بی‌معیاری از خودِ ندونستن خسته‌کننده‌تره.</p></article>
     </div>
 
-    <p class="knot rv">چیزی که کم داری محتوا نیست. مسیره و معیار.</p>
+    <p class="knot rv">چیزی که کم داریم محتوا نیست. مسیره و معیار.</p>
   </div>
 </section>
 
@@ -270,7 +274,7 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
   <div class="wrap">
     <span class="eyebrow rv">۰۲ — فلسفهٔ دوره</span>
     <h2 class="rv">این کلاس <span class="en">UI/UX</span> نیست.</h2>
-    <p class="lead rv">تجربهٔ کاربر لازمه؛ کافی نیست. قرار نیست یه مشت متد و ابزار حفظ کنی؛ قراره کل‌نگر فکر کنی، نه فقط قشنگش کنی. قراره ببینی یه دیزاینر محصول، وسط یه موقعیت واقعی، چطور فکر می‌کنه:</p>
+    <p class="lead rv">تجربهٔ کاربر لازمه؛ کافی نیست. قرار نیست یه مشت متد و ابزار حفظ کنیم؛ قراره کل‌نگر فکر کنیم، نه فقط قشنگش کنیم. قراره با هم ببینیم یه دیزاینر محصول، وسط یه موقعیت واقعی، چطور فکر می‌کنه:</p>
 
     <div class="cols3">
       <article class="blk rv"><span class="i">۰۱</span><h3>مسئله رو چطور می‌بینه</h3><p>قبل از اینکه دنبال راه‌حل بگرده، سؤال می‌پرسه: صورت‌مسئله چیه، و کدوم صورت‌مسئله اصلاً ارزش حل کردن داره؟</p></article>
@@ -278,8 +282,7 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
       <article class="blk rv"><span class="i">۰۳</span><h3>چطور می‌سازه و فرایند رو جلو می‌بره</h3><p>طراحی می‌کنه، فرضش رو تست می‌کنه، و تنها کار نمی‌کنه — با مهندس و مدیر محصول حرف می‌زنه، پای تصمیمش وایسه، و فرایند رو رهبری می‌کنه.</p></article>
     </div>
 
-    <div class="model rv"><b>آگاهی</b><i>—</i><b>مهارت</b><i>—</i><b>میدان</b></div>
-    <p class="body rv" style="margin-block-start:1.4rem">دوتای اول کار منه؛ سومی فقط تو کار واقعی به دست میاد و هیچ دوره‌ای نمی‌تونه جاش رو بگیره. ولی هدف روشنه: دیزاینری که فقط رابط رو قشنگ نمی‌کنه، تصویر بزرگ‌تر و نتیجه رو می‌بینه.</p>
+    <p class="body rv" style="margin-block-start:2rem">بخشی از این مسیر رو با هم می‌سازیم؛ بخشی دیگه فقط تو کار واقعی به دست میاد و هیچ اردویی نمی‌تونه جاش رو بگیره. ولی هدفمون روشنه: دیزاینری که فقط رابط رو قشنگ نمی‌کنه، تصویر بزرگ‌تر و نتیجه رو می‌بینه.</p>
   </div>
 </section>
 
@@ -288,8 +291,8 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
 <!-- 06 SKILLS -->
 <section id="skills">
   <div class="wrap">
-    <span class="eyebrow rv">۰۳ — چی یاد می‌گیری</span>
-    <h2 class="rv">چیزایی که واقعاً به کارت میان.</h2>
+    <span class="eyebrow rv">۰۳ — چی یاد می‌گیریم</span>
+    <h2 class="rv">چیزایی که واقعاً به کارمون میان.</h2>
     <p class="lead rv">شش دستهٔ مهارت که کنار هم، کار روزمرهٔ یه دیزاینر محصول رو می‌سازن.</p>
 
     <div class="clus rv">
@@ -310,17 +313,17 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
   <div class="wrap">
     <span class="eyebrow rv">۰۴ — تجربهٔ یادگیری</span>
     <h2 class="rv">خبری از ویدیو نیست. باید لایو با هم مشورت کنیم.</h2>
-    <p class="lead rv">اینجا جایی نیست که یه سری ویدئو بخری و تنها بذاریمت. هر هفته زنده می‌شینیم، مسئله رو باز می‌کنیم و با هم تصمیم می‌گیریم. یادگیری اینجا یه چرخه‌ست، نه یه خط صاف.</p>
+    <p class="lead rv">اینجا جایی نیست که یه سری ویدئو بخریم و تنها بمونیم. هر هفته زنده می‌شینیم، مسئله رو باز می‌کنیم و با هم تصمیم می‌گیریم. یادگیری اینجا یه چرخه‌ست، نه یه خط صاف.</p>
 
     <ol class="loop rv">
-      <li><span class="n">01</span><b>لایو مشورت می‌کنیم</b><p>وبینار زنده. مسئله رو با هم باز می‌کنیم، مثال می‌بینیم، نقد می‌کنیم. سؤال بقیه هم به کارت میاد.</p></li>
-      <li><span class="n">02</span><b>منابع رو می‌خونی</b><p>محتوای آموزشی و منابع تکمیلی — برای اینکه سر جلسهٔ بعد، حرف مشترک داشته باشیم.</p></li>
-      <li><span class="n">03</span><b>تمرین می‌کنی</b><p>تمرین‌های کوچیک هفتگی و پروژه‌های واقعی‌تر. یادگیری واقعی همین‌جا اتفاق می‌افته.</p></li>
-      <li><span class="n">04</span><b>بازخورد می‌گیری</b><p>بازخورد و راهنمایی روی همون چیزی که ساختی. نه نمره — معیار.</p></li>
-      <li><span class="n">05</span><b>دوباره فکر می‌کنی</b><p>اصلاح، تکرار، بازاندیشی. بعد دور بعد.</p></li>
+      <li><span class="n">01</span><b>لایو مشورت می‌کنیم</b><p>وبینار زنده. مسئله رو با هم باز می‌کنیم، مثال می‌بینیم، نقد می‌کنیم. سؤال بقیه هم به کارمون میاد.</p></li>
+      <li><span class="n">02</span><b>منابع رو می‌خونیم</b><p>محتوای آموزشی و منابع تکمیلی — برای اینکه سر جلسهٔ بعد، حرف مشترک داشته باشیم.</p></li>
+      <li><span class="n">03</span><b>تمرین می‌کنیم</b><p>تمرین‌های کوچیک هفتگی و پروژه‌های واقعی‌تر. یادگیری واقعی همین‌جا اتفاق می‌افته.</p></li>
+      <li><span class="n">04</span><b>بازخورد می‌گیریم</b><p>بازخورد و راهنمایی روی همون چیزی که ساختیم. نه نمره — معیار.</p></li>
+      <li><span class="n">05</span><b>دوباره فکر می‌کنیم</b><p>اصلاح، تکرار، بازاندیشی. بعد دور بعد.</p></li>
     </ol>
     <p class="loopback rv">و بعد از اول — این‌بار با نگاه عوض‌شده.</p>
-    <p class="body rv" style="margin-block-start:clamp(1.6rem,4vw,2.2rem)">هر جلسه ضبط می‌شه و تو پنل دوره می‌مونه؛ هر وقت خواستی دوباره ببینش. ولی ضبط برای <b style="font-weight:700">بازبینی</b>ه، نه برای جایگزینی — مشورت وقتی جواب می‌ده که سؤالت رو همون لحظه بپرسی.</p>
+    <p class="body rv" style="margin-block-start:clamp(1.6rem,4vw,2.2rem)">هر جلسه ضبط می‌شه و تو پنل اردو می‌مونه؛ هر وقت خواستیم دوباره می‌بینیمش. ولی ضبط برای <b style="font-weight:700">بازبینی</b>ه، نه برای جایگزینی — مشورت وقتی جواب می‌ده که سؤالمون رو همون لحظه بپرسیم.</p>
   </div>
 </section>
 
@@ -328,22 +331,22 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
 <section id="fit">
   <div class="wrap">
     <span class="eyebrow rv">۰۵ — برای کی</span>
-    <h2 class="rv">احتمالاً جای درستی اومدی، اگه…</h2>
+    <h2 class="rv">این اردو احتمالاً جای درستیه، برای…</h2>
 
     <div class="cols2">
-      <article class="blk rv"><h3>می‌خوای وارد دیزاین بشی</h3><p>و دنبال یه شروع جدی و ساختارمندی، نه یه دورهٔ دیگه که فقط لیست کارها رو بلندتر کنه.</p></article>
-      <article class="blk rv"><h3>یه مدتیه دیزاین می‌کنی</h3><p>ولی حس می‌کنی دانشت تیکه‌تیکه‌ست و بعضی پایه‌ها رو هیچ‌وقت درست یاد نگرفتی.</p></article>
-      <article class="blk rv"><h3>کنار دیزاینرها کار می‌کنی</h3><p><span class="en">Product Manager</span>، <span class="en">Founder</span> یا <span class="en">Marketer</span> هستی و می‌خوای بفهمی از دیزاینر چی باید بخوای.</p></article>
-      <article class="blk rv"><h3>دنبال ارتقای چند مهارت خاصی</h3><p><span class="en">Research</span>، <span class="en">UI</span>، <span class="en">Product Thinking</span>، <span class="en">Figma</span>، <span class="en">AI</span> یا <span class="en">Design Systems</span>.</p></article>
+      <article class="blk rv"><h3>ورود جدی به دیزاین</h3><p>یه شروع جدی و ساختارمند، نه یه دورهٔ دیگه که فقط لیست کارهای نکرده رو بلندتر کنه.</p></article>
+      <article class="blk rv"><h3>دانشِ تیکه‌تیکه</h3><p>مدتیه دیزاین می‌کنیم، ولی حس می‌کنیم بعضی پایه‌ها رو هیچ‌وقت درست یاد نگرفتیم.</p></article>
+      <article class="blk rv"><h3>همکاری نزدیک با دیزاینرها</h3><p><span class="en">Product Manager</span>، <span class="en">Founder</span> یا <span class="en">Marketer</span>هایی که می‌خوان بفهمن از دیزاینر چی باید بخوان.</p></article>
+      <article class="blk rv"><h3>ارتقای چند مهارت خاص</h3><p><span class="en">Research</span>، <span class="en">UI</span>، <span class="en">Product Thinking</span>، <span class="en">Figma</span>، <span class="en">AI</span> یا <span class="en">Design Systems</span>.</p></article>
     </div>
 
-    <h3 class="rv" style="margin-block-start:clamp(3rem,7vw,4.5rem);font-size:clamp(1.3rem,3.2vw,1.8rem);font-weight:900">و احتمالاً جای درستی نیومدی، اگه…</h3>
+    <h3 class="rv" style="margin-block-start:clamp(3rem,7vw,4.5rem);font-size:clamp(1.3rem,3.2vw,1.8rem);font-weight:900">و شاید جای درستی نباشه، اگه هدف یکی از این‌هاست…</h3>
     <ul class="plain rv">
-      <li>فقط دنبال یادگیری <span class="en">Figma</span> هستی.</li>
-      <li>انتظار داری بعد دو ماه استخدامت تضمین بشه.</li>
-      <li>دنبال یه فرمول ثابت برای همهٔ پروژه‌هایی.</li>
-      <li>حاضر نیستی برای تمرین وقت بذاری.</li>
-      <li>فقط مدرک می‌خوای.</li>
+      <li>فقط یادگیری <span class="en">Figma</span>.</li>
+      <li>تضمین استخدام بعد از دو ماه.</li>
+      <li>یه فرمول ثابت برای همهٔ پروژه‌ها.</li>
+      <li>رسیدن به نتیجه بدون وقت گذاشتن برای تمرین.</li>
+      <li>فقط گرفتن مدرک.</li>
     </ul>
   </div>
 </section>
@@ -363,7 +366,7 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
 
     <ul class="plain rv" style="max-width:52ch;margin-block-start:clamp(2.5rem,6vw,3.5rem)">
       <li>محتوا با تغییرات بازار به‌روز می‌شه، نه با تقویم.</li>
-      <li>مثال‌ها واقعی‌ان و از سرویس‌هایی میان که خودت هر روز استفاده می‌کنی.</li>
+      <li>مثال‌ها واقعی‌ان و از سرویس‌هایی میان که همه‌مون هر روز استفاده می‌کنیم.</li>
       <li>تمرکز روی وظایف واقعی <span class="en">Product Designer</span>، نه عنوان‌های کتاب.</li>
       <li>ترکیب <span class="en">Research</span>، <span class="en">UI</span>، <span class="en">Product</span> و <span class="en">Business</span>.</li>
       <li><span class="en">AI</span> به‌عنوان بخشی از کار روزمره، نه یه سرفصل تزئینی.</li>
@@ -379,20 +382,20 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
 <!-- 13 OUTCOMES -->
 <section class="flip" id="outcomes">
   <div class="wrap">
-    <span class="eyebrow rv">۰۷ — آخر دو ماه</span>
-    <h2 class="rv">آخرش چی برمی‌داری با خودت؟</h2>
-    <p class="lead rv">قرار نیست همه‌چیز رو بلد باشی. ولی این‌ها رو با خودت می‌بری:</p>
+    <span class="eyebrow rv">۰۷ — آخر اردو</span>
+    <h2 class="rv">آخرش چی برمی‌داریم با خودمون؟</h2>
+    <p class="lead rv">قرار نیست همه‌چیز رو بلد باشیم. ولی این‌ها رو با خودمون می‌بریم:</p>
 
     <div class="cols3">
-      <article class="blk rv"><span class="i">۰۱</span><h3>یه نقشه</h3><p>می‌دونی الان کجایی و قدم بعدیت چیه.</p></article>
-      <article class="blk rv"><span class="i">۰۲</span><h3>یه زبون حرفه‌ای</h3><p>می‌تونی با تیم محصول هم‌زبون حرف بزنی و منظورت رو برسونی.</p></article>
-      <article class="blk rv"><span class="i">۰۳</span><h3>مهارت‌های تمرین‌شده</h3><p>فقط درباره‌شون نخوندی؛ انجامشون دادی و بازخوردشون رو گرفتی.</p></article>
+      <article class="blk rv"><span class="i">۰۱</span><h3>یه نقشه</h3><p>می‌دونیم الان کجاییم و قدم بعدیمون چیه.</p></article>
+      <article class="blk rv"><span class="i">۰۲</span><h3>یه زبون حرفه‌ای</h3><p>می‌تونیم با تیم محصول هم‌زبون حرف بزنیم و منظورمون رو برسونیم.</p></article>
+      <article class="blk rv"><span class="i">۰۳</span><h3>مهارت‌های تمرین‌شده</h3><p>فقط درباره‌شون نخوندیم؛ انجامشون دادیم و بازخوردشون رو گرفتیم.</p></article>
       <article class="blk rv"><span class="i">۰۴</span><h3>یه پروژه</h3><p>برای شروع یا کامل کردن <span class="en">Portfolio</span>.</p></article>
-      <article class="blk rv"><span class="i">۰۵</span><h3>عادتِ نقد شنیدن</h3><p>یاد گرفتی نقد بگیری، اصلاح کنی و پای تصمیمت وایسی.</p></article>
-      <article class="blk rv"><span class="i">۰۶</span><h3>درک بازار</h3><p>می‌دونی سازمان‌ها از یه دیزاینر محصول چی می‌خوان.</p></article>
+      <article class="blk rv"><span class="i">۰۵</span><h3>عادتِ نقد شنیدن</h3><p>یاد گرفتیم نقد بگیریم، اصلاح کنیم و پای تصمیم‌مون وایسیم.</p></article>
+      <article class="blk rv"><span class="i">۰۶</span><h3>درک بازار</h3><p>می‌دونیم سازمان‌ها از یه دیزاینر محصول چی می‌خوان.</p></article>
     </div>
 
-    <p class="knot rv">حالا آماده‌تری بری تو میدان.</p>
+    <p class="knot rv">حالا آماده‌تریم بریم تو میدان.</p>
   </div>
 </section>
 
@@ -416,7 +419,7 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
 <section id="curriculum">
   <div class="wrap">
     <span class="eyebrow rv">۰۹ — مشخصات و سرفصل</span>
-    <h2 class="rv">خب، خودِ دوره چه شکلیه؟</h2>
+    <h2 class="rv">خب، خودِ اردو چه شکلیه؟</h2>
 
     <dl class="specs rv">
       <div><dt>مدت</dt><dd>۲ ماه</dd></div>
@@ -432,16 +435,34 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
 
     <h3 class="rv" style="margin-block-start:clamp(3rem,7vw,4.5rem);font-size:clamp(1.3rem,3.2vw,1.8rem);font-weight:900">تو این دو ماه از چی حرف می‌زنیم؟</h3>
     <div class="rows rv">
-      <details open><summary><span class="idx">۰۱</span><span class="ttl">مبانی دیزاین و حل مسئله</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">تفکر طراحی · حل مسئله · کار با ابهام · Problem Framing</p></details>
-      <details><summary><span class="idx">۰۲</span><span class="ttl">پژوهش کاربر</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Research Planning · Interview · Generative Research · Usability Testing</p></details>
-      <details><summary><span class="idx">۰۳</span><span class="ttl">محصول و ارزش</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Value Proposition · Product Thinking · Outcome-based Design</p></details>
-      <details><summary><span class="idx">۰۴</span><span class="ttl">دیزاین تعامل</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">User Flow · Information Architecture · Interaction Patterns</p></details>
-      <details><summary><span class="idx">۰۵</span><span class="ttl">رابط و دیزاین بصری</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Visual Hierarchy · Layout · Typography · Color · Responsive UI</p></details>
-      <details><summary><span class="idx">۰۶</span><span class="ttl">فیگما و پروتوتایپ</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Figma · Components · Variables · Prototype</p></details>
-      <details><summary><span class="idx">۰۷</span><span class="ttl">دیزاین سیستم</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Components · Tokens · Documentation · Governance basics</p></details>
-      <details><summary><span class="idx">۰۸</span><span class="ttl">دیتا و آزمایش</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Product Metrics · Behavioral Data · Testing · Data-informed Design</p></details>
-      <details><summary><span class="idx">۰۹</span><span class="ttl">دیزاین با کمک هوش مصنوعی</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">AI Workflow · Ideation · Research Support · Prototyping · Design-to-code Awareness</p></details>
-      <details><summary><span class="idx">۱۰</span><span class="ttl">کار حرفه‌ای</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Portfolio · Teamwork · Communication · Market · Hiring · Working with PM &amp; Developers</p></details>
+      <details open><summary><span class="idx en">Chapter 01</span><span class="ttl">مبانی دیزاین و حل مسئله</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">تفکر طراحی · حل مسئله · کار با ابهام · Problem Framing</p></details>
+      <details><summary><span class="idx en">Chapter 02</span><span class="ttl">پژوهش کاربر</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Research Planning · Interview · Generative Research · Usability Testing</p></details>
+      <details><summary><span class="idx en">Chapter 03</span><span class="ttl">محصول و ارزش</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Value Proposition · Product Thinking · Outcome-based Design</p></details>
+      <details><summary><span class="idx en">Chapter 04</span><span class="ttl">دیزاین تعامل</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">User Flow · Information Architecture · Interaction Patterns</p></details>
+      <details><summary><span class="idx en">Chapter 05</span><span class="ttl">رابط و دیزاین بصری</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Visual Hierarchy · Layout · Typography · Color · Responsive UI</p></details>
+      <details><summary><span class="idx en">Chapter 06</span><span class="ttl">فیگما و پروتوتایپ</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Figma · Components · Variables · Prototype</p></details>
+      <details><summary><span class="idx en">Chapter 07</span><span class="ttl">دیزاین سیستم</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Components · Tokens · Documentation · Governance basics</p></details>
+      <details><summary><span class="idx en">Chapter 08</span><span class="ttl">دیتا و آزمایش</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Product Metrics · Behavioral Data · Testing · Data-informed Design</p></details>
+      <details><summary><span class="idx en">Chapter 09</span><span class="ttl">دیزاین با کمک هوش مصنوعی</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">AI Workflow · Ideation · Research Support · Prototyping · Design-to-code Awareness</p></details>
+      <details><summary><span class="idx en">Chapter 10</span><span class="ttl">کار حرفه‌ای</span><span class="pm" aria-hidden="true"></span></summary><p class="tags">Portfolio · Teamwork · Communication · Market · Hiring · Working with PM &amp; Developers</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDATIONS (skeleton) -->
+<section id="recommendations">
+  <div class="wrap">
+    <span class="eyebrow rv">همراهان قبلی<i class="gloss">Recommended by</i></span>
+    <h2 class="rv">دیزاینرهایی که قبلاً با ما همراه بودن.</h2>
+    <p class="lead rv">شش نفر از چهره‌های شناخته‌شدهٔ بازار که تو دوره‌ها یا کارگاه‌های قبلی شرکت کردن — در انتظار انتخاب و تأیید نهایی.</p>
+
+    <div class="recos rv">
+      <div class="slot"><span class="lab">دیزاینر ۰۱</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر ۰۲</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر ۰۳</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر ۰۴</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر ۰۵</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر ۰۶</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
     </div>
   </div>
 </section>
@@ -450,20 +471,20 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
 <section id="faq">
   <div class="wrap">
     <span class="eyebrow rv">۱۰ — سؤال‌های پرتکرار</span>
-    <h2 class="rv">شاید هنوز چندتا سؤال داشته باشی.</h2>
+    <h2 class="rv">شاید هنوز چندتا سؤال داشته باشیم.</h2>
     <div class="rows rv">
       <details><summary><span class="idx">۰۱</span><span class="ttl">هیچ تجربه‌ای ندارم؛ این دوره به درد من می‌خوره؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans tbd">در انتظار پاسخ.</p></details>
-      <details><summary><span class="idx">۰۲</span><span class="ttl">بعدش می‌تونم استخدام بشم؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">این دوره کاریابی نیست و استخدام رو تضمین نمی‌کنه. کاری که می‌کنه اینه که آمادگی اولیه‌ات رو بسازه. قدم آخر با خودته و با بازار.</p></details>
+      <details><summary><span class="idx">۰۲</span><span class="ttl">بعدش می‌تونم استخدام بشم؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">این اردو کاریابی نیست و استخدام رو تضمین نمی‌کنه. کاری که می‌کنه اینه که آمادگی اولیه‌مون رو بسازه. قدم آخر با خودمونه و با بازار.</p></details>
       <details><summary><span class="idx">۰۳</span><span class="ttl"><span class="en">Portfolio</span> می‌سازیم؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">پروژهٔ پایانی دوره برای شروع یا کامل کردن <span class="en">Portfolio</span> قابل استفاده‌ست.</p></details>
-      <details><summary><span class="idx">۰۴</span><span class="ttl">فیگما هم درس می‌دی؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">آره، سرفصل ۰۶ مال همینه. ولی موضوع دوره ابزار نیست؛ ابزار درِ ورودیه، نه مقصد.</p></details>
-      <details><summary><span class="idx">۰۵</span><span class="ttl"><span class="en">AI</span> چه نقشی داره؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">سرفصل ۰۹ دربارهٔ کار با <span class="en">AI</span> توی جریان کار روزمرهٔ دیزاینره: ایده‌پردازی، کمک به پژوهش، پروتوتایپ و آشنایی با <span class="en">design-to-code</span>.</p></details>
+      <details><summary><span class="idx">۰۴</span><span class="ttl">فیگما هم آموزش داده می‌شه؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">آره، <span class="en">Chapter 06</span> مال همینه. ولی موضوع اردو ابزار نیست؛ ابزار درِ ورودیه، نه مقصد.</p></details>
+      <details><summary><span class="idx">۰۵</span><span class="ttl"><span class="en">AI</span> چه نقشی داره؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans"><span class="en">Chapter 09</span> دربارهٔ کار با <span class="en">AI</span> توی جریان کار روزمرهٔ دیزاینره: ایده‌پردازی، کمک به پژوهش، پروتوتایپ و آشنایی با <span class="en">design-to-code</span>.</p></details>
       <details><summary><span class="idx">۰۶</span><span class="ttl">هفته‌ای چقدر وقت می‌خواد؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans tbd">در انتظار پاسخ.</p></details>
-      <details><summary><span class="idx">۰۷</span><span class="ttl">اگه یه جلسه رو از دست بدم چی؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">ضبطش تو پنل هست، پس از مسیر عقب نمی‌مونی. ولی اون هفته یه چیزی رو از دست دادی که تو ضبط نیست: پرسیدن. سؤالت رو تو گروه بپرس تا جلسهٔ بعد جبران بشه.</p></details>
+      <details><summary><span class="idx">۰۷</span><span class="ttl">اگه یه جلسه رو از دست بدم چی؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">ضبطش تو پنل هست، پس از مسیر عقب نمی‌مونیم. ولی اون هفته یه چیزی رو از دست دادیم که تو ضبط نیست: پرسیدن. سؤالمون رو تو گروه می‌پرسیم تا جلسهٔ بعد جبران بشه.</p></details>
       <details><summary><span class="idx">۰۸</span><span class="ttl">تمرین‌ها اجباری‌ان؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans tbd">در انتظار پاسخ.</p></details>
       <details><summary><span class="idx">۰۹</span><span class="ttl">بازخورد چطور داده می‌شه؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans tbd">در انتظار پاسخ.</p></details>
       <details><summary><span class="idx">۱۰</span><span class="ttl">برای دیزاینر <span class="en">Mid-level</span> هم خوبه؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans tbd">در انتظار پاسخ.</p></details>
-      <details><summary><span class="idx">۱۱</span><span class="ttl">مدرک هم می‌دی؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans tbd">در انتظار پاسخ.</p></details>
-      <details><summary><span class="idx">۱۲</span><span class="ttl">ضبط جلسه‌های زنده در دسترسه؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">آره. هر جلسه ضبط می‌شه و تو پنل دوره در اختیارته تا هر وقت خواستی دوباره بازبینیش کنی. این دوره ویدئوی از پیش ضبط‌شده نداره؛ چیزی که می‌بینی، همون جلسه‌ایه که خودت توش بودی.</p></details>
+      <details><summary><span class="idx">۱۱</span><span class="ttl">مدرک هم داده می‌شه؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans tbd">در انتظار پاسخ.</p></details>
+      <details><summary><span class="idx">۱۲</span><span class="ttl">ضبط جلسه‌های زنده در دسترسه؟</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">آره. هر جلسه ضبط می‌شه و تو پنل اردو در اختیارمونه تا هر وقت خواستیم دوباره بازبینیش کنیم. این اردو ویدئوی از پیش ضبط‌شده نداره؛ چیزی که می‌بینیم، همون جلسه‌ایه که خودمون توش بودیم.</p></details>
     </div>
   </div>
 </section>
@@ -473,12 +494,12 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
   <div class="wrap">
     <span class="eyebrow rv">۱۱ — ثبت‌نام</span>
     <div data-state="open">
-      <h2 class="rv">اگه می‌خوای جدی شروع کنی.</h2>
-      <p class="lead rv">دورهٔ بعدی از <span class="en">[تاریخ]</span> شروع می‌شه. ظرفیت محدوده.</p>
-      <span class="state rv" data-state="open"><i></i>دوره فعاله</span>
+      <h2 class="rv">وقتشه جدی شروع کنیم.</h2>
+      <p class="lead rv">اردوی بعدی از <span class="en">[تاریخ]</span> شروع می‌شه. ظرفیت محدوده.</p>
+      <span class="state rv" data-state="open"><i></i>اردو فعاله</span>
       <div class="acts rv">
-        <a class="lnk" href="#" data-enroll>ثبت‌نام در دوره <span aria-hidden="true">↖</span></a>
-        <a class="lnk lnk--q" href="#curriculum">اول سرفصل کامل رو ببینم</a>
+        <a class="lnk" href="#" data-enroll>ثبت‌نام در اردو <span aria-hidden="true">↖</span></a>
+        <a class="lnk lnk--q" href="#curriculum">سرفصل کامل رو ببینیم</a>
       </div>
       <dl class="specs rv">
         <div><dt>تاریخ شروع</dt><dd>—</dd></div>
@@ -492,8 +513,8 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
     </div>
 
     <div data-state="closed">
-      <h2 class="rv">فعلاً درها بسته‌ست. ولی دورهٔ بعدی میاد.</h2>
-      <p class="lead rv">ایمیل یا شماره‌ات رو بذار تا وقتی ثبت‌نام دورهٔ بعد باز شد خبرت کنم.</p>
+      <h2 class="rv">فعلاً درها بسته‌ست. ولی اردوی بعدی میاد.</h2>
+      <p class="lead rv">ایمیل یا شماره رو می‌ذاریم تا وقتی ثبت‌نام اردوی بعد باز شد خبر بدیم.</p>
       <div class="acts rv">
         <a class="lnk" href="#">خبرم کن <span aria-hidden="true">↖</span></a>
         <a class="lnk lnk--q" href="#curriculum">فعلاً سرفصل‌ها رو ببینم</a>
@@ -502,7 +523,7 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
     </div>
 
     <div class="toggle">
-      <span>پیش‌نمایش پیش‌نویس · وضعیت دوره:</span>
+      <span>پیش‌نمایش پیش‌نویس · وضعیت اردو:</span>
       <button type="button" data-set="open" aria-pressed="true">باز</button>
       <button type="button" data-set="closed" aria-pressed="false">بسته</button>
     </div>
@@ -528,7 +549,7 @@ footer{background:var(--flip);color:var(--on-flip-3);padding-block:0 clamp(3rem,
 </footer>
 
 <div class="sticky" id="sticky">
-  <div class="txt"><b>دورهٔ دو ماههٔ دیزاین محصول</b><span>آنلاین · تمرین‌محور · پروژهٔ پایانی</span></div>
+  <div class="txt"><b>اردوی آنلاین دیزاین‌آگاهی</b><span>آنلاین · تمرین‌محور · پروژهٔ پایانی</span></div>
   <a class="lnk" href="#enroll" style="font-size:.92rem">ثبت‌نام</a>
 </div>
 
