@@ -56,7 +56,7 @@ section{padding-block:clamp(3.5rem,9vw,7rem);position:relative;overflow:hidden}
 .s-ink .tag,.s-blue .tag{border-color:var(--line-d)}
 .tag--solid{background:var(--ink);color:var(--white);border-color:var(--ink)}
 .tag--blue{background:var(--blue);color:#fff;border-color:var(--blue)}
-.badge{display:inline-grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);font-family:var(--mono);font-size:.72rem;font-weight:700;flex-shrink:0;transition:background .35s var(--e),color .35s var(--e),border-color .35s var(--e),transform .35s var(--e)}
+.badge{display:inline-grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);font-family:var(--lat);font-size:.8rem;font-weight:500;flex-shrink:0;transition:background .35s var(--e),color .35s var(--e),border-color .35s var(--e),transform .35s var(--e)}
 .s-ink .badge,.s-blue .badge{border-color:var(--line-d)}
 .badge--fill{background:var(--accent);color:#fff;border-color:var(--accent)}
 .badge--blue{background:var(--blue);color:#fff;border-color:var(--blue)}
@@ -78,7 +78,9 @@ section{padding-block:clamp(3.5rem,9vw,7rem);position:relative;overflow:hidden}
 .split__band .lab{font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.12em;color:var(--on-dark);text-align:center}
 @media (min-width:56rem){.split__band{flex-direction:column-reverse}.split__band .lab{writing-mode:vertical-rl;text-orientation:sideways}}
 .split__num{font-family:var(--lat);font-weight:300;font-size:clamp(2.2rem,5vw,3.2rem);color:var(--yellow);line-height:1;font-variant-numeric:tabular-nums}
-.split__main{padding:clamp(3.5rem,9vw,7rem) var(--pad);position:relative;z-index:1}
+.split__main{padding-block:clamp(3.5rem,9vw,7rem);position:relative;z-index:1}
+.split__band--light{background:var(--yellow);color:var(--ink)}
+.split__band--light .lab,.split__band--light .split__num{color:var(--ink)}
 
 /* ══ type ══ */
 h1{font-size:clamp(2.5rem,8.5vw,6.4rem);line-height:1.16;letter-spacing:-.035em}
@@ -299,49 +301,62 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
 </header>
 
 <!-- ══ FIGURES ══ -->
-<section class="s-white" style="padding-block:clamp(2.5rem,6vw,4rem)">
-  <div class="wrap">
-    <div class="eyerow"><span class="tag">۰۰ / اعتبار</span><span class="rule"></span></div>
-    <ul class="figs">
-      <li class="fig rv"><span class="n" data-count="20">+۰</span><span class="c">سال کار دیزاین</span></li>
-      <li class="fig rv"><span class="n" data-count="9">+۰</span><span class="c">سال آموزش و منتورینگ</span></li>
-      <li class="fig rv"><span class="n" data-count="3000">+۰</span><span class="c">مهارت‌آموز</span></li>
-      <li class="fig rv"><span class="n" data-count="40">+۰</span><span class="c">دوره، کارگاه و بوت‌کمپ</span></li>
-    </ul>
+<section class="s-white split">
+  <div class="split__band">
+    <span class="lab lat" dir="ltr">PROOF</span>
+    <span class="split__num">00</span>
+  </div>
+  <div class="split__main" style="padding-block:clamp(2rem,5vw,3rem)">
+    <div class="wrap">
+      <ul class="figs">
+        <li class="fig rv"><span class="n" data-count="20">+0</span><span class="c">سال کار دیزاین</span></li>
+        <li class="fig rv"><span class="n" data-count="9">+0</span><span class="c">سال آموزش و منتورینگ</span></li>
+        <li class="fig rv"><span class="n" data-count="3000">+0</span><span class="c">مهارت‌آموز</span></li>
+        <li class="fig rv"><span class="n" data-count="40">+0</span><span class="c">دوره، کارگاه و بوت‌کمپ</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <!-- ══ 01 PROBLEM ══ -->
-<section class="s-yellow" id="s-problem" data-label="مسئله">
+<section class="s-yellow split" id="s-problem" data-label="مسئله">
   <div class="haze" style="width:28rem;height:28rem;background:radial-gradient(circle,#FFFFFF,transparent 70%);top:-8rem;left:10%"></div>
   <span class="ghost-outline" aria-hidden="true" style="bottom:-10%;inset-inline-end:-4%;font-size:clamp(11rem,30vw,23rem);-webkit-text-stroke:2px rgba(8,9,12,.16)">01</span>
-  <div class="wrap">
-    <div class="eyerow"><span class="tag">۰۱ / مسئله</span><span class="rule"></span><span class="badge"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></span></div>
-    <h2><span class="ln"><i>کم نیاوردی. <span style="color:var(--blue)">زیاد آوردی.</span></i></span></h2>
-    <p class="lede rv">هیچ‌وقت به‌اندازهٔ الان آموزش رایگان نبوده. پس اگه هنوز گیر کرده باشیم، مشکل نبودِ محتوا نیست. هر کسی از یه چیز حرف می‌زنه:</p>
-    <ul class="claims rv">
-      <li>یکی می‌گه <span class="lat">Figma</span> یاد بگیر</li>
-      <li>یکی می‌گه <span class="lat">UX</span> یعنی <span class="lat">Research</span></li>
-      <li>یکی <span class="lat">Portfolio</span> می‌خواد</li>
-      <li>یکی <span class="lat">Business Thinking</span></li>
-      <li>فقط پروژهٔ واقعی مهمه</li>
-      <li>حالا <span class="lat">AI</span> هم اومده وسط</li>
-    </ul>
+  <div class="split__band">
+    <span class="lab lat" dir="ltr">PROBLEM</span>
+    <span class="split__num">01</span>
+  </div>
+  <div class="split__main">
+    <div class="wrap">
+      <h2><span class="ln"><i>کم نیاوردی. <span style="color:var(--blue)">زیاد آوردی.</span></i></span></h2>
+      <p class="lede rv">هیچ‌وقت به‌اندازهٔ الان آموزش رایگان نبوده. پس اگه هنوز گیر کرده باشیم، مشکل نبودِ محتوا نیست. هر کسی از یه چیز حرف می‌زنه:</p>
+      <ul class="claims rv">
+        <li>یکی می‌گه <span class="lat">Figma</span> یاد بگیر</li>
+        <li>یکی می‌گه <span class="lat">UX</span> یعنی <span class="lat">Research</span></li>
+        <li>یکی <span class="lat">Portfolio</span> می‌خواد</li>
+        <li>یکی <span class="lat">Business Thinking</span></li>
+        <li>فقط پروژهٔ واقعی مهمه</li>
+        <li>حالا <span class="lat">AI</span> هم اومده وسط</li>
+      </ul>
 
-    <div class="grid3">
-      <article class="card rv"><span class="badge">۰۱</span><h3>مسیر زیاده، شروع نیست.</h3><p>هر هفته یه رودمپ جدید می‌بینیم، یه دوره سیو می‌کنیم، یه لیست ابزار. فهرست «باید بلد باشیم» هر روز بلندتر می‌شه و روزی که واقعاً شروع کنیم، هر روز دورتر.</p></article>
-      <article class="card rv"><span class="badge">۰۲</span><h3>ابزار رو بلدیم، تصمیم رو نه.</h3><p>فیگما رو بلدیم. ولی تا یکی می‌پرسه «چرا این دکمه اینجاست؟»، جوابمون می‌شه سلیقه. یاد گرفتیم بسازیم؛ یاد نگرفتیم انتخاب کنیم.</p></article>
-      <article class="card rv"><span class="badge">۰۳</span><h3>معیار نداریم، پس نمی‌دونیم کِی آماده‌ایم.</h3><p>نمی‌دونیم کارمون خوبه یا نه، نمی‌دونیم چقدر مونده، نمی‌دونیم اون‌ور میز مصاحبه دنبال چیه. این بی‌معیاری از خودِ ندونستن خسته‌کننده‌تره.</p></article>
+      <div class="grid3">
+        <article class="card rv"><span class="badge">01</span><h3>مسیر زیاده، شروع نیست.</h3><p>هر هفته یه رودمپ جدید می‌بینیم، یه دوره سیو می‌کنیم، یه لیست ابزار. فهرست «باید بلد باشیم» هر روز بلندتر می‌شه و روزی که واقعاً شروع کنیم، هر روز دورتر.</p></article>
+        <article class="card rv"><span class="badge">02</span><h3>ابزار رو بلدیم، تصمیم رو نه.</h3><p>فیگما رو بلدیم. ولی تا یکی می‌پرسه «چرا این دکمه اینجاست؟»، جوابمون می‌شه سلیقه. یاد گرفتیم بسازیم؛ یاد نگرفتیم انتخاب کنیم.</p></article>
+        <article class="card rv"><span class="badge">03</span><h3>معیار نداریم، پس نمی‌دونیم کِی آماده‌ایم.</h3><p>نمی‌دونیم کارمون خوبه یا نه، نمی‌دونیم چقدر مونده، نمی‌دونیم اون‌ور میز مصاحبه دنبال چیه. این بی‌معیاری از خودِ ندونستن خسته‌کننده‌تره.</p></article>
+      </div>
+
+      <p class="pull"><span class="ln"><i>چیزی که کم داریم محتوا نیست.</i></span><span class="ln"><i><em>مسیره و معیار.</em></i></span></p>
     </div>
-
-    <p class="pull"><span class="ln"><i>چیزی که کم داریم محتوا نیست.</i></span><span class="ln"><i><em>مسیره و معیار.</em></i></span></p>
   </div>
 </section>
 
 <!-- ══ 02 PHILOSOPHY ══ -->
-<section class="s-white" id="s-philosophy" data-label="فلسفه">
-  <div class="wrap">
-    <div class="eyerow"><span class="tag">۰۲ / فلسفهٔ دوره</span><span class="rule"></span></div>
+<section class="s-white split" id="s-philosophy" data-label="فلسفه">
+  <div class="split__band">
+    <span class="lab lat" dir="ltr">PHILOSOPHY</span>
+    <span class="split__num">02</span>
+  </div>
+  <div class="split__main"><div class="wrap">
     <h2><span class="ln"><i>این کلاس <span class="lat">UI/UX</span> نیست.</i></span></h2>
     <p class="lede rv">تجربهٔ کاربر لازمه؛ کافی نیست. قرار نیست یه مشت متد و ابزار حفظ کنیم؛ قراره کل‌نگر فکر کنیم، نه فقط قشنگش کنیم.</p>
 
@@ -352,16 +367,19 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
     </div>
 
     <p class="pull rv" style="font-size:clamp(1.3rem,3.6vw,2.2rem);max-width:22ch">هدف روشنه: <em>دیزاینری که فقط رابط رو قشنگ نمی‌کنه</em>، تصویر بزرگ‌تر و نتیجه رو می‌بینه.</p>
-  </div>
+  </div></div>
 </section>
 
 
 
 <!-- ══ 04 SKILLS ══ -->
-<section class="s-ink" id="s-skills" data-label="مهارت‌ها">
+<section class="s-ink split" id="s-skills" data-label="مهارت‌ها">
   <span class="ghost-outline" aria-hidden="true" style="top:-6%;inset-inline-start:-3%;font-size:clamp(6rem,16vw,11.5rem);-webkit-text-stroke:2px rgba(255,212,0,.22)">SKILLS</span>
-  <div class="wrap">
-    <div class="eyerow"><span class="tag">۰۳ / چی یاد می‌گیریم</span><span class="rule"></span></div>
+  <div class="split__band split__band--light">
+    <span class="lab lat" dir="ltr">SKILLS</span>
+    <span class="split__num">03</span>
+  </div>
+  <div class="split__main"><div class="wrap">
     <h2><span class="ln"><i>چیزایی که واقعاً به کارمون میان.</i></span></h2>
     <div class="grid3" style="margin-block-start:clamp(2rem,5vw,3rem)">
       <article class="card rv"><span class="badge">A</span><h3>فهم کاربر</h3><div class="acc__p"><ul class="tags" style="padding:0;display:flex;flex-wrap:wrap;gap:.4rem"><li>User Research</li><li>Interview</li><li>Journey Mapping</li><li>Usability Testing</li></ul></div></article>
@@ -371,16 +389,19 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
       <article class="card rv"><span class="badge">E</span><h3>فهم محصول</h3><div class="acc__p"><ul class="tags" style="padding:0;display:flex;flex-wrap:wrap;gap:.4rem"><li>Value Proposition</li><li>Outcome Thinking</li><li>Data-informed</li></ul></div></article>
       <article class="card rv"><span class="badge">F</span><h3>کار در دنیای امروز</h3><div class="acc__p"><ul class="tags" style="padding:0;display:flex;flex-wrap:wrap;gap:.4rem"><li>Design Systems</li><li>AI-assisted</li><li>Documentation</li></ul></div></article>
     </div>
-  </div>
+  </div></div>
 </section>
 
 
 
 <!-- ══ 06 LOOP ══ -->
-<section class="s-white" id="s-loop" data-label="یادگیری">
+<section class="s-white split" id="s-loop" data-label="یادگیری">
   <div class="haze" style="width:24rem;height:24rem;background:radial-gradient(circle,#FFFFFF,transparent 70%);bottom:-8rem;right:15%"></div>
-  <div class="wrap">
-    <div class="eyerow"><span class="tag">۰۴ / تجربهٔ یادگیری</span><span class="rule"></span></div>
+  <div class="split__band">
+    <span class="lab lat" dir="ltr">LOOP</span>
+    <span class="split__num">04</span>
+  </div>
+  <div class="split__main"><div class="wrap">
     <h2 style="max-width:22ch"><span class="ln"><i>خبری از ویدیو نیست.</i></span><span class="ln"><i>باید لایو با هم مشورت کنیم.</i></span></h2>
     <p class="lede rv">اینجا جایی نیست که یه سری ویدئو بخریم و تنها بمونیم. هر هفته زنده می‌شینیم، مسئله رو باز می‌کنیم و با هم تصمیم می‌گیریم.</p>
 
@@ -392,13 +413,16 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
       <li class="lp rv"><span class="badge">05</span><b>دوباره فکر می‌کنیم</b><p>اصلاح، تکرار، بازاندیشی. بعد دور بعد.</p></li>
     </ol>
     <p class="copy rv" style="margin-block-start:1.6rem">هر جلسه ضبط می‌شه و تو پنل اردو می‌مونه. ولی ضبط برای بازبینیه، نه جایگزینی — مشورت وقتی جواب می‌ده که سؤالمون رو همون لحظه بپرسیم.</p>
-  </div>
+  </div></div>
 </section>
 
 <!-- ══ 07 FIT ══ -->
-<section class="s-white" id="s-fit" data-label="برای کی">
-  <div class="wrap">
-    <div class="eyerow"><span class="tag">۰۵ / برای کی</span><span class="rule"></span></div>
+<section class="s-white split" id="s-fit" data-label="برای کی">
+  <div class="split__band">
+    <span class="lab lat" dir="ltr">FIT</span>
+    <span class="split__num">05</span>
+  </div>
+  <div class="split__main"><div class="wrap">
     <h2><span class="ln"><i>این اردو احتمالاً جای درستیه، برای…</i></span></h2>
     <div class="grid3">
       <article class="card rv"><span class="badge"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><h3>ورود جدی به دیزاین</h3><p>یه شروع جدی و ساختارمند، نه یه دورهٔ دیگه که فقط لیست کارهای نکرده رو بلندتر کنه.</p></article>
@@ -415,7 +439,7 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
         <li>فقط گرفتن مدرک.</li>
       </ul>
     </div>
-  </div>
+  </div></div>
 </section>
 
 <!-- ══ 08 BRIDGE ══ -->
@@ -425,12 +449,14 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
     <span class="split__num">06</span>
   </div>
   <div class="split__main">
-    <h2><span class="ln"><i>نه فقط تئوری. نه فقط ابزار.</i></span></h2>
-    <p class="lede rv">بیشتر دوره‌ها توی یکی از این سه دنیا گیر می‌کنن. کاری که اینجا می‌کنیم پل زدن بینشونه.</p>
-    <div class="model">
-      <div class="mcap rv"><span class="badge">A</span><div><b>دانش دیزاین</b><small>چارچوب‌هایی که تصمیمت رو قابل دفاع می‌کنن.</small></div></div>
-      <div class="mcap rv"><span class="badge">B</span><div><b>مهارت عملی</b><small>ساختن چیزی که واقعاً کار کنه و بشه تحویلش داد.</small></div></div>
-      <div class="mcap rv"><span class="badge">C</span><div><b>واقعیت بازار</b><small>اون چیزی که سازمان‌ها واقعاً می‌خوان.</small></div></div>
+    <div class="wrap">
+      <h2><span class="ln"><i>نه فقط تئوری. نه فقط ابزار.</i></span></h2>
+      <p class="lede rv">بیشتر دوره‌ها توی یکی از این سه دنیا گیر می‌کنن. کاری که اینجا می‌کنیم پل زدن بینشونه.</p>
+      <div class="model">
+        <div class="mcap rv"><span class="badge">A</span><div><b>دانش دیزاین</b><small>چارچوب‌هایی که تصمیمت رو قابل دفاع می‌کنن.</small></div></div>
+        <div class="mcap rv"><span class="badge">B</span><div><b>مهارت عملی</b><small>ساختن چیزی که واقعاً کار کنه و بشه تحویلش داد.</small></div></div>
+        <div class="mcap rv"><span class="badge">C</span><div><b>واقعیت بازار</b><small>اون چیزی که سازمان‌ها واقعاً می‌خوان.</small></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -440,27 +466,33 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
 
 
 <!-- ══ 11 OUTCOMES ══ -->
-<section class="s-blue" id="s-outcomes" data-label="خروجی">
+<section class="s-blue split" id="s-outcomes" data-label="خروجی">
   <div class="haze" style="width:30rem;height:30rem;background:radial-gradient(circle,#FFD400,transparent 70%);top:-10rem;left:5%;opacity:.35"></div>
-  <div class="wrap">
-    <div class="eyerow"><span class="tag">۰۷ / آخر دو ماه</span><span class="rule"></span></div>
+  <div class="split__band">
+    <span class="lab lat" dir="ltr">OUTCOMES</span>
+    <span class="split__num">07</span>
+  </div>
+  <div class="split__main"><div class="wrap">
     <h2 style="color:#fff"><span class="ln"><i>آخرش چی برمی‌داریم با خودمون؟</i></span></h2>
     <div class="grid3">
-      <article class="card rv" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff"><span class="badge" style="border-color:rgba(255,255,255,.5)">۰۱</span><h3>یه نقشه</h3><p style="color:rgba(255,255,255,.76)">می‌دونیم الان کجاییم و قدم بعدیمون چیه.</p></article>
-      <article class="card rv" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff"><span class="badge" style="border-color:rgba(255,255,255,.5)">۰۲</span><h3>یه زبون حرفه‌ای</h3><p style="color:rgba(255,255,255,.76)">با تیم محصول هم‌زبون حرف می‌زنیم.</p></article>
-      <article class="card rv" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff"><span class="badge" style="border-color:rgba(255,255,255,.5)">۰۳</span><h3>مهارت تمرین‌شده</h3><p style="color:rgba(255,255,255,.76)">فقط درباره‌شون نخوندیم؛ انجامشون دادیم.</p></article>
-      <article class="card rv" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff"><span class="badge" style="border-color:rgba(255,255,255,.5)">۰۴</span><h3>یه پروژه</h3><p style="color:rgba(255,255,255,.76)">برای شروع یا کامل کردن <span class="lat">Portfolio</span>.</p></article>
-      <article class="card rv" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff"><span class="badge" style="border-color:rgba(255,255,255,.5)">۰۵</span><h3>عادتِ نقد شنیدن</h3><p style="color:rgba(255,255,255,.76)">نقد می‌گیریم، اصلاح می‌کنیم، دفاع می‌کنیم.</p></article>
-      <article class="card rv" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff"><span class="badge" style="border-color:rgba(255,255,255,.5)">۰۶</span><h3>درک بازار</h3><p style="color:rgba(255,255,255,.76)">می‌دونیم سازمان‌ها از دیزاینر چی می‌خوان.</p></article>
+      <article class="card rv" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff"><span class="badge" style="border-color:rgba(255,255,255,.5)">01</span><h3>یه نقشه</h3><p style="color:rgba(255,255,255,.76)">می‌دونیم الان کجاییم و قدم بعدیمون چیه.</p></article>
+      <article class="card rv" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff"><span class="badge" style="border-color:rgba(255,255,255,.5)">02</span><h3>یه زبون حرفه‌ای</h3><p style="color:rgba(255,255,255,.76)">با تیم محصول هم‌زبون حرف می‌زنیم.</p></article>
+      <article class="card rv" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff"><span class="badge" style="border-color:rgba(255,255,255,.5)">03</span><h3>مهارت تمرین‌شده</h3><p style="color:rgba(255,255,255,.76)">فقط درباره‌شون نخوندیم؛ انجامشون دادیم.</p></article>
+      <article class="card rv" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff"><span class="badge" style="border-color:rgba(255,255,255,.5)">04</span><h3>یه پروژه</h3><p style="color:rgba(255,255,255,.76)">برای شروع یا کامل کردن <span class="lat">Portfolio</span>.</p></article>
+      <article class="card rv" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff"><span class="badge" style="border-color:rgba(255,255,255,.5)">05</span><h3>عادتِ نقد شنیدن</h3><p style="color:rgba(255,255,255,.76)">نقد می‌گیریم، اصلاح می‌کنیم، دفاع می‌کنیم.</p></article>
+      <article class="card rv" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff"><span class="badge" style="border-color:rgba(255,255,255,.5)">06</span><h3>درک بازار</h3><p style="color:rgba(255,255,255,.76)">می‌دونیم سازمان‌ها از دیزاینر چی می‌خوان.</p></article>
     </div>
     <p class="pull" style="color:#fff;max-width:20ch"><span class="ln"><i>حالا آماده‌تریم بریم تو میدان.</i></span></p>
-  </div>
+  </div></div>
 </section>
 
 <!-- ══ 12 ABOUT ══ -->
-<section class="s-white" id="s-about" data-label="مدرس">
-  <div class="wrap">
-    <div class="eyerow"><span class="tag">۰۸ / دربارهٔ من</span><span class="rule"></span></div>
+<section class="s-white split" id="s-about" data-label="مدرس">
+  <div class="split__band">
+    <span class="lab lat" dir="ltr">ABOUT</span>
+    <span class="split__num">08</span>
+  </div>
+  <div class="split__main"><div class="wrap">
     <h2><span class="ln"><i>این دوره رو از رو کتاب نساختم.</i></span></h2>
     <div class="bio">
       <div class="slot slot--img rv"><span class="lab">تصویر</span><p>پرترهٔ مدرس — در انتظار فایل</p></div>
@@ -470,16 +502,19 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
         <div class="slot rv"><span class="lab">لینک‌ها</span><p>LinkedIn · Instagram · X · Substack</p></div>
       </div>
     </div>
-  </div>
+  </div></div>
 </section>
 
 <!-- ══ 13 CURRICULUM ══ -->
-<section class="s-white" id="s-curriculum" data-label="سرفصل">
-  <div class="wrap">
-    <div class="eyerow"><span class="tag">۰۹ / مشخصات و سرفصل</span><span class="rule"></span></div>
+<section class="s-white split" id="s-curriculum" data-label="سرفصل">
+  <div class="split__band">
+    <span class="lab lat" dir="ltr">CURRICULUM</span>
+    <span class="split__num">09</span>
+  </div>
+  <div class="split__main"><div class="wrap">
     <h2><span class="ln"><i>خب، خودِ اردو چه شکلیه؟</i></span></h2>
     <dl class="specs">
-      <div class="rv"><dt>مدت</dt><dd>۲ ماه</dd></div>
+      <div class="rv"><dt>مدت</dt><dd>2 ماه</dd></div>
       <div class="rv"><dt>برگزاری</dt><dd>آنلاین</dd></div>
       <div class="rv"><dt>آموزش</dt><dd>وبینار زنده + ضبط</dd></div>
       <div class="rv"><dt>تمرین</dt><dd>تمرین + پروژه</dd></div>
@@ -502,7 +537,7 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
       <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag lat" dir="ltr">Chapter 09</span><span class="acc__t">دیزاین با کمک هوش مصنوعی</span><span class="pm"></span></button><div class="acc__p"><div><ul class="tags"><li>AI Workflow</li><li>Ideation</li><li>Research Support</li><li>Design-to-code</li></ul></div></div></div>
       <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag lat" dir="ltr">Chapter 10</span><span class="acc__t">کار حرفه‌ای</span><span class="pm"></span></button><div class="acc__p"><div><ul class="tags"><li>Portfolio</li><li>Teamwork</li><li>Communication</li><li>Hiring</li></ul></div></div></div>
     </div>
-  </div>
+  </div></div>
 </section>
 
 <!-- ══ RECOMMENDATIONS ══ -->
@@ -512,37 +547,43 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
     <h2><span class="ln"><i>دیزاینرهایی که قبلاً با ما همراه بودن.</i></span></h2>
     <p class="lede rv">شش نفر از چهره‌های شناخته‌شدهٔ بازار که تو دوره‌ها یا کارگاه‌های قبلی شرکت کردن — در انتظار انتخاب و تأیید نهایی.</p>
     <div class="grid3 rv">
-      <div class="slot"><span class="lab">دیزاینر ۰۱</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
-      <div class="slot"><span class="lab">دیزاینر ۰۲</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
-      <div class="slot"><span class="lab">دیزاینر ۰۳</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
-      <div class="slot"><span class="lab">دیزاینر ۰۴</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
-      <div class="slot"><span class="lab">دیزاینر ۰۵</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
-      <div class="slot"><span class="lab">دیزاینر ۰۶</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر 01</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر 02</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر 03</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر 04</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر 05</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
+      <div class="slot"><span class="lab">دیزاینر 06</span><p>نام · سمت و شرکت · یک جملهٔ توصیه — در انتظار محتوا</p></div>
     </div>
   </div>
 </section>
 
 <!-- ══ 14 FAQ ══ -->
-<section class="s-white" id="s-faq" data-label="سؤال‌ها">
-  <div class="wrap">
-    <div class="eyerow"><span class="tag">۱۰ / سؤال‌های پرتکرار</span><span class="rule"></span></div>
+<section class="s-white split" id="s-faq" data-label="سؤال‌ها">
+  <div class="split__band">
+    <span class="lab lat" dir="ltr">FAQ</span>
+    <span class="split__num">10</span>
+  </div>
+  <div class="split__main"><div class="wrap">
     <h2><span class="ln"><i>شاید هنوز چندتا سؤال داشته باشیم.</i></span></h2>
     <div class="acc" data-acc>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag">۰۱</span><span class="acc__t">هیچ تجربه‌ای ندارم؛ به درد من می‌خوره؟</span><span class="pm"></span></button><div class="acc__p"><div><p class="inner tbd">در انتظار پاسخ.</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag">۰۲</span><span class="acc__t">بعدش می‌تونم استخدام بشم؟</span><span class="pm"></span></button><div class="acc__p"><div><p class="inner">این اردو کاریابی نیست و استخدام رو تضمین نمی‌کنه. کاری که می‌کنه اینه که آمادگی اولیه‌مون رو بسازه. قدم آخر با خودمونه و با بازار.</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag">۰۳</span><span class="acc__t">فیگما هم آموزش داده می‌شه؟</span><span class="pm"></span></button><div class="acc__p"><div><p class="inner">آره، <span class="lat">Chapter 06</span> مال همینه. ولی موضوع اردو ابزار نیست؛ ابزار درِ ورودیه، نه مقصد.</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag">۰۴</span><span class="acc__t">اگه یه جلسه رو از دست بدم چی؟</span><span class="pm"></span></button><div class="acc__p"><div><p class="inner">ضبطش تو پنل هست، پس از مسیر عقب نمی‌مونیم. ولی اون هفته یه چیزی رو از دست دادیم که تو ضبط نیست: پرسیدن.</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag">۰۵</span><span class="acc__t">هفته‌ای چقدر وقت می‌خواد؟</span><span class="pm"></span></button><div class="acc__p"><div><p class="inner tbd">در انتظار پاسخ.</p></div></div></div>
-      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag">۰۶</span><span class="acc__t">مدرک هم داده می‌شه؟</span><span class="pm"></span></button><div class="acc__p"><div><p class="inner tbd">در انتظار پاسخ.</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag lat" dir="ltr">01</span><span class="acc__t">هیچ تجربه‌ای ندارم؛ به درد من می‌خوره؟</span><span class="pm"></span></button><div class="acc__p"><div><p class="inner tbd">در انتظار پاسخ.</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag lat" dir="ltr">02</span><span class="acc__t">بعدش می‌تونم استخدام بشم؟</span><span class="pm"></span></button><div class="acc__p"><div><p class="inner">این اردو کاریابی نیست و استخدام رو تضمین نمی‌کنه. کاری که می‌کنه اینه که آمادگی اولیه‌مون رو بسازه. قدم آخر با خودمونه و با بازار.</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag lat" dir="ltr">03</span><span class="acc__t">فیگما هم آموزش داده می‌شه؟</span><span class="pm"></span></button><div class="acc__p"><div><p class="inner">آره، <span class="lat">Chapter 06</span> مال همینه. ولی موضوع اردو ابزار نیست؛ ابزار درِ ورودیه، نه مقصد.</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag lat" dir="ltr">04</span><span class="acc__t">اگه یه جلسه رو از دست بدم چی؟</span><span class="pm"></span></button><div class="acc__p"><div><p class="inner">ضبطش تو پنل هست، پس از مسیر عقب نمی‌مونیم. ولی اون هفته یه چیزی رو از دست دادیم که تو ضبط نیست: پرسیدن.</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag lat" dir="ltr">05</span><span class="acc__t">هفته‌ای چقدر وقت می‌خواد؟</span><span class="pm"></span></button><div class="acc__p"><div><p class="inner tbd">در انتظار پاسخ.</p></div></div></div>
+      <div class="acc__item"><button class="acc__btn" aria-expanded="false"><span class="tag lat" dir="ltr">06</span><span class="acc__t">مدرک هم داده می‌شه؟</span><span class="pm"></span></button><div class="acc__p"><div><p class="inner tbd">در انتظار پاسخ.</p></div></div></div>
     </div>
-  </div>
+  </div></div>
 </section>
 
 <!-- ══ 15 ENROLL ══ -->
-<section class="s-ink" id="s-enroll" data-label="ثبت‌نام">
+<section class="s-ink split" id="s-enroll" data-label="ثبت‌نام">
   <div class="haze" style="width:34rem;height:34rem;background:radial-gradient(circle,#1024CF,transparent 65%);bottom:-14rem;left:20%"></div>
-  <div class="wrap">
-    <div class="eyerow"><span class="tag">۱۱ / ثبت‌نام</span><span class="rule"></span><span class="badge badge--blue"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></div>
+  <div class="split__band split__band--light">
+    <span class="lab lat" dir="ltr">ENROLL</span>
+    <span class="split__num">11</span>
+  </div>
+  <div class="split__main"><div class="wrap">
     <div data-state="open">
       <h2 style="max-width:19ch"><span class="ln"><i>وقتشه جدی شروع کنیم.</i></span></h2>
       <p class="lede rv">اردوی بعدی از <span class="lat">[تاریخ]</span> شروع می‌شه. ظرفیت محدوده.</p>
@@ -573,7 +614,7 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
       <button type="button" data-set="open" aria-pressed="true">باز</button>
       <button type="button" data-set="closed" aria-pressed="false">بسته</button>
     </div>
-  </div>
+  </div></div>
 </section>
 
 <footer>
@@ -582,8 +623,6 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
       <li><a href="#">حریم خصوصی</a></li>
       <li><a href="#">قوانین ثبت‌نام</a></li>
       <li><a href="#" class="lat">LinkedIn</a></li>
-      <li><a href="#" class="lat">Instagram</a></li>
-      <li><a href="#" class="lat">X</a></li>
     </ul>
     <div class="fend">
       <b>آگاهی <i>/</i> مهارت <i>/</i> میدان</b>
