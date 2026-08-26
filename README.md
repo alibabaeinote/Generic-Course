@@ -17,7 +17,13 @@
 | [`docs/PUBLISHING.md`](docs/PUBLISHING.md) | برنامهٔ انتشار: دامنه، هاست، CI/CD، چک‌لیست لانچ |
 | [`docs/DECISIONS.md`](docs/DECISIONS.md) | تصمیم‌های باز (TBD) که پیش از توسعه باید بسته شوند |
 | [`docs/ANALYTICS.md`](docs/ANALYTICS.md) | تعریف رویدادها و معیارهای موفقیت |
-| [`docs/content/homepage-brief.md`](docs/content/homepage-brief.md) | قالب خالی برای ساختار محتوای صفحهٔ اصلی — **قدم بعدی مالک محصول** |
+| [`docs/content/homepage-brief.md`](docs/content/homepage-brief.md) | قالب خالی ساختار محتوای صفحهٔ اصلی |
+| [`docs/content/homepage-architecture.md`](docs/content/homepage-architecture.md) | ساختار نهایی ۱۵ سکشنی صفحهٔ اصلی |
+| [`docs/content/values.md`](docs/content/values.md) | ارزش‌ها و مواضع دوره — منبع حقیقت محتوایی |
+| [`docs/content/content-guidelines.md`](docs/content/content-guidelines.md) | **راهنمای لحن و محتوا برای همهٔ صفحه‌ها و قابلیت‌ها** |
+| [`docs/content/voice.md`](docs/content/voice.md) | تصمیم‌های لحن و جدول قبل/بعد بازنویسی |
+| [`docs/content/visual-directions.md`](docs/content/visual-directions.md) | مقایسهٔ جهت‌های بصری (هنوز انتخاب نشده) |
+| [`docs/design-system/step-0.md`](docs/design-system/step-0.md) | **قدم صفر دیزاین سیستم — مستقل از سبک بصری** |
 
 ## اصل حاکم بر پروژه
 
