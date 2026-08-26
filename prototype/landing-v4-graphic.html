@@ -180,11 +180,16 @@ h3{font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:800;line-height:1.45;letter
 .s-blue .plain li::before,.s-ink .plain li::before{border-color:rgba(255,255,255,.45)}
 
 /* ══ accordion ══ */
-.acc{margin-block-start:clamp(2rem,5vw,3rem);display:grid;gap:.55rem}
-.acc__item{background:var(--white);border:1.5px solid var(--line);border-radius:22px;overflow:hidden;transition:border-color .4s var(--e)}
-.acc__item:hover{border-color:var(--line-2)}
-.s-ink .acc__item{background:rgba(243,245,250,.05);border-color:var(--line-d)}
+.acc{margin-block-start:clamp(2rem,5vw,3rem);border:1.5px solid var(--line);border-radius:22px;overflow:hidden}
+.acc__item{border-block-end:1.5px solid var(--line);transition:background .4s var(--e)}
+.acc__item:last-child{border-block-end:none}
+.acc__item:hover{background:rgba(8,9,12,.03)}
+.s-ink .acc{border-color:var(--line-d)}
+.s-ink .acc__item{border-color:var(--line-d)}
+.s-ink .acc__item:hover{background:rgba(243,245,250,.04)}
 .acc__btn{width:100%;display:grid;grid-template-columns:auto 1fr auto;gap:1.1rem;align-items:center;padding:clamp(1rem,2.3vw,1.35rem) clamp(1.1rem,2.5vw,1.6rem)}
+.acc__btn .tag{border-color:transparent;background:transparent;padding:.28rem 0;color:var(--ink-2)}
+.s-ink .acc__btn .tag{color:rgba(243,245,250,.5)}
 .acc__t{font-weight:800;font-size:clamp(1rem,2.2vw,1.24rem);letter-spacing:-.02em;line-height:1.45}
 .pm{width:2.1rem;height:2.1rem;border-radius:50%;border:1.5px solid var(--line-2);position:relative;flex-shrink:0;transition:background .4s var(--e),border-color .4s var(--e)}
 .pm::before,.pm::after{content:"";position:absolute;inset-block-start:50%;inset-inline-start:50%;width:.7rem;height:1.5px;background:currentColor;transform:translate(50%,-50%);transition:transform .45s var(--e)}
@@ -507,8 +512,6 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
       <div class="rv"><dt>تمرین</dt><dd>تمرین + پروژه</dd></div>
       <div class="rv"><dt>منتورینگ</dt><dd>بازخورد و پرسش</dd></div>
       <div class="rv"><dt>ظرفیت</dt><dd>محدود</dd></div>
-      <div class="rv"><dt>پیش‌نیاز</dt><dd class="tbd">در انتظار</dd></div>
-      <div class="rv"><dt>وقت هفتگی</dt><dd class="tbd">در انتظار</dd></div>
     </dl>
 
     <h3 style="margin-block-start:clamp(2.5rem,6vw,3.5rem);font-size:clamp(1.2rem,3vw,1.7rem)">تو این دو ماه از چی حرف می‌زنیم؟</h3>
