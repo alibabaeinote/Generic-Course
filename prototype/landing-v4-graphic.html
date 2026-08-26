@@ -113,7 +113,7 @@ h3{font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:800;line-height:1.45;letter
 /* ══ figures ══ */
 .figs{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
 @media (min-width:56rem){.figs{grid-template-columns:repeat(4,1fr)}}
-.fig{background:var(--white);border:1.5px solid var(--line);border-radius:26px;padding:clamp(1.3rem,3vw,1.9rem);display:flex;flex-direction:column;gap:.5rem;transition:transform .45s var(--e),border-color .45s var(--e)}
+.fig{background:var(--white);border:1.5px solid var(--line);border-radius:26px;padding:clamp(2.2rem,5vw,3rem) clamp(1.4rem,3vw,2rem);min-height:clamp(11rem,18vw,14rem);display:flex;flex-direction:column;justify-content:center;gap:.7rem;transition:transform .45s var(--e),border-color .45s var(--e)}
 .fig:hover{transform:translateY(-5px);border-color:var(--ink)}
 .fig .n{font-family:var(--lat);font-weight:300;font-size:clamp(2.4rem,6.5vw,4.2rem);line-height:1;letter-spacing:-.05em;color:var(--blue);font-variant-numeric:tabular-nums}
 .fig .c{font-size:.85rem;color:var(--ink-2);line-height:1.65}
