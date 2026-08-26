@@ -102,7 +102,8 @@ h3{font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:800;line-height:1.45;letter
 @media (min-width:60rem){.herofoot{grid-template-columns:1.1fr .9fr;gap:3rem}}
 
 /* journey track */
-.track{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;margin-block-start:clamp(2rem,5vw,3rem)}
+.track{display:none;align-items:center;gap:.55rem;flex-wrap:wrap;margin-block-start:clamp(2rem,5vw,3rem)}
+@media (min-width:56rem){.track{display:flex}}
 .track button{display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid var(--line-2);border-radius:var(--pill);padding:.42rem 1rem;font-family:var(--mono);font-size:.68rem;font-weight:700;letter-spacing:.1em;transition:background .35s var(--e),color .35s var(--e),border-color .35s var(--e),padding .35s var(--e)}
 .track button span{font-family:var(--fa);font-size:.86rem;font-weight:700;letter-spacing:0}
 .track button:hover{background:var(--white)}
