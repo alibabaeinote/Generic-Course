@@ -41,7 +41,11 @@ section{padding-block:clamp(3.5rem,9vw,7rem);position:relative;overflow:hidden}
 .dotgrid{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(8,9,12,.14) 1.1px,transparent 1.7px);background-size:28px 28px;opacity:0;transition:opacity .6s var(--e)}
 .dotgrid::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(8,9,12,.42) 1.4px,transparent 1.9px);background-size:28px 28px;-webkit-mask-image:radial-gradient(380px circle at var(--mx,50%) var(--my,18%),#000 0%,transparent 72%);mask-image:radial-gradient(380px circle at var(--mx,50%) var(--my,18%),#000 0%,transparent 72%)}
 .is-ready .dotgrid{opacity:1}
-@media (max-width:56rem){.dotgrid,.dotgrid::after{background-size:20px 20px}}
+@media (max-width:56rem){
+  .dotgrid,.dotgrid::after{background-size:20px 20px}
+  .dotgrid{background-image:radial-gradient(rgba(8,9,12,.08) 1px,transparent 1.6px)}
+  .dotgrid::after{background-image:radial-gradient(rgba(8,9,12,.22) 1.2px,transparent 1.7px)}
+}
 @media (prefers-reduced-motion:reduce){.dotgrid::after{-webkit-mask-image:radial-gradient(520px circle at 50% 18%,#000 0%,transparent 72%);mask-image:radial-gradient(520px circle at 50% 18%,#000 0%,transparent 72%)}}
 
 /* ══ graphic primitives ══ */
@@ -95,6 +99,8 @@ h3{font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:800;line-height:1.45;letter
 .ghost:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
 .s-ink .ghost{border-color:var(--line-d)}
 .s-ink .ghost:hover{background:var(--on-dark);color:var(--ink)}
+.hero .ghost{background:var(--white)}
+.hero .ghost:hover{background:var(--ink)}
 .acts{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
 
 /* ══ hero ══ */
@@ -276,7 +282,6 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
       <span class="tag tag--solid">اردوی آنلاین مهارت‌آموزی دیزاین‌آگاهی</span>
       <div class="dots">
         <span class="badge">A</span>
-        <span class="badge badge--fill"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="7" x2="7" y2="17"></line><polyline points="17 17 7 17 7 7"></polyline></svg></span>
       </div>
     </div>
 
