@@ -236,9 +236,6 @@ h3{font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:800;line-height:1.45;letter
 /* ══ enroll ══ */
 [data-state]{display:none}
 [data-course-status="open"] [data-state="open"],[data-course-status="closed"] [data-state="closed"]{display:block}
-.toggle{margin-block-start:clamp(2.2rem,5vw,3rem);display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
-.toggle button{border:1.5px solid rgba(255,255,255,.3);border-radius:var(--pill);padding:.25rem .8rem;color:inherit;transition:background .35s,color .35s}
-.toggle button[aria-pressed="true"]{background:#fff;color:var(--blue)}
 
 /* ══ footer ══ */
 footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5rem,6vw,4rem)}
@@ -551,7 +548,6 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
     <div data-state="open">
       <h2 style="max-width:19ch"><span class="ln"><i>وقتشه جدی شروع کنیم.</i></span></h2>
       <p class="lede rv">اردوی بعدی از <span class="lat">[تاریخ]</span> شروع می‌شه. ظرفیت محدوده.</p>
-      <span class="tag tag--solid rv" data-state="open" style="margin-block-start:1.2rem">● اردو فعاله</span>
       <div class="acts rv" style="margin-block-start:clamp(1.4rem,4vw,2rem)">
         <a class="cta" href="#" data-enroll>ثبت‌نام در اردو<span class="b"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></a>
         <a class="ghost" href="#s-curriculum">سرفصل کامل رو ببینیم</a>
@@ -572,11 +568,6 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
         <a class="cta" href="#">خبرم کن<span class="b"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></a>
         <a class="ghost" href="#s-curriculum">فعلاً سرفصل‌ها رو ببینم</a>
       </div>
-    </div>
-    <div class="toggle">
-      <span>پیش‌نمایش · وضعیت اردو:</span>
-      <button type="button" data-set="open" aria-pressed="true">باز</button>
-      <button type="button" data-set="closed" aria-pressed="false">بسته</button>
     </div>
   </div></div>
 </section>
@@ -600,7 +591,6 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
 <script>
 (function(){
   var R = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var app = document.getElementById('app');
   var heroEl = document.querySelector('.hero');
   requestAnimationFrame(function(){ requestAnimationFrame(function(){ heroEl.classList.add('is-ready'); }); });
 
@@ -695,13 +685,6 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
         btn.setAttribute('aria-expanded', open ? 'false' : 'true');
         if (open) p.removeAttribute('data-open'); else p.setAttribute('data-open', '1');
       });
-    });
-  });
-
-  document.querySelectorAll('.toggle button').forEach(function(b){
-    b.addEventListener('click', function(){
-      app.setAttribute('data-course-status', b.getAttribute('data-set'));
-      document.querySelectorAll('.toggle button').forEach(function(o){ o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
     });
   });
 })();
