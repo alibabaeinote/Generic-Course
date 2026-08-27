@@ -249,6 +249,14 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
 .fend b{color:var(--on-dark);font-size:clamp(1rem,2.4vw,1.35rem);font-weight:900;letter-spacing:-.02em}
 .fend b i{font-style:normal;color:var(--accent)}
 
+/* ══ sticky enroll bar ══ */
+.stickybar{position:fixed;inset-inline:0;bottom:0;z-index:30;background:var(--ink);border-block-start:1.5px solid var(--line-d);box-shadow:0 -10px 30px rgba(8,9,12,.18);padding:.9rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem;transform:translateY(100%);transition:transform .45s var(--e)}
+.stickybar.show{transform:translateY(0)}
+.stickybar .date{color:rgba(243,245,250,.72);font-size:.92rem}
+.stickybar .cta{padding:.6rem .7rem .6rem 1.3rem;font-size:.92rem}
+.stickybar .cta .b{width:1.8rem;height:1.8rem}
+@media (prefers-reduced-motion:reduce){.stickybar{transition:none}}
+
 /* ══ motion ══ */
 .rv{opacity:0;transform:translateY(20px);transition:opacity .7s var(--e2),transform .7s var(--e)}
 .rv.in{opacity:1;transform:none}
@@ -589,6 +597,11 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
   </div>
 </footer>
 
+<div class="stickybar" id="stickybar">
+  <span class="date">تاریخ شروع: <span class="lat">[تاریخ]</span></span>
+  <a class="cta" href="#" data-enroll>ثبت‌نام در اردو<span class="b"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></a>
+</div>
+
 </div>
 
 <script>
@@ -596,6 +609,16 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
   var R = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var heroEl = document.querySelector('.hero');
   requestAnimationFrame(function(){ requestAnimationFrame(function(){ heroEl.classList.add('is-ready'); }); });
+
+  /* sticky enroll bar: visible once past the hero, hidden again once the real enroll section shows up */
+  var stickybar = document.getElementById('stickybar');
+  var enrollSection = document.getElementById('s-enroll');
+  if (stickybar && enrollSection && 'IntersectionObserver' in window) {
+    var pastHero = false, atEnroll = false;
+    var sync = function(){ stickybar.classList.toggle('show', pastHero && !atEnroll); };
+    new IntersectionObserver(function(en){ pastHero = !en[0].isIntersecting; sync(); }, { rootMargin: '0px' }).observe(heroEl);
+    new IntersectionObserver(function(en){ atEnroll = en[0].isIntersecting; sync(); }, { rootMargin: '0px' }).observe(enrollSection);
+  }
 
   /* dot-grid spotlight follows the cursor, tinted by which quarter of the header it's in */
   if (!R && matchMedia('(hover: hover) and (pointer: fine)').matches) {
