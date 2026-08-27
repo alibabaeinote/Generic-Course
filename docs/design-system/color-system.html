@@ -1,0 +1,254 @@
+<!doctype html>
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<title>سیستم رنگی برند — علی بابایی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+  @page{ size:A4; margin:16mm 14mm; }
+  :root{
+    --yellow:#FFD400; --paper:#F5F4EF; --accent:#E23F1C; --green:#16A34A;
+    --white:#FFFFFF; --ink:rgb(14 17 32); --ink-2:#3A3D45;
+    --blue:#1024CF; --blue-2:#4A63FF; --blue-ink:#0A1580;
+    --line:rgba(8,9,12,.16); --line-2:rgba(8,9,12,.3);
+    --on-dark:#F3F5FA; --line-d:rgba(243,245,250,.22);
+    --fa:"Vazirmatn",system-ui,sans-serif;
+    --lat:"Space Grotesk","Vazirmatn",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--fa);color:var(--ink);font-size:12.5px;line-height:1.6;background:#fff}
+  .lat{font-family:var(--lat);direction:ltr;unicode-bidi:isolate}
+
+  /* ── header ── */
+  .head{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:2.5px solid var(--ink);margin-bottom:22px}
+  .head h1{margin:0;font-size:21px;font-weight:900;letter-spacing:-.01em}
+  .head .sub{margin-top:4px;font-size:11px;color:var(--ink-2)}
+  .head .mark{width:40px;height:40px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--lat);font-weight:700;font-size:14px;flex:none}
+
+  /* ── share summary ── */
+  .share-box{margin-bottom:26px}
+  .share-box h2{font-size:13.5px;font-weight:800;margin:0 0 4px}
+  .share-box .note{font-size:10px;color:var(--ink-2);margin:0 0 10px}
+  .stackbar{display:flex;height:26px;border-radius:8px;overflow:hidden;border:1.5px solid var(--line-2)}
+  .stackbar span{display:flex;align-items:center;justify-content:center;font-family:var(--lat);font-size:10px;font-weight:700;white-space:nowrap}
+  .legend{display:flex;gap:14px;margin-top:8px;flex-wrap:wrap}
+  .legend .li{display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--ink-2)}
+  .legend .dot{width:9px;height:9px;border-radius:3px;flex:none}
+
+  /* ── category ── */
+  .cat{margin-bottom:20px}
+  .cat h2{font-size:13.5px;font-weight:800;margin:0 0 2px;display:flex;align-items:baseline;gap:8px}
+  .cat h2 .tag{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;color:var(--ink-2);text-transform:uppercase}
+  .cat .desc{font-size:10.5px;color:var(--ink-2);margin:0 0 10px}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .swatch{display:flex;gap:11px;border:1.5px solid var(--line-2);border-radius:14px;padding:10px 12px;break-inside:avoid}
+  .chip{width:46px;height:46px;border-radius:10px;flex:none;border:1px solid var(--line-2)}
+  .info{min-width:0;flex:1}
+  .info .name{font-weight:800;font-size:12px;margin:0 0 1px}
+  .info .code{font-family:var(--mono);font-size:9.5px;color:var(--ink-2);direction:ltr;display:block;text-align:right;margin-bottom:4px}
+  .info .use{font-size:10px;color:var(--ink-2);margin:0 0 4px;line-height:1.5}
+  .sharepill{display:inline-block;font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--paper);color:var(--ink-2);border:1px solid var(--line-2)}
+
+  footer{margin-top:26px;padding-top:12px;border-top:1.5px solid var(--line-2);display:flex;justify-content:space-between;font-size:9.5px;color:var(--ink-2)}
+</style>
+</head>
+<body>
+
+<div class="head">
+  <div>
+    <h1>سیستم رنگی برند</h1>
+    <div class="sub">اردوی آنلاین مهارت‌آموزی دیزاین‌آگاهی — علی بابایی · منبع: <span class="lat">landing-v4-graphic.html</span></div>
+  </div>
+  <div class="mark">AB</div>
+</div>
+
+<div class="share-box">
+  <h2>سهم رنگ‌های پس‌زمینه از صفحه</h2>
+  <p class="note">اندازه‌گیری‌شده از پس‌زمینهٔ واقعی ۱۱ سکشن لندینگ فعلی، نه یک قاعدهٔ نظری — اگر ترکیب سکشن‌ها عوض شود این عددها هم عوض می‌شوند.</p>
+  <div class="stackbar">
+    <span style="width:64%;background:var(--white);color:var(--ink);border-left:1px solid var(--line-2)">64%</span>
+    <span style="width:18%;background:var(--ink);color:var(--on-dark)">18%</span>
+    <span style="width:9%;background:var(--yellow);color:var(--ink)">9%</span>
+    <span style="width:9%;background:var(--blue);color:#fff">9%</span>
+  </div>
+  <div class="legend">
+    <div class="li"><span class="dot" style="background:var(--white);border:1px solid var(--line-2)"></span>سفید — زمینهٔ خنثی غالب</div>
+    <div class="li"><span class="dot" style="background:var(--ink)"></span>ink — زمینهٔ معکوس (فوتر، سکشن‌های تیره)</div>
+    <div class="li"><span class="dot" style="background:var(--yellow)"></span>زرد — زمینهٔ تاکید/برند</div>
+    <div class="li"><span class="dot" style="background:var(--blue)"></span>آبی — زمینهٔ ویژه (کم‌مصرف)</div>
+  </div>
+</div>
+
+<div class="cat">
+  <h2>پس‌زمینه‌ها <span class="tag">Surfaces</span></h2>
+  <p class="desc">هر سکشن پس‌زمینهٔ خودش را دارد؛ نه یک زمینهٔ یکنواخت با کارت‌های رنگی رویش.</p>
+  <div class="grid">
+    <div class="swatch">
+      <div class="chip" style="background:var(--white)"></div>
+      <div class="info">
+        <p class="name">سفید</p><span class="code lat">#FFFFFF</span>
+        <p class="use">زمینهٔ خنثی اصلی؛ بیشترین سکشن‌ها روی همین‌اند.</p>
+        <span class="sharepill">۶۴٪ از صفحه</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--paper)"></div>
+      <div class="info">
+        <p class="name">کاغذی (Paper)</p><span class="code lat">#F5F4EF</span>
+        <p class="use">یک پله تیره‌تر از سفید؛ فقط برای کارت روی زمینهٔ سفید، نه به‌عنوان زمینهٔ سکشن.</p>
+        <span class="sharepill">زیرمجموعهٔ سفید</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--yellow)"></div>
+      <div class="info">
+        <p class="name">زرد برند</p><span class="code lat">#FFD400</span>
+        <p class="use">زمینهٔ کامل سکشن‌های تاکیدی (مسئله، اثبات)؛ باند شمارهٔ سکشن‌های روشن.</p>
+        <span class="sharepill">۹٪ از صفحه</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--ink)"></div>
+      <div class="info">
+        <p class="name">Ink (تیره)</p><span class="code lat">#0E1120</span>
+        <p class="use">زمینهٔ معکوس؛ سکشن‌های تیره (فلسفه، مهارت‌ها، ثبت‌نام) و فوتر همیشه همین‌اند.</p>
+        <span class="sharepill">۱۸٪ از صفحه</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--blue)"></div>
+      <div class="info">
+        <p class="name">آبی</p><span class="code lat">#1024CF</span>
+        <p class="use">زمینه فقط برای سکشن‌های ویژه و به‌ندرت؛ نقش اصلی‌اش «کنش» است نه زمینه (پایین را ببین).</p>
+        <span class="sharepill">۹٪ از صفحه</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cat">
+  <h2>رنگ کنش <span class="tag">Action — تنها یکی</span></h2>
+  <p class="desc">تنها رنگی که معنی «قابل کلیک» می‌دهد؛ هرگز صرفاً تزیینی استفاده نمی‌شود.</p>
+  <div class="grid">
+    <div class="swatch">
+      <div class="chip" style="background:var(--blue)"></div>
+      <div class="info">
+        <p class="name">آبی — کنش</p><span class="code lat">#1024CF</span>
+        <p class="use">دکمهٔ CTA، عدد آمار، لینک هاورشده، حالت باز آکاردئون.</p>
+        <span class="sharepill">نقطه‌ای / کم‌حجم</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--blue-2)"></div>
+      <div class="info">
+        <p class="name">آبی روشن</p><span class="code lat">#4A63FF</span>
+        <p class="use">نسخهٔ روشن‌تر آبی؛ گرادیان و حالت‌های ظریف‌تر کنار رنگ اصلی کنش.</p>
+        <span class="sharepill">فرعی</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--blue-ink)"></div>
+      <div class="info">
+        <p class="name">آبی تیره</p><span class="code lat">#0A1580</span>
+        <p class="use">نسخهٔ تیره‌تر آبی؛ متن یا حالت فشرده روی زمینهٔ آبی.</p>
+        <span class="sharepill">فرعی</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cat">
+  <h2>لهجه‌های داغ <span class="tag">Hot accents — هم‌وزن</span></h2>
+  <p class="desc">این دو رنگ هم‌وزن‌اند و جای‌گزین هم؛ هیچ‌کدام سلسله‌مراتب بالاتری از دیگری ندارد.</p>
+  <div class="grid">
+    <div class="swatch">
+      <div class="chip" style="background:var(--accent)"></div>
+      <div class="info">
+        <p class="name">نارنجی‌قرمز</p><span class="code lat">#E23F1C</span>
+        <p class="use">بج‌های شمارهٔ پیش‌فرض، حرف تاکیدی در نقل‌قول‌ها روی زمینهٔ زرد.</p>
+        <span class="sharepill">نقطه‌ای / کم‌حجم</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--green)"></div>
+      <div class="info">
+        <p class="name">سبز</p><span class="code lat">#16A34A</span>
+        <p class="use">تنوع بج‌ها و آیکون‌ها وقتی همه‌چیز نارنجی‌قرمز یکنواخت به‌نظر برسد.</p>
+        <span class="sharepill">نقطه‌ای / کم‌حجم</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cat">
+  <h2>متن‌ها <span class="tag">Text</span></h2>
+  <div class="grid">
+    <div class="swatch">
+      <div class="chip" style="background:var(--ink)"></div>
+      <div class="info">
+        <p class="name">متن اصلی</p><span class="code lat">#0E1120</span>
+        <p class="use">روی هر زمینهٔ روشن (سفید، کاغذی، زرد).</p>
+        <span class="sharepill">همه‌جا</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--ink-2)"></div>
+      <div class="info">
+        <p class="name">متن ثانویه</p><span class="code lat">#3A3D45</span>
+        <p class="use">لید، پاراگراف بدنه، برچسب — هرگز خاکستری بی‌روح نیست.</p>
+        <span class="sharepill">همه‌جا</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--on-dark);border-color:var(--ink)"></div>
+      <div class="info">
+        <p class="name">متن روی تیره</p><span class="code lat">#F3F5FA</span>
+        <p class="use">روی زمینهٔ ink یا آبی.</p>
+        <span class="sharepill">فقط زمینهٔ تیره</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cat">
+  <h2>خطوط جداکننده <span class="tag">Dividers</span></h2>
+  <p class="desc">مرز کارت، تگ و آکاردئون — نه رنگ محتوا.</p>
+  <div class="grid">
+    <div class="swatch">
+      <div class="chip" style="background:#D7D8D8"></div>
+      <div class="info">
+        <p class="name">خط روشن — ملایم</p><span class="code lat">rgba(8,9,12,.16)</span>
+        <p class="use">مرز پیش‌فرض کارت/تگ روی زمینهٔ روشن. معادل تقریبی روی سفید: <span class="lat">#D7D8D8</span></p>
+        <span class="sharepill">پس‌زمینهٔ روشن</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:#B5B5B6"></div>
+      <div class="info">
+        <p class="name">خط روشن — پررنگ</p><span class="code lat">rgba(8,9,12,.3)</span>
+        <p class="use">وقتی مرز باید محسوس‌تر باشد. معادل تقریبی روی سفید: <span class="lat">#B5B5B6</span></p>
+        <span class="sharepill">پس‌زمینهٔ روشن</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:#404350"></div>
+      <div class="info">
+        <p class="name">خط تیره</p><span class="code lat">rgba(243,245,250,.22)</span>
+        <p class="use">همان نقش خط روشن، روی زمینهٔ ink/آبی. معادل تقریبی روی ink: <span class="lat">#404350</span></p>
+        <span class="sharepill">پس‌زمینهٔ تیره</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>سیستم رنگی — قابل استفاده در هر برند/محصول دیگر با همین نام‌گذاری نقش‌ها</span>
+  <span class="lat">v1 · 2026</span>
+</footer>
+
+</body>
+</html>
