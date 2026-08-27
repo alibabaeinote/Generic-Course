@@ -127,9 +127,12 @@ h3{font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:800;line-height:1.45;letter
 @media (min-width:56rem){.figs{grid-template-columns:repeat(4,1fr)}}
 .fig{background:var(--white);border:1.5px solid var(--line);border-radius:26px;padding:clamp(2.2rem,5vw,3rem) clamp(1.4rem,3vw,2rem);min-height:clamp(11rem,18vw,14rem);display:flex;flex-direction:column;justify-content:center;gap:.7rem;transition:transform .45s var(--e),border-color .45s var(--e)}
 .fig:hover{transform:translateY(-5px);border-color:var(--ink)}
-.fig .n{font-family:var(--lat);font-weight:300;font-size:clamp(3.4rem,9vw,5.4rem);line-height:1;letter-spacing:-.05em;color:var(--blue);font-variant-numeric:tabular-nums;display:inline-block;opacity:0;filter:blur(10px);transform:scale(.9);transition:opacity .7s var(--e2),filter .7s var(--e2),transform .7s var(--e)}
-.fig .n.counted{opacity:1;filter:blur(0);transform:scale(1)}
-@media (prefers-reduced-motion:reduce){.fig .n{opacity:1;filter:none;transform:none}}
+.fig .n{font-family:var(--lat);font-weight:300;font-size:clamp(3.4rem,9vw,5.4rem);line-height:1;letter-spacing:-.05em;color:var(--blue);font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.fig .n .plus{display:inline-block}
+.fig .n .digit{display:inline-block;overflow:hidden;height:1em;vertical-align:top}
+.fig .n .reel{display:block;transition:transform 1s var(--e)}
+.fig .n .reel i{display:block;height:1em;line-height:1;font-style:normal}
+@media (prefers-reduced-motion:reduce){.fig .n .reel{transition:none}}
 .fig .c{font-size:.85rem;color:var(--ink-2);line-height:1.65}
 
 /* ══ cards ══ */
@@ -666,21 +669,26 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
     watch.forEach(function(e){ io.observe(e); });
   }
 
+  /* masked digit-roll: each digit sits in its own overflow:hidden window and spins
+     bottom-to-top through a repeated 0-9 strip before landing on the real digit */
   document.querySelectorAll('[data-count]').forEach(function(el){
-    var t = parseInt(el.getAttribute('data-count'), 10), done = false;
-    var paint = function(v){ el.textContent = '+' + v; };
-    if (R || !('IntersectionObserver' in window)) { paint(t); return; }
-    paint(0);
+    var digits = el.getAttribute('data-count').split('');
+    var strip = '';
+    for (var r = 0; r < 20; r++) strip += '<i>' + (r % 10) + '</i>';
+    var html = '<span class="plus">+</span>';
+    digits.forEach(function(d, i){
+      html += '<span class="digit"><span class="reel" style="transition-delay:' + Math.min(i * 90, 360) + 'ms">' + strip + '</span></span>';
+    });
+    el.setAttribute('aria-label', '+' + digits.join(''));
+    el.innerHTML = '<span aria-hidden="true">' + html + '</span>';
+    var reels = el.querySelectorAll('.reel');
+    var land = function(){ reels.forEach(function(reel, i){ reel.style.transform = 'translateY(-' + (10 + parseInt(digits[i], 10)) + 'em)'; }); };
+    if (R || !('IntersectionObserver' in window)) { land(); return; }
+    var done = false;
     new IntersectionObserver(function(en, obs){
       if (!en[0].isIntersecting || done) return;
       done = true; obs.disconnect();
-      el.classList.add('counted');
-      var t0 = performance.now();
-      (function step(now){
-        var k = Math.min(1, (now - t0) / 1300);
-        paint(Math.round(t * (1 - Math.pow(1 - k, 4))));
-        if (k < 1) requestAnimationFrame(step);
-      })(t0);
+      requestAnimationFrame(land);
     }, { threshold: .5 }).observe(el);
   });
 
