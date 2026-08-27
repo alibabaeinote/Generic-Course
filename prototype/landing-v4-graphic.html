@@ -116,13 +116,12 @@ h3{font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:800;line-height:1.45;letter
 .hero .lede{margin-inline:auto}
 .hero .acts{justify-content:center}
 
-/* journey track */
-.track{display:none;align-items:center;justify-content:center;gap:.55rem;flex-wrap:wrap;margin-block-start:clamp(2rem,5vw,3rem)}
-@media (min-width:56rem){.track{display:flex;margin-block-start:clamp(4.5rem,9vw,7rem)}}
-.track button{display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid var(--line-2);border-radius:var(--pill);padding:.42rem 1rem;font-family:var(--mono);font-size:.76rem;font-weight:700;letter-spacing:.1em;transition:background .35s var(--e),color .35s var(--e),border-color .35s var(--e),padding .35s var(--e)}
-.track button span{font-family:var(--fa);font-size:.86rem;font-weight:700;letter-spacing:0}
-.track button:hover{background:var(--white)}
-.track button.on{background:var(--ink);color:var(--white);border-color:var(--ink);padding-inline:1.3rem}
+/* scroll hint */
+.scrollhint{display:flex;justify-content:center;margin-block-start:clamp(3rem,7vw,5rem);color:var(--ink-2);opacity:.55;transition:opacity .35s var(--e),transform .35s var(--e)}
+.scrollhint:hover{opacity:1;transform:translateY(3px)}
+.scrollhint .wheel{animation:scrollwheel 1.6s ease-in-out infinite}
+@keyframes scrollwheel{0%{transform:translateY(0);opacity:1}70%{opacity:0}100%{transform:translateY(9px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.scrollhint .wheel{animation:none}}
 
 /* ══ figures ══ */
 .figs{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
@@ -294,7 +293,12 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
       </div>
     </div>
 
-    <div class="track rv" id="track" role="tablist" aria-label="مسیر دوره"></div>
+    <a class="scrollhint rv" href="#s-problem" aria-label="برو به سکشن بعدی">
+      <svg viewBox="0 0 24 40" width="22" height="36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="1" y="1" width="22" height="38" rx="11"></rect>
+        <line class="wheel" x1="12" y1="10" x2="12" y2="16"></line>
+      </svg>
+    </a>
   </div>
 </header>
 
@@ -619,18 +623,6 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
     });
   }
 
-  /* journey track built from the sections themselves */
-  var secs = Array.prototype.slice.call(document.querySelectorAll('section[data-label]'));
-  var track = document.getElementById('track');
-  var btns = secs.slice(0, 8).map(function(s, i){
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.innerHTML = '<em style="font-style:normal">' + String(i).padStart(2, '0') + '</em><span>' + s.getAttribute('data-label') + '</span>';
-    b.addEventListener('click', function(){ s.scrollIntoView({ behavior: R ? 'auto' : 'smooth', block: 'start' }); });
-    track.appendChild(b);
-    return b;
-  });
-
   var watch = document.querySelectorAll('section .ln, .rv');
   if (R || !('IntersectionObserver' in window)) {
     watch.forEach(function(e){ e.classList.add('in'); });
@@ -664,17 +656,6 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
       })(t0);
     }, { threshold: .5 }).observe(el);
   });
-
-  if ('IntersectionObserver' in window) {
-    var so = new IntersectionObserver(function(en){
-      en.forEach(function(e){
-        if (!e.isIntersecting) return;
-        var i = secs.indexOf(e.target);
-        btns.forEach(function(b, j){ b.classList.toggle('on', j === i); });
-      });
-    }, { rootMargin: '-45% 0px -45% 0px' });
-    secs.forEach(function(s){ so.observe(s); });
-  }
 
   document.querySelectorAll('[data-acc]').forEach(function(g){
     g.querySelectorAll('.acc__btn').forEach(function(btn){
