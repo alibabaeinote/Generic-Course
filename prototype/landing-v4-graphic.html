@@ -204,8 +204,8 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 /* box-shadow (not border) avoids the classic border+border-radius antialiasing seam on the outer edge.
    Real bug found here: a nth-child(...) top-border rule from a narrower breakpoint has higher specificity
    than the plain ".specs--divided div" reset at a wider breakpoint, so it kept winning the cascade and
-   leaving a stray 1.5px top border on half the desktop cells. Every border-block-start reset below now
-   uses an nth-child selector of matching specificity so later breakpoints reliably win. */
+   leaving a stray 1.5px top border on half the desktop cells. Every border reset below now uses an
+   nth-child selector of matching specificity so later breakpoints reliably win. */
 .specs--divided{grid-template-columns:repeat(2,1fr);gap:0;border-radius:22px;box-shadow:0 0 0 1.5px var(--line)}
 .specs--divided div{border-radius:0;background:transparent;border-width:0;border-style:solid;border-color:var(--line)}
 .specs--divided .ic{color:var(--green)}
@@ -223,6 +223,8 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 @media (min-width:64rem){
   .specs--divided{grid-template-columns:repeat(6,1fr)}
   .specs--divided div{border-inline-start-width:1.5px;padding-block:clamp(2.6rem,4vw,3.4rem)}
+  /* The base odd/even rules have equal specificity; restate the six-column divider rule after them. */
+  .specs--divided div:nth-child(n+1){border-inline-start-width:1.5px}
   .specs--divided div:nth-child(6n+1){border-inline-start-width:0}
   .specs--divided div:nth-child(n+1){border-block-start-width:0}
 }
