@@ -24,6 +24,13 @@
 | [`docs/content/voice.md`](docs/content/voice.md) | تصمیم‌های لحن و جدول قبل/بعد بازنویسی |
 | [`docs/content/visual-directions.md`](docs/content/visual-directions.md) | مقایسهٔ جهت‌های بصری (هنوز انتخاب نشده) |
 | [`docs/design-system/step-0.md`](docs/design-system/step-0.md) | قدم صفر دیزاین سیستم — ⏸ متوقف تا وجود استایل‌گاید |
+| [`docs/GOVERNANCE.md`](docs/GOVERNANCE.md) | قرارداد واحد همکاری عامل‌ها، معماری، منبع حقیقت و فرایند انتشار |
+
+## همکاری توسعه
+
+Codex و Claude Code روی همین پروژه و با یک قرارداد مشترک کار می‌کنند. پیش از هر تغییر، [`AGENTS.md`](AGENTS.md) و
+[`docs/GOVERNANCE.md`](docs/GOVERNANCE.md) را بخوان. هر عامل باید در branch/worktree جدا کار کند و تغییرات محصول، معماری
+و دیزاین‌سیستم را فقط از طریق منابع حقیقت مشخص‌شده در قرارداد انجام دهد.
 
 ## اصل حاکم بر پروژه
 
