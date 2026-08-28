@@ -1,0 +1,272 @@
+<!doctype html>
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<title>اسکلت محتوا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&family=Space+Mono:wght@400;700&display=swap">
+<style>
+  @page{ size:A4; margin:18mm 16mm; }
+  :root{
+    --ink:#0E1120; --ink-2:#3A3D45; --line:#DDDDDD; --line-2:rgba(8,9,12,.18);
+    --blue:#1024CF; --paper:#F5F4EF; --mono:"Space Mono",ui-monospace,monospace;
+    --fa:"Vazirmatn",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--fa);color:var(--ink);font-size:12.5px;line-height:1.75;background:#fff}
+  .lat{font-family:var(--mono);direction:ltr;unicode-bidi:isolate}
+
+  .doctitle{margin-bottom:4mm;padding-bottom:4mm;border-bottom:2px solid var(--ink)}
+  .doctitle h1{margin:0;font-size:19px;font-weight:900}
+  .doctitle .meta{margin-top:3px;font-size:10px;color:var(--ink-2)}
+
+  .legend{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 6mm;font-size:9px;color:var(--ink-2)}
+  .legend span{display:inline-flex;align-items:center;gap:4px}
+  .legend i{display:inline-block;width:8px;height:8px;border-radius:2px;font-style:normal}
+
+  .sec{break-inside:avoid-page;margin-bottom:6mm;padding-bottom:5mm;border-bottom:1px solid #E4E3DD}
+  .sec:last-child{border-bottom:none}
+  .sec__head{display:flex;align-items:baseline;gap:8px;margin-bottom:2mm}
+  .sec__num{font-family:var(--mono);font-size:9px;font-weight:700;color:#fff;background:var(--ink);padding:2px 7px;border-radius:999px;letter-spacing:.04em}
+  .sec__label{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+  .sec__title{font-size:14.5px;font-weight:800;margin:1mm 0 0}
+
+  .block{margin-top:2.2mm;padding-right:14px;border-right:2px solid #EDEBE2}
+  .block__tag{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:1mm;display:block}
+  .block p{margin:0;font-size:11.3px;color:var(--ink-2);line-height:1.75}
+  .block ul{margin:0;padding:0;list-style:none}
+  .block li{font-size:11px;color:var(--ink-2);padding:1.3px 0}
+  .block li::before{content:"– "}
+  .cardgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:2mm 6mm}
+  .cardgrid .card{font-size:11px;color:var(--ink-2)}
+  .cardgrid .card b{display:block;color:var(--ink);font-weight:700;font-size:11.3px;margin-bottom:.5mm}
+  .tbd{font-style:italic;color:#9A9890}
+  .tags-inline{font-size:9.5px;color:#8B8880;font-family:var(--mono);direction:ltr;text-align:right;unicode-bidi:isolate}
+  .specrow{display:flex;flex-wrap:wrap;gap:2mm 8mm;font-size:11px}
+  .specrow .s b{color:var(--ink);font-weight:700}
+  .specrow .s{color:var(--ink-2)}
+
+  footer{margin-top:6mm;padding-top:3mm;border-top:1px solid var(--line-2);font-size:9px;color:var(--ink-2);display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<div class="doctitle">
+  <h1>اسکلت محتوا — اردوی آنلاین مهارت‌آموزی دیزاین‌آگاهی</h1>
+  <div class="meta">منبع: <span class="lat">prototype/landing-v4-graphic.html</span> · فقط محتوای متنی صفحه، بدون گرافیک/استایل — برای بازبینی و ویرایش کپی</div>
+</div>
+
+<div class="legend">
+  <span><i style="background:#1024CF"></i> لید/بدنه</span>
+  <span><i style="background:#3A3D45"></i> لیست/کارت</span>
+  <span class="tbd">ایتالیک = جای‌نگهدار، هنوز محتوای واقعی نداره</span>
+</div>
+
+<!-- HERO -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">هدر</span><span class="sec__label">Hero</span></div>
+  <h2 class="sec__title">دیزاین رو از کجا باید شروع کرد؟</h2>
+  <div class="block"><span class="block__tag">هویت</span><p>پیل: «اردوی آنلاین مهارت‌آموزی دیزاین‌آگاهی» · بج: Ali Babaei</p></div>
+  <div class="block"><span class="block__tag">لید</span><p>فراگیری دیزاین امروز بیشتر از کمبود منابع، مسئله‌ی زیادیِ مسیرها و گم‌شدن اولویت‌هاست؛ اینکه چه چیزی را واقعاً باید بلد باشیم. هشت سال پیش این دوره را طراحی کردم تا با هم یک نقشه‌راه روشن و آزموده‌شده داشته باشیم؛ مهم‌ها را از حاشیه‌ها جدا کنیم، بین آگاهی و مهارت پل بزنیم و در مدتی فشرده، برای ورود به بازار کار دیزاین آماده‌تر شویم.</p></div>
+  <div class="block"><span class="block__tag">دکمه‌ها</span><p>اصلی: «شروع سفر» (→ ثبت‌نام) · ثانویه: «چی یاد می‌گیریم» (→ سرفصل)</p></div>
+</div>
+
+<!-- FIGURES -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">۰۰</span><span class="sec__label">Proof</span></div>
+  <h2 class="sec__title">آمار (بدون تیتر مستقل)</h2>
+  <div class="block"><span class="block__tag">اعداد</span>
+    <div class="specrow">
+      <span class="s"><b>+20</b> سال کار دیزاین</span>
+      <span class="s"><b>+9</b> سال آموزش و منتورینگ</span>
+      <span class="s"><b>+3000</b> مهارت‌آموز</span>
+      <span class="s"><b>+60</b> دوره، کارگاه و بوت‌کمپ</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">۰۱</span><span class="sec__label">Problem · مسئله</span></div>
+  <h2 class="sec__title">کم نیاوردی. زیاد آوردی.</h2>
+  <div class="block"><span class="block__tag">لید</span><p>هیچ‌وقت به‌اندازهٔ امروز آموزش رایگان و در دسترس نبوده. پس اگه هنوز جایی گیر می‌کنیم، احتمالاً مشکل کمبود محتوا نیست؛ مشکل اینه که هر کسی یه مسیر نشونمون می‌ده.</p></div>
+  <div class="block"><span class="block__tag">پیل‌های ادعا (۶)</span>
+    <ul>
+      <li>یکی می‌گه Figma یاد بگیر</li>
+      <li>یکی می‌گه UX یعنی Research</li>
+      <li>یکی می‌گه Portfolio مهم‌تره</li>
+      <li>یکی می‌گه بدون Business Thinking نمی‌شه</li>
+      <li>یکی می‌گه فقط پروژهٔ واقعی مهمه</li>
+      <li>حالا AI هم اومده وسط و دیزاینر چی می‌شه؟</li>
+    </ul>
+  </div>
+  <div class="block"><span class="block__tag">کارت‌ها (۳)</span>
+    <div class="cardgrid">
+      <div class="card"><b>۰۱ مسیر زیاده، شروع نیست.</b>هر هفته یه رودمپ جدید می‌بینیم، یه دوره سیو می‌کنیم، یه لیست ابزار. فهرست «باید بلد باشیم» هر روز بلندتر می‌شه و روزی که واقعاً شروع کنیم، هر روز دورتر.</div>
+      <div class="card"><b>۰۲ ابزار رو بلدیم، تصمیم رو نه.</b>فیگما رو بلدیم. ولی تا یکی می‌پرسه «چرا این دکمه اینجاست؟»، جوابمون می‌شه سلیقه. یاد گرفتیم بسازیم؛ یاد نگرفتیم انتخاب کنیم.</div>
+      <div class="card"><b>۰۳ معیار نداریم، پس نمی‌دونیم کِی آماده‌ایم.</b>نمی‌دونیم کارمون خوبه یا نه، نمی‌دونیم چقدر مونده، نمی‌دونیم اون‌ور میز مصاحبه دنبال چیه. این بی‌معیاری از خودِ ندونستن خسته‌کننده‌تره.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">۰۲</span><span class="sec__label">Philosophy · فلسفه</span></div>
+  <h2 class="sec__title">این کلاس UI/UX نیست.</h2>
+  <div class="block"><span class="block__tag">لید</span><p>تجربهٔ کاربر لازمه؛ کافی نیست. قرار نیست یه مشت متد و ابزار حفظ کنیم؛ قراره کل‌نگر فکر کنیم، نه فقط قشنگش کنیم.</p></div>
+  <div class="block"><span class="block__tag">کارت‌ها (۳)</span>
+    <div class="cardgrid">
+      <div class="card"><b>مسئله رو چطور می‌بینه</b>قبل از اینکه دنبال راه‌حل بگرده، سؤال می‌پرسه: صورت‌مسئله چیه، و کدوم صورت‌مسئله اصلاً ارزش حل کردن داره؟</div>
+      <div class="card"><b>چطور تحقیق می‌کنه</b>می‌دونه کِی باید بپرسه، از کی، و جوابی که گرفته چه تصمیمی رو عوض می‌کنه. تحقیق برای دلگرمی نیست؛ برای تصمیمه.</div>
+      <div class="card"><b>چطور فرایند رو جلو می‌بره</b>طراحی می‌کنه، فرضش رو تست می‌کنه، و تنها کار نمی‌کنه — با مهندس و مدیر محصول حرف می‌زنه، پای تصمیمش وایسه، و رهبری‌اش می‌کنه.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">۰۳</span><span class="sec__label">Skills · مهارت‌ها</span></div>
+  <h2 class="sec__title">چیزایی که واقعاً به کارمون میان.</h2>
+  <div class="block"><span class="block__tag">کارت‌ها (۶، حرف A–F)</span>
+    <div class="cardgrid">
+      <div class="card"><b>A · فهم کاربر</b><span class="tags-inline">User Research · Interview · Journey Mapping · Usability Testing</span></div>
+      <div class="card"><b>B · حل مسئله</b><span class="tags-inline">Problem Framing · Divergence · Decision Making · Uncertainty</span></div>
+      <div class="card"><b>C · ساخت تجربه</b><span class="tags-inline">User Flow · Interaction Design · IA · Prototyping</span></div>
+      <div class="card"><b>D · ساخت رابط</b><span class="tags-inline">Visual Design · UI Design · Figma · Responsive</span></div>
+      <div class="card"><b>E · فهم محصول</b><span class="tags-inline">Value Proposition · Outcome Thinking · Data-informed</span></div>
+      <div class="card"><b>F · کار در دنیای امروز</b><span class="tags-inline">Design Systems · AI-assisted · Documentation</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FIT -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">۰۵</span><span class="sec__label">Fit · برای کی</span></div>
+  <h2 class="sec__title">این اردو احتمالاً جای درستیه، برای…</h2>
+  <div class="block"><span class="block__tag">کارت‌ها (۳)</span>
+    <div class="cardgrid">
+      <div class="card"><b>ورود جدی به دیزاین</b>یه شروع جدی و ساختارمند، نه یه دورهٔ دیگه که فقط لیست کارهای نکرده رو بلندتر کنه.</div>
+      <div class="card"><b>دانشِ تیکه‌تیکه</b>مدتیه دیزاین می‌کنیم، ولی حس می‌کنیم بعضی پایه‌ها رو هیچ‌وقت درست یاد نگرفتیم.</div>
+      <div class="card"><b>همکاری نزدیک با دیزاینرها</b>PM، Founder یا Marketer هایی که می‌خوان بفهمن از دیزاینر چی باید بخوان.</div>
+    </div>
+  </div>
+</div>
+
+<!-- OUTCOMES -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">۰۷</span><span class="sec__label">Outcomes · خروجی</span></div>
+  <h2 class="sec__title">آخرش چی برمی‌داریم با خودمون؟</h2>
+  <div class="block"><span class="block__tag">کارت‌ها (۶)</span>
+    <div class="cardgrid">
+      <div class="card"><b>۰۱ یه نقشه</b>می‌دونیم الان کجاییم و قدم بعدیمون چیه.</div>
+      <div class="card"><b>۰۲ یه زبون حرفه‌ای</b>با تیم محصول هم‌زبون حرف می‌زنیم.</div>
+      <div class="card"><b>۰۳ مهارت تمرین‌شده</b>فقط درباره‌شون نخوندیم؛ انجامشون دادیم.</div>
+      <div class="card"><b>۰۴ یه پروژه</b>برای شروع یا کامل کردن Portfolio.</div>
+      <div class="card"><b>۰۵ عادتِ نقد شنیدن</b>نقد می‌گیریم، اصلاح می‌کنیم، دفاع می‌کنیم.</div>
+      <div class="card"><b>۰۶ درک بازار</b>می‌دونیم سازمان‌ها از دیزاینر چی می‌خوان.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">۰۸</span><span class="sec__label">About · مدرس</span></div>
+  <h2 class="sec__title">این دوره رو از رو کتاب نساختم.</h2>
+  <div class="block"><span class="block__tag">اسلات‌ها</span>
+    <ul>
+      <li>تصویر — <span class="tbd">پرترهٔ مدرس، در انتظار فایل</span></li>
+      <li>متن معرفی — <span class="tbd">بیو، مسیر حرفه‌ای، تجربهٔ کار در تیم‌های محصول و مشاوره، پیام شخصی — در انتظار محتوا</span></li>
+      <li>Social Proof — <span class="tbd">Selected Companies · Selected Universities · Selected Consulting Projects — در انتظار محتوا</span></li>
+      <li>لینک‌ها — <span class="tbd">LinkedIn · Instagram · X · Substack — در انتظار لینک واقعی</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- CURRICULUM -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">۰۹</span><span class="sec__label">Curriculum · سرفصل</span></div>
+  <h2 class="sec__title">خب، خودِ اردو چه شکلیه؟</h2>
+  <div class="block"><span class="block__tag">مشخصات</span>
+    <div class="specrow">
+      <span class="s"><b>مدت</b> ۲ ماه</span>
+      <span class="s"><b>برگزاری</b> آنلاین</span>
+      <span class="s"><b>آموزش</b> وبینار زنده + ضبط</span>
+      <span class="s"><b>تمرین</b> تمرین + پروژه</span>
+      <span class="s"><b>منتورینگ</b> بازخورد و پرسش</span>
+      <span class="s"><b>ظرفیت</b> محدود</span>
+    </div>
+  </div>
+  <div class="block"><span class="block__tag">نقشه راه (۱۰ فصل)</span>
+    <ul>
+      <li>Chapter 01 — مبانی دیزاین و حل مسئله <span class="tags-inline">(Design Thinking · Problem Framing · Uncertainty)</span></li>
+      <li>Chapter 02 — پژوهش کاربر <span class="tags-inline">(Research Planning · Interview · Generative Research · Usability Testing)</span></li>
+      <li>Chapter 03 — محصول و ارزش <span class="tags-inline">(Value Proposition · Product Thinking · Outcome-based Design)</span></li>
+      <li>Chapter 04 — دیزاین تعامل <span class="tags-inline">(User Flow · IA · Interaction Patterns)</span></li>
+      <li>Chapter 05 — رابط و دیزاین بصری <span class="tags-inline">(Visual Hierarchy · Layout · Typography · Color)</span></li>
+      <li>Chapter 06 — فیگما و پروتوتایپ <span class="tags-inline">(Figma · Components · Variables · Prototype)</span></li>
+      <li>Chapter 07 — دیزاین سیستم <span class="tags-inline">(Components · Tokens · Documentation)</span></li>
+      <li>Chapter 08 — دیتا و آزمایش <span class="tags-inline">(Product Metrics · Behavioral Data · Testing)</span></li>
+      <li>Chapter 09 — دیزاین با کمک هوش مصنوعی <span class="tags-inline">(AI Workflow · Ideation · Research Support · Design-to-code)</span></li>
+      <li>Chapter 10 — کار حرفه‌ای <span class="tags-inline">(Portfolio · Teamwork · Communication · Hiring)</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- RECOMMENDATIONS -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">—</span><span class="sec__label">Recommendations · همراهان</span></div>
+  <h2 class="sec__title">دیزاینرهایی که قبلاً با ما همراه بودن.</h2>
+  <div class="block"><span class="block__tag">لید</span><p>شش نفر از چهره‌های شناخته‌شدهٔ بازار که تو دوره‌ها یا کارگاه‌های قبلی شرکت کردن — در انتظار انتخاب و تأیید نهایی.</p></div>
+  <div class="block"><span class="block__tag">اسلات‌ها (۶)</span><p class="tbd">دیزاینر ۰۱ تا ۰۶ — نام · سمت و شرکت · یک جملهٔ توصیه — همگی در انتظار محتوای واقعی</p></div>
+</div>
+
+<!-- FAQ -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">۱۰</span><span class="sec__label">FAQ · سؤال‌ها</span></div>
+  <h2 class="sec__title">شاید هنوز چندتا سؤال داشته باشیم.</h2>
+  <div class="block"><span class="block__tag">پرسش و پاسخ (۶)</span>
+    <ul>
+      <li><b>۰۱ هیچ تجربه‌ای ندارم؛ به درد من می‌خوره؟</b> — <span class="tbd">در انتظار پاسخ</span></li>
+      <li><b>۰۲ بعدش می‌تونم استخدام بشم؟</b> — این اردو کاریابی نیست و استخدام رو تضمین نمی‌کنه. کاری که می‌کنه اینه که آمادگی اولیه‌مون رو بسازه. قدم آخر با خودمونه و با بازار.</li>
+      <li><b>۰۳ فیگما هم آموزش داده می‌شه؟</b> — آره، Chapter 06 مال همینه. ولی موضوع اردو ابزار نیست؛ ابزار درِ ورودیه، نه مقصد.</li>
+      <li><b>۰۴ اگه یه جلسه رو از دست بدم چی؟</b> — ضبطش تو پنل هست، پس از مسیر عقب نمی‌مونیم. ولی اون هفته یه چیزی رو از دست دادیم که تو ضبط نیست: پرسیدن.</li>
+      <li><b>۰۵ هفته‌ای چقدر وقت می‌خواد؟</b> — <span class="tbd">در انتظار پاسخ</span></li>
+      <li><b>۰۶ مدرک هم داده می‌شه؟</b> — <span class="tbd">در انتظار پاسخ</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ENROLL -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">۱۱</span><span class="sec__label">Enroll · ثبت‌نام</span></div>
+  <h2 class="sec__title">وقتشه جدی شروع کنیم. <span style="font-size:10px;font-weight:400;color:#9A9890">(حالت باز)</span></h2>
+  <div class="block"><span class="block__tag">لید</span><p>اردوی بعدی از <span class="tbd">[تاریخ]</span> شروع می‌شه. ظرفیت محدوده.</p></div>
+  <div class="block"><span class="block__tag">دکمه‌ها</span><p>اصلی: «ثبت‌نام در اردو» (→ لینک ثبت‌نام، فعلاً خالی) · ثانویه: «سرفصل کامل رو ببینیم»</p></div>
+  <div class="block"><span class="block__tag">مشخصات</span><p><b>تاریخ شروع:</b> <span class="tbd">—</span> · <b>ظرفیت:</b> <span class="tbd">—</span> <span style="font-size:9.5px">(هزینه/پرداخت فعلاً عمداً خاموش — قیمت‌گذاری هنوز تصمیم نگرفته شده)</span></p></div>
+  <h2 class="sec__title" style="margin-top:4mm">فعلاً درها بسته‌ست. ولی اردوی بعدی میاد. <span style="font-size:10px;font-weight:400;color:#9A9890">(حالت بسته، جایگزین)</span></h2>
+  <div class="block"><span class="block__tag">لید</span><p>ایمیل یا شماره رو می‌ذاریم تا وقتی ثبت‌نام اردوی بعد باز شد خبر بدیم.</p></div>
+  <div class="block"><span class="block__tag">دکمه‌ها</span><p>اصلی: «خبرم کن» · ثانویه: «فعلاً سرفصل‌ها رو ببینم»</p></div>
+</div>
+
+<!-- FOOTER -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">فوتر</span><span class="sec__label">Footer</span></div>
+  <div class="block"><span class="block__tag">لینک‌ها</span><p>حریم خصوصی · قوانین ثبت‌نام · LinkedIn</p></div>
+  <div class="block"><span class="block__tag">شعار</span><p>آگاهی / مهارت / میدان</p></div>
+  <div class="block"><span class="block__tag">کپی‌رایت</span><p>© Ali Babaei · Graphic draft v4</p></div>
+</div>
+
+<!-- STICKY BAR -->
+<div class="sec">
+  <div class="sec__head"><span class="sec__num">شناور</span><span class="sec__label">Sticky bar — همیشه‌حاضر بعد از هیرو</span></div>
+  <div class="block"><span class="block__tag">محتوا</span><p>«تاریخ شروع: <span class="tbd">[تاریخ]</span>» + دکمهٔ «ثبت‌نام»</p></div>
+</div>
+
+<footer>
+  <span>اسکلت محتوا — فقط برای بازبینی متن، نه مرجع بصری</span>
+  <span class="lat">v1 · 2026</span>
+</footer>
+
+</body>
+</html>
