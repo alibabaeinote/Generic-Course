@@ -74,8 +74,14 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 .ghost:not([disabled]):not(.is-soon):hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 
 /* ══ hero ══ */
-.hero{padding-block:clamp(2rem,6vw,4.5rem) clamp(1rem,4vw,2rem)}
+.hero{padding-block:clamp(2rem,6vw,4.5rem) clamp(1rem,4vw,2rem);position:relative;overflow:hidden}
 .hero .tag--fa{background:var(--paper);border-color:transparent}
+.hero .wrap{position:relative;z-index:2}
+
+/* ══ soft haze + dot grid (shared decorative language with course landing) ══ */
+.haze{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0}
+.dotgrid{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(8,9,12,.08) 1.1px,transparent 1.7px);background-size:28px 28px;-webkit-mask-image:radial-gradient(38rem 22rem at 82% 8%,#000 0%,transparent 72%);mask-image:radial-gradient(38rem 22rem at 82% 8%,#000 0%,transparent 72%)}
+@media (max-width:56rem){.dotgrid{display:none}}
 
 /* ══ proof strip ══ */
 .figs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;margin-block-start:clamp(2.5rem,6vw,3.5rem)}
@@ -134,6 +140,9 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 
 <!-- ══ HERO ══ -->
 <section class="hero">
+  <div class="dotgrid" aria-hidden="true"></div>
+  <div class="haze" style="width:26rem;height:26rem;background:radial-gradient(circle,var(--blue),transparent 70%);top:-8rem;left:70%;opacity:.14"></div>
+  <div class="haze" style="width:20rem;height:20rem;background:radial-gradient(circle,var(--green),transparent 70%);bottom:-6rem;left:8%;opacity:.14"></div>
   <div class="wrap">
     <span class="tag tag--fa">پلتفرم آموزش دیزاین</span>
     <h1 style="margin-block-start:clamp(1.4rem,3.5vw,2rem)">دوره‌هایی که واقعاً برای بازار کار آماده‌ت می‌کنن.</h1>
