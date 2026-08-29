@@ -121,6 +121,15 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 /* ══ hero ══ */
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;background:var(--white);padding-block:clamp(2rem,6vh,3.5rem) clamp(2.5rem,6vh,4rem);overflow:hidden;position:relative}
 .hero .h1{position:relative}
+.iconstrip{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-block-end:clamp(1.4rem,4vw,2.2rem)}
+.iconstrip__item{display:inline-flex;align-items:center;gap:.4rem;border-radius:var(--pill);padding:.42rem .9rem;font-family:var(--fa);font-size:var(--fs-sm);font-weight:700;white-space:nowrap}
+.iconstrip__item .ic{width:14px;height:14px;flex:none}
+.iconstrip__item--yellow{background:var(--yellow);color:var(--ink)}
+.iconstrip__item--blue{background:var(--blue);color:#fff}
+.iconstrip__item--accent{background:var(--accent);color:#fff}
+.iconstrip__item--green{background:var(--green);color:#fff}
+.iconstrip__item--ink{background:var(--ink);color:var(--white)}
+@media (max-width:26rem){.iconstrip__item{padding:.36rem .7rem;font-size:.72rem}}
 .herotop{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
 @media (max-width:56rem){.herotop{flex-direction:column;align-items:center;gap:1.4rem}}
 .dots{display:flex;gap:.5rem}
@@ -293,6 +302,14 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
   <div class="haze" style="width:20rem;height:20rem;background:radial-gradient(circle,#1024CF,transparent 70%);top:38%;left:18%;opacity:.16"></div>
 
   <div class="wrap">
+    <div class="iconstrip rv" aria-hidden="true">
+      <span class="iconstrip__item iconstrip__item--yellow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4"></path><line x1="12" y1="16.5" x2="12" y2="16.51"></line></svg>کنجکاوی</span>
+      <span class="iconstrip__item iconstrip__item--blue"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="1" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="23"></line><line x1="1" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="23" y2="12"></line></svg>مسئله‌محوری</span>
+      <span class="iconstrip__item iconstrip__item--accent"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="20" x2="6" y2="12"></line><line x1="12" y1="20" x2="12" y2="6"></line><line x1="18" y1="20" x2="18" y2="15"></line></svg>شواهدمحور</span>
+      <span class="iconstrip__item iconstrip__item--green"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="6"></circle><circle cx="15" cy="12" r="6"></circle></svg>کل‌نگری</span>
+      <span class="iconstrip__item iconstrip__item--ink"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9"></polyline></svg>تصمیم آگاهانه</span>
+    </div>
+
     <div class="herotop">
       <span class="tag tag--solid">اردوی آنلاین مهارت‌آموزی دیزاین‌آگاهی</span>
       <div class="dots">
