@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دیزاین‌آگاهی — خانه</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Space+Mono:wght@400;700&display=swap">
+
+<style>
+:root{
+  --yellow:#FFD400; --paper:#F5F4EF; --accent:#E23F1C; --green:#16A34A;
+  --white:#FFFFFF; --ink:rgb(14 17 32); --ink-2:#3A3D45;
+  --blue:#1024CF; --blue-2:#4A63FF; --blue-ink:#0A1580;
+  --line:rgba(8,9,12,.16); --line-2:rgba(8,9,12,.3);
+  --on-dark:#F3F5FA; --line-d:rgba(243,245,250,.22);
+  --fa:"Vazirmatn",system-ui,sans-serif;
+  --lat:"Bricolage Grotesque","Vazirmatn",system-ui,sans-serif;
+  --mono:"Space Mono",ui-monospace,monospace;
+  --e:cubic-bezier(.16,1,.3,1);
+  --e2:cubic-bezier(.25,1,.5,1);
+  --pad:clamp(1.1rem,4vw,3.5rem);
+  --pill:999px;
+
+  --fs-label:.8rem;
+  --fs-sm:.92rem;
+  --fs-body:17px;
+  --fs-lede:clamp(1.02rem,2.2vw,1.28rem);
+  --fs-h4:clamp(1.2rem,3vw,1.7rem);
+  --fs-h3:clamp(1.05rem,2.2vw,1.3rem);
+  --fs-h2:clamp(1.85rem,5.2vw,3.5rem);
+  --fs-h1:clamp(2.1rem,6.1vw,4.1rem);
+  --fs-display-sm:clamp(2.2rem,5vw,3.2rem);
+  --fs-display-lg:clamp(3.4rem,9vw,5.4rem);
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--fa);font-size:var(--fs-body);font-weight:400;line-height:1.9;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--blue);color:#fff}
+h1,h2,h3{margin:0;font-weight:900;line-height:1.28;letter-spacing:-.03em;text-wrap:balance}
+p{margin:0}ul,ol,dl{margin:0;padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;text-align:inherit}
+:focus-visible{outline:2.5px solid var(--blue);outline-offset:3px;border-radius:6px}
+.lat{font-family:var(--lat);font-weight:500;font-size:.95em;direction:ltr;unicode-bidi:isolate;letter-spacing:-.01em}
+.wrap{max-width:84rem;margin-inline:auto;padding-inline:var(--pad);position:relative;z-index:2}
+h1{font-size:var(--fs-h1);line-height:1.16;letter-spacing:-.03em}
+h2{font-size:var(--fs-h2);line-height:1.26}
+h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em}
+.lede{font-weight:400;font-size:var(--fs-lede);line-height:1.85;color:var(--ink-2);max-width:46ch;margin-block-start:clamp(1.4rem,3.5vw,2rem)}
+
+/* ══ header ══ */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:clamp(1.2rem,3vw,1.6rem)}
+.brand{display:flex;align-items:center;gap:.7rem;font-family:var(--lat);font-weight:700;font-size:1.1rem}
+.brand .dot{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--ink);display:inline-grid;place-items:center;color:var(--yellow);font-size:.85rem}
+.navlinks{display:flex;align-items:center;gap:clamp(1rem,3vw,2rem);font-size:var(--fs-sm);color:var(--ink-2)}
+@media (max-width:40rem){.navlinks{display:none}}
+
+/* ══ tag / badge (shared with course landing) ══ */
+.tag{display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid var(--line-2);border-radius:var(--pill);padding:.28rem .85rem;font-family:var(--mono);font-size:var(--fs-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.badge{display:inline-grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:50%;font-family:var(--lat);font-size:var(--fs-sm);font-weight:700;flex-shrink:0}
+.badge--ink{background:var(--ink);color:var(--yellow)}
+.badge--accent{background:var(--accent);color:#fff}
+.badge--green{background:var(--green);color:#fff}
+.badge--yellow{background:var(--yellow);color:var(--ink)}
+.ic{display:block;flex-shrink:0}
+
+/* ══ buttons (shared) ══ */
+.cta{position:relative;display:inline-flex;align-items:center;gap:.8rem;padding:.9rem 1.7rem;border-radius:var(--pill);background:var(--blue);color:#fff;font-weight:700;font-size:var(--fs-sm);transition:transform .35s var(--e),background .35s var(--e)}
+.cta:hover{background:var(--ink)}
+.ghost{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.6rem;border-radius:var(--pill);border:1.5px solid var(--line-2);font-weight:600;font-size:var(--fs-sm);color:var(--ink-2);transition:background .35s var(--e),color .35s var(--e),border-color .35s var(--e)}
+.ghost[disabled],.ghost.is-soon{cursor:default;opacity:.55}
+.ghost:not([disabled]):not(.is-soon):hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ══ hero ══ */
+.hero{padding-block:clamp(2rem,6vw,4.5rem) clamp(1rem,4vw,2rem)}
+.hero .tag{background:var(--paper);border-color:transparent}
+
+/* ══ proof strip ══ */
+.figs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;margin-block-start:clamp(2.5rem,6vw,3.5rem)}
+@media (min-width:48rem){.figs{grid-template-columns:repeat(4,1fr)}}
+.fig{background:var(--white);padding:clamp(1.4rem,3vw,1.8rem) 1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.4rem}
+.fig .n{font-family:var(--lat);font-weight:300;font-size:clamp(1.6rem,4vw,2.4rem);color:var(--blue);line-height:1;white-space:nowrap}
+.fig .c{font-size:var(--fs-sm);color:var(--ink-2)}
+
+/* ══ courses section ══ */
+.courses{padding-block:clamp(3.5rem,9vw,6rem)}
+.courses__head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem}
+
+/* featured course */
+.featured{margin-block-start:clamp(2rem,5vw,3rem);background:var(--ink);color:var(--on-dark);border-radius:28px;padding:clamp(1.8rem,4vw,3rem);display:grid;gap:clamp(1.4rem,3vw,2rem);position:relative;overflow:hidden}
+@media (min-width:56rem){.featured{grid-template-columns:1fr auto;align-items:center}}
+.featured__glow{position:absolute;inset:0;background:radial-gradient(60rem 20rem at 90% -10%,rgba(255,212,0,.14),transparent 60%);pointer-events:none}
+.featured__body{position:relative;z-index:1}
+.featured__meta{display:flex;flex-wrap:wrap;gap:.6rem;margin-block-end:1.1rem}
+.featured__meta .tag{border-color:var(--line-d);color:var(--on-dark)}
+.featured h3{font-size:var(--fs-h4);color:#fff;margin-block-end:.7rem}
+.featured p{max-width:46ch;color:rgba(243,245,250,.72);font-size:var(--fs-body);line-height:1.9}
+.featured__specs{display:flex;flex-wrap:wrap;gap:1.4rem;margin-block:1.4rem;font-size:var(--fs-sm);color:rgba(243,245,250,.6)}
+.featured__specs b{color:#fff;font-weight:700}
+.featured__cta{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:.8rem}
+@media (min-width:56rem){.featured__cta{align-items:flex-end}}
+
+/* course grid */
+.grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-block-start:1rem}
+@media (min-width:56rem){.grid{grid-template-columns:repeat(3,1fr)}}
+.ccard{background:var(--paper);border-radius:24px;padding:clamp(1.4rem,3vw,1.9rem);display:flex;flex-direction:column;gap:1rem;transition:transform .4s var(--e)}
+.ccard:hover{transform:translateY(-4px)}
+.ccard__top{display:flex;align-items:center;justify-content:space-between}
+.ccard .tag--soon{background:transparent;border-color:var(--line-2);color:var(--ink-2)}
+.ccard p{color:var(--ink-2);font-size:var(--fs-body);line-height:1.85}
+.ccard__meta{display:flex;flex-wrap:wrap;gap:.5rem .9rem;font-size:var(--fs-sm);color:var(--ink-2);border-top:1.5px solid var(--line);padding-block-start:.9rem}
+.ccard__meta span{white-space:nowrap}
+.ccard__foot{margin-block-start:auto;padding-block-start:.4rem}
+
+/* ══ footer ══ */
+.foot{background:var(--ink);color:rgba(243,245,250,.6);padding-block:clamp(2.4rem,6vw,3.5rem)}
+.foot__row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem}
+.foot .brand{color:#fff}
+.foot .brand .dot{background:var(--yellow);color:var(--ink)}
+.foot__links{display:flex;gap:1.4rem;font-size:var(--fs-sm)}
+</style>
+</head>
+<body>
+
+<header class="wrap topbar">
+  <div class="brand"><span class="dot">دآ</span>دیزاین‌آگاهی</div>
+  <nav class="navlinks">
+    <span>دوره‌ها</span>
+    <span>درباره من</span>
+    <span>تماس</span>
+  </nav>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="wrap">
+    <span class="tag">پلتفرم آموزش دیزاین</span>
+    <h1 style="margin-block-start:1.2rem">دوره‌هایی که واقعاً برای بازار کار آماده‌ت می‌کنن.</h1>
+    <p class="lede">هر دوره یک مهارت مشخص رو دقیق و عملی یاد می‌ده — از پایه‌های دیزاین محصول تا کار با AI. یکی رو انتخاب کن و شروع کن.</p>
+
+    <div class="figs">
+      <div class="fig"><span class="n">+20</span><span class="c">سال کار دیزاین</span></div>
+      <div class="fig"><span class="n">+9</span><span class="c">سال آموزش و منتورینگ</span></div>
+      <div class="fig"><span class="n">+3000</span><span class="c">مهارت‌آموز</span></div>
+      <div class="fig"><span class="n">+60</span><span class="c">دوره، کارگاه و بوت‌کمپ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COURSES ══ -->
+<section class="courses">
+  <div class="wrap">
+    <div class="courses__head">
+      <h2 style="font-size:var(--fs-h4)">دوره‌ها</h2>
+      <span class="lede" style="margin:0;font-size:var(--fs-sm);max-width:none">۴ دوره — یکی کامل، سه‌تا تازه</span>
+    </div>
+
+    <!-- featured / flagship -->
+    <article class="featured">
+      <div class="featured__glow" aria-hidden="true"></div>
+      <div class="featured__body">
+        <div class="featured__meta">
+          <span class="tag">بوت‌کمپ کامل</span>
+          <span class="tag">دورهٔ اصلی</span>
+        </div>
+        <h3>مهارت‌آموزی دیزاینر محصول</h3>
+        <p>مسیر کامل و آزموده‌شده برای شروع جدی دیزاین محصول؛ از پژوهش و حل مسئله تا دیزاین بصری و مستندسازی — هرچی برای ورود به بازار کار لازمه.</p>
+        <div class="featured__specs">
+          <span>مدت: <b>۲ ماه</b></span>
+          <span>برگزاری: <b>آنلاین</b></span>
+          <span>آموزش: <b>وبینار زنده + ضبط</b></span>
+        </div>
+      </div>
+      <div class="featured__cta">
+        <a class="cta" href="landing-v4-graphic.html">مشاهده دوره</a>
+      </div>
+    </article>
+
+    <!-- new courses grid -->
+    <div class="grid">
+      <article class="ccard">
+        <div class="ccard__top">
+          <span class="badge badge--accent">AI</span>
+          <span class="tag tag--soon">به‌زودی</span>
+        </div>
+        <h3>دیزاین با AI</h3>
+        <p>یاد می‌گیری چطور از ابزارهای AI برای سرعت‌گرفتن در ریسرچ، آیدیشن و دیزاین بصری استفاده کنی — بدون این‌که قضاوت طراحی رو به ابزار بسپاری.</p>
+        <div class="ccard__meta">
+          <span>سطح: میانی</span>
+          <span>مدت: ۴ هفته</span>
+          <span>آنلاین</span>
+        </div>
+        <div class="ccard__foot"><button class="ghost is-soon" disabled>اطلاع بده وقتی باز شد</button></div>
+      </article>
+
+      <article class="ccard">
+        <div class="ccard__top">
+          <span class="badge badge--green">UX</span>
+          <span class="tag tag--soon">به‌زودی</span>
+        </div>
+        <h3>پژوهش کاربر با AI</h3>
+        <p>از طراحی مصاحبه تا تحلیل حجم بالای داده‌های کیفی، با کمک AI سریع‌تر به بینش واقعی می‌رسی — نه فقط خلاصه‌ی خودکار متن.</p>
+        <div class="ccard__meta">
+          <span>سطح: میانی</span>
+          <span>مدت: ۳ هفته</span>
+          <span>آنلاین</span>
+        </div>
+        <div class="ccard__foot"><button class="ghost is-soon" disabled>اطلاع بده وقتی باز شد</button></div>
+      </article>
+
+      <article class="ccard">
+        <div class="ccard__top">
+          <span class="badge badge--yellow">VC</span>
+          <span class="tag tag--soon">به‌زودی</span>
+        </div>
+        <h3>وایب کدینگ</h3>
+        <p>برای دیزاینرهایی که می‌خوان ایده‌شون رو مستقیم به یک پروتوتایپ واقعی و قابل‌کلیک تبدیل کنن — بدون این‌که برنامه‌نویس باشن.</p>
+        <div class="ccard__meta">
+          <span>سطح: مقدماتی</span>
+          <span>مدت: ۳ هفته</span>
+          <span>آنلاین</span>
+        </div>
+        <div class="ccard__foot"><button class="ghost is-soon" disabled>اطلاع بده وقتی باز شد</button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="foot">
+  <div class="wrap foot__row">
+    <div class="brand"><span class="dot">دآ</span>دیزاین‌آگاهی</div>
+    <div class="foot__links">
+      <span>لینکدین</span>
+      <span>مدیوم</span>
+      <span>وب‌سایت شخصی</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
