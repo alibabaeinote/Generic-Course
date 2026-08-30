@@ -158,6 +158,8 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 /* ══ cards ══ */
 .grid3{display:grid;grid-template-columns:1fr;gap:.8rem;margin-block-start:clamp(2rem,5vw,3rem);align-items:start}
 #s-problem .grid3{align-items:stretch}
+#s-skills .grid3{align-items:stretch;grid-auto-rows:14rem}
+#s-skills .grid3 .card{height:100%;}
 @media (min-width:60rem){.grid3{grid-template-columns:repeat(3,1fr)}}
 .card{background:var(--white);border:1.5px solid var(--line);border-radius:26px;padding:clamp(1.4rem,3vw,2rem);display:flex;flex-direction:column;gap:.9rem;transition:transform .45s var(--e),border-color .45s var(--e)}
 .card:hover{transform:translateY(-5px);border-color:var(--ink)}
