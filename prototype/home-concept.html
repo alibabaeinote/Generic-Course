@@ -92,7 +92,25 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 
 /* ══ courses section ══ */
 .courses{padding-block:clamp(3.5rem,9vw,6rem)}
-.courses__head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem}
+.courses__head{display:flex;flex-direction:column;gap:.6rem}
+.courses__head .lede{font-size:var(--fs-sm);max-width:none;margin-block-start:0}
+
+/* ══ hero bento (visual anchor, desktop only) ══ */
+.hero__grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,5vw,3rem);align-items:center}
+.hero__bento{display:none}
+@media (min-width:64rem){
+  .hero__grid{grid-template-columns:1.15fr .85fr}
+  .hero__bento{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+}
+.btile{border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;padding:clamp(1.6rem,3vw,2.2rem) 1rem;text-align:center;transition:transform .4s var(--e)}
+.btile:hover{transform:translateY(-4px)}
+.btile svg{width:26px;height:26px;flex-shrink:0}
+.btile span{font-size:var(--fs-sm);font-weight:700}
+.btile--wide{grid-column:1/3;flex-direction:row;justify-content:center;padding-block:clamp(1.3rem,2.5vw,1.6rem)}
+.btile--ink{background:var(--ink);color:var(--on-dark)}
+.btile--accent{background:var(--accent);color:#fff}
+.btile--green{background:var(--green);color:#fff}
+.btile--yellow{background:var(--yellow);color:var(--ink)}
 
 /* featured course */
 .featured{margin-block-start:clamp(2rem,5vw,3rem);background:var(--ink);color:var(--on-dark);border-radius:26px;padding:clamp(1.8rem,4vw,3rem);display:grid;gap:clamp(1.4rem,3vw,2rem);position:relative;overflow:hidden}
@@ -144,9 +162,19 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
   <div class="haze" style="width:26rem;height:26rem;background:radial-gradient(circle,var(--blue),transparent 70%);top:-8rem;left:70%;opacity:.14"></div>
   <div class="haze" style="width:20rem;height:20rem;background:radial-gradient(circle,var(--green),transparent 70%);bottom:-6rem;left:8%;opacity:.14"></div>
   <div class="wrap">
-    <span class="tag tag--fa">پلتفرم آموزش دیزاین</span>
-    <h1 style="margin-block-start:clamp(1.4rem,3.5vw,2rem)">دوره‌هایی که واقعاً برای بازار کار آماده‌ت می‌کنن.</h1>
-    <p class="lede">هر دوره یک مهارت مشخص رو دقیق و عملی یاد می‌ده — از پایه‌های دیزاین محصول تا کار با AI. یکی رو انتخاب کن و شروع کن.</p>
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <span class="tag tag--fa">پلتفرم آموزش دیزاین</span>
+        <h1 style="margin-block-start:clamp(1.4rem,3.5vw,2rem)">دوره‌هایی که واقعاً برای بازار کار آماده‌ت می‌کنن.</h1>
+        <p class="lede">هر دوره یک مهارت مشخص رو دقیق و عملی یاد می‌ده — از پایه‌های دیزاین محصول تا کار با AI. یکی رو انتخاب کن و شروع کن.</p>
+      </div>
+      <div class="hero__bento" aria-hidden="true">
+        <div class="btile btile--wide btile--ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3l7 16 2.5-6.5L20 10z"></path></svg><span>دیزاین محصول</span></div>
+        <div class="btile btile--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg><span>دیزاین با AI</span></div>
+        <div class="btile btile--green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>پژوهش کاربر</span></div>
+        <div class="btile btile--yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 3 12 8 18"></polyline><polyline points="16 6 21 12 16 18"></polyline></svg><span>وایب کدینگ</span></div>
+      </div>
+    </div>
 
     <div class="figs">
       <div class="fig"><span class="n">+20</span><span class="c">سال کار دیزاین</span></div>
@@ -162,7 +190,7 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
   <div class="wrap">
     <div class="courses__head">
       <h2 style="font-size:var(--fs-h4)">دوره‌ها</h2>
-      <span class="lede" style="margin:0;font-size:var(--fs-sm);max-width:none">۴ دوره — یکی کامل، سه‌تا تازه</span>
+      <p class="lede">۴ دوره — یکی کامل، سه‌تا تازه</p>
     </div>
 
     <!-- featured / flagship -->
