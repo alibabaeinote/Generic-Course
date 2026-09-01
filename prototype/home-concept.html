@@ -13,7 +13,7 @@
   --yellow:#FFD400; --paper:#F5F4EF; --accent:#E23F1C; --green:#16A34A;
   --white:#FFFFFF; --ink:rgb(14 17 32); --ink-2:#3A3D45;
   --blue:#1024CF; --blue-2:#4A63FF; --blue-ink:#0A1580;
-  --line:rgba(8,9,12,.16); --line-2:rgba(8,9,12,.3);
+  --line:rgba(8,9,12,.08); --line-2:rgba(8,9,12,.3);
   --on-dark:#F3F5FA; --line-d:rgba(243,245,250,.22);
   --fa:"Vazirmatn",system-ui,sans-serif;
   --lat:"Bricolage Grotesque","Vazirmatn",system-ui,sans-serif;
@@ -58,7 +58,7 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 @media (max-width:40rem){.navlinks{display:none}}
 
 /* ══ tag / badge (shared with course landing) ══ */
-.tag{display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid var(--line-2);border-radius:var(--pill);padding:.28rem .85rem;font-family:var(--mono);font-size:var(--fs-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.tag{display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid var(--line);border-radius:var(--pill);padding:.28rem .85rem;font-family:var(--mono);font-size:var(--fs-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
 .tag--fa{font-family:var(--fa);font-size:var(--fs-sm);font-weight:700;letter-spacing:0;text-transform:none}
 .badge{display:inline-grid;place-items:center;width:3.2rem;height:3.2rem;border-radius:50%;font-family:var(--lat);font-size:var(--fs-body);font-weight:500;flex-shrink:0}
 .badge--accent{background:var(--accent);color:#fff}
@@ -69,7 +69,7 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 /* ══ buttons (shared) ══ */
 .cta{position:relative;display:inline-flex;align-items:center;gap:.8rem;padding:.9rem 1.7rem;border-radius:var(--pill);background:var(--blue);color:#fff;font-weight:700;font-size:var(--fs-sm);transition:transform .35s var(--e),background .35s var(--e)}
 .cta:hover{background:var(--ink)}
-.ghost{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.6rem;border-radius:var(--pill);border:1.5px solid var(--line-2);font-weight:600;font-size:var(--fs-sm);color:var(--ink-2);transition:background .35s var(--e),color .35s var(--e),border-color .35s var(--e)}
+.ghost{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.6rem;border-radius:var(--pill);border:1.5px solid var(--line);font-weight:600;font-size:var(--fs-sm);color:var(--ink-2);transition:background .35s var(--e),color .35s var(--e),border-color .35s var(--e)}
 .ghost[disabled],.ghost.is-soon{cursor:default;opacity:.55}
 .ghost:not([disabled]):not(.is-soon):hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 
@@ -114,7 +114,7 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 .ccard{background:var(--paper);border-radius:26px;padding:clamp(1.4rem,3vw,1.9rem);display:flex;flex-direction:column;gap:1rem;transition:transform .4s var(--e)}
 .ccard:hover{transform:translateY(-4px)}
 .ccard__top{display:flex;align-items:center;justify-content:space-between}
-.ccard .tag--soon{background:transparent;border-color:var(--line-2);color:var(--ink-2)}
+.ccard .tag--soon{background:transparent;border-color:var(--line);color:var(--ink-2)}
 .ccard p{color:var(--ink-2);font-size:var(--fs-body);line-height:1.85}
 .ccard__meta{display:flex;flex-wrap:wrap;gap:.5rem .9rem;font-size:var(--fs-sm);color:var(--ink-2);border-top:1.5px solid var(--line);padding-block-start:.9rem}
 .ccard__meta span{white-space:nowrap}
