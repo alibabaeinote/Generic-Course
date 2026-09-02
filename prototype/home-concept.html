@@ -95,6 +95,10 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 .hero .tag--fa{background:var(--paper);border-color:transparent}
 .hero__tagrow{display:flex;align-items:center;gap:.5rem}
 .tagarrow{display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);width:calc(1.9em + .56rem + 3px);aspect-ratio:1;border-radius:50%;background:var(--green);color:#fff;flex-shrink:0}
+@media (min-width:40rem){
+  .hero .tag--fa{font-size:var(--fs-body)}
+  .hero .tagarrow{font-size:var(--fs-body)}
+}
 .hero .wrap{position:relative;z-index:2}
 
 /* ══ soft haze + dot grid (shared decorative language with course landing) ══ */
