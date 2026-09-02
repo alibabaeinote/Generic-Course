@@ -51,13 +51,27 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 .lede{font-weight:400;font-size:var(--fs-lede);line-height:1.85;color:var(--ink-2);max-width:46ch;margin-block-start:clamp(1.4rem,3.5vw,2rem)}
 
 /* ══ header ══ */
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:clamp(1.2rem,3vw,1.6rem)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:clamp(1.2rem,3vw,1.6rem);border-bottom:1.5px solid var(--line)}
 .brand{display:flex;align-items:center;gap:.7rem;font-family:var(--fa);font-weight:700;font-size:var(--fs-h3)}
 .brand img{width:3.2rem;height:3.2rem;border-radius:50%;object-fit:cover;display:block}
 .brand .logo-mark{width:auto;height:3.2rem;border-radius:0;object-fit:contain}
 .topbar .logo-mark{height:5rem}
 .navlinks{display:flex;align-items:center;gap:clamp(1rem,3vw,2rem);font-size:var(--fs-sm);color:var(--ink-2)}
-@media (max-width:40rem){.navlinks{display:none}}
+.menubtn{display:none;align-items:center;justify-content:center;width:3.2rem;height:3.2rem;border-radius:var(--pill);border:1.5px solid var(--line);color:var(--ink);flex-shrink:0;transition:background .35s var(--e),color .35s var(--e),border-color .35s var(--e)}
+.menubtn svg{width:20px;height:20px;display:block}
+.menubtn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.mobilemenu{display:none}
+@media (max-width:40rem){
+  .navlinks{display:none}
+  .menubtn{display:inline-flex}
+  .mobilemenu{display:block;border-bottom:1.5px solid var(--line)}
+}
+.mobilemenu__p{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--e)}
+.mobilemenu__p[data-open="1"]{grid-template-rows:1fr}
+.mobilemenu__p>div{overflow:hidden}
+.mobilemenu__links{display:flex;flex-direction:column;padding-block:.2rem clamp(1rem,3vw,1.4rem)}
+.mobilemenu__links span{padding:.85rem 0;font-size:var(--fs-sm);color:var(--ink-2);border-top:1.5px solid var(--line)}
+.mobilemenu__links span:first-child{border-top:none}
 
 /* ══ tag / badge (shared with course landing) ══ */
 .tag{display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid var(--line);border-radius:var(--pill);padding:.28rem .85rem;font-family:var(--mono);font-size:var(--fs-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
@@ -158,7 +172,20 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
     <span>درباره من</span>
     <span>تماس</span>
   </nav>
+  <button class="menubtn" type="button" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mobilemenu-p">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+  </button>
 </header>
+
+<div class="mobilemenu wrap">
+  <div class="mobilemenu__p" id="mobilemenu-p"><div>
+    <nav class="mobilemenu__links">
+      <span>دوره‌ها</span>
+      <span>درباره من</span>
+      <span>تماس</span>
+    </nav>
+  </div></div>
+</div>
 
 <!-- ══ HERO ══ -->
 <section class="hero">
@@ -276,6 +303,19 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var btn = document.querySelector('.menubtn');
+  var panel = document.getElementById('mobilemenu-p');
+  if (!btn || !panel) return;
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    if (open) panel.removeAttribute('data-open'); else panel.setAttribute('data-open', '1');
+  });
+})();
+</script>
 
 </body>
 </html>
