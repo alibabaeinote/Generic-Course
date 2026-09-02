@@ -102,8 +102,8 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 /* ══ proof strip ══ */
 .figs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;margin-block-start:clamp(2.5rem,6vw,3.5rem)}
 @media (min-width:48rem){.figs{grid-template-columns:repeat(4,1fr)}}
-.fig{background:var(--white);padding:clamp(2.2rem,5vw,3rem) 1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.4rem}
-.fig .n{font-family:var(--lat);font-weight:300;font-size:var(--fs-display-sm);color:var(--ink);line-height:1;white-space:nowrap}
+.fig{background:var(--white);padding:clamp(2.5rem,6vw,3.6rem) 1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.4rem}
+.fig .n{font-family:var(--lat);font-weight:300;font-size:var(--fs-display-lg);line-height:1;letter-spacing:-.05em;color:var(--ink);font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate;white-space:nowrap}
 .fig .c{font-size:var(--fs-sm);color:var(--ink-2)}
 
 /* ══ courses section ══ */
@@ -119,7 +119,7 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
   .hero__bento{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
   .hero__bento--img{display:block}
 }
-.hero__bento--img img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:26px;display:block}
+.hero__bento--img img{width:80%;aspect-ratio:1;object-fit:cover;border-radius:26px;display:block;margin-inline:auto}
 .btile{border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;padding:clamp(1.6rem,3vw,2.2rem) 1rem;text-align:center;transition:transform .4s var(--e)}
 .btile:hover{transform:translateY(-4px)}
 .btile svg{width:26px;height:26px;flex-shrink:0}
@@ -190,8 +190,6 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 <!-- ══ HERO ══ -->
 <section class="hero">
   <div class="dotgrid" aria-hidden="true"></div>
-  <div class="haze" style="width:26rem;height:26rem;background:radial-gradient(circle,var(--blue),transparent 70%);top:-8rem;left:70%;opacity:.14"></div>
-  <div class="haze" style="width:20rem;height:20rem;background:radial-gradient(circle,var(--green),transparent 70%);bottom:-6rem;left:8%;opacity:.14"></div>
   <div class="wrap">
     <div class="hero__grid">
       <div class="hero__copy">
