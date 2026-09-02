@@ -93,8 +93,8 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 /* ══ hero ══ */
 .hero{padding-block:clamp(2rem,6vw,4.5rem) clamp(1rem,4vw,2rem);position:relative;overflow:hidden}
 .hero .tag--fa{background:var(--paper);border-color:transparent}
-.hero__tagrow{display:flex;align-items:stretch;gap:.5rem}
-.tagarrow{display:inline-flex;align-items:center;justify-content:center;aspect-ratio:1;border-radius:var(--pill);background:var(--green);color:#fff;flex-shrink:0}
+.hero__tagrow{display:flex;align-items:center;gap:.5rem}
+.tagarrow{display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);width:calc(1.9em + .56rem + 3px);aspect-ratio:1;border-radius:50%;background:var(--green);color:#fff;flex-shrink:0}
 .hero .wrap{position:relative;z-index:2}
 
 /* ══ soft haze + dot grid (shared decorative language with course landing) ══ */
@@ -122,7 +122,7 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
   .hero__bento{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
   .hero__bento--img{display:block}
 }
-.hero__bento--img img{width:100%;display:block;margin-inline:auto}
+.hero__bento--img img{width:92%;display:block;margin-inline:auto}
 .btile{border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;padding:clamp(1.6rem,3vw,2.2rem) 1rem;text-align:center;transition:transform .4s var(--e)}
 .btile:hover{transform:translateY(-4px)}
 .btile svg{width:26px;height:26px;flex-shrink:0}
