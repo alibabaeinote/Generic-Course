@@ -68,6 +68,10 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
 .menubtn{display:none;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;color:var(--ink);flex-shrink:0;margin-inline-start:auto;transition:opacity .3s var(--e)}
 .menubtn svg{width:18px;height:18px;display:block}
 .menubtn:hover{opacity:.55}
+.menubtn line{transform-box:view-box;transform-origin:12px 12px;transition:transform .4s var(--e),opacity .3s var(--e)}
+.menubtn[aria-expanded="true"] .l1{transform:translateY(5px) rotate(45deg)}
+.menubtn[aria-expanded="true"] .l2{opacity:0}
+.menubtn[aria-expanded="true"] .l3{transform:translateY(-5px) rotate(-45deg)}
 .mobilemenu{display:none}
 @media (max-width:40rem){
   .navlinks{display:none}
@@ -78,8 +82,12 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
 .mobilemenu__p[data-open="1"]{grid-template-rows:1fr}
 .mobilemenu__p>div{overflow:hidden}
 .mobilemenu__links{display:flex;flex-direction:column;padding-block:.2rem clamp(1rem,3vw,1.4rem)}
-.mobilemenu__links span{padding:.85rem 0;font-size:var(--fs-sm);color:var(--ink-2);border-top:1.5px solid var(--line)}
+.mobilemenu__links span{display:block;padding:1.05rem 0;font-size:var(--fs-sm);font-weight:700;color:var(--ink);border-top:1.5px solid var(--line);opacity:0;transform:translateY(10px);transition:opacity .5s var(--e),transform .5s var(--e)}
 .mobilemenu__links span:first-child{border-top:none}
+.mobilemenu__p[data-open="1"] .mobilemenu__links span{opacity:1;transform:none}
+.mobilemenu__links span:nth-child(1){transition-delay:.08s}
+.mobilemenu__links span:nth-child(2){transition-delay:.15s}
+.mobilemenu__links span:nth-child(3){transition-delay:.22s}
 
 /* ══ shared bits — tag / icon tile / buttons. Palette rule for this
    direction: white + ink dominate everywhere; blue is reserved strictly for
@@ -170,7 +178,7 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
         <span>تماس</span>
       </nav>
       <button class="menubtn" type="button" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mobilemenu-p">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line class="l1" x1="4" y1="7" x2="20" y2="7"></line><line class="l2" x1="4" y1="12" x2="20" y2="12"></line><line class="l3" x1="4" y1="17" x2="20" y2="17"></line></svg>
       </button>
     </header>
   </div>
