@@ -125,7 +125,10 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
 /* desktop: headline wraps to 1-2 lines (not 4) so the herostage graphic
    sits above the fold instead of requiring a scroll */
 @media (min-width:64rem){
-  .hero{padding-block:clamp(2.4rem,5vw,3.6rem) 0}
+  /* nav-to-hero gap reuses the design system's documented "ریتم سکشن" step
+     (clamp(3.5rem,9vw,7rem) — docs/design-system/style-guide.md §3.3) rather
+     than a one-off number */
+  .hero{padding-block:clamp(3.5rem,9vw,7rem) 0}
   .hero__copy{max-width:60rem}
   .hero__copy h1{font-size:clamp(2.4rem,4.2vw,3.6rem);line-height:1.22}
 }
