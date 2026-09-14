@@ -148,13 +148,39 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
 .mockcard__body{position:relative;flex:1;display:grid;grid-template-columns:1fr 1fr}
 .mockcard__half{position:relative;padding:1rem 1.1rem}
 .mockcard__half--before{background:var(--paper)}
-.mockcard .bar{height:.55rem;border-radius:99px;margin-block-end:.5rem;background:rgba(8,9,12,.14)}
-.mockcard .bar:nth-child(1){width:75%}
-.mockcard .bar:nth-child(2){width:48%}
-.mockcard .bar:nth-child(3){width:60%}
-.mockcard__half--after .bar:nth-child(1){background:var(--accent)}
-.mockcard__half--after .bar:nth-child(2){background:var(--yellow)}
-.mockcard__half--after .bar:nth-child(3){background:var(--green)}
+
+/* ══ mini UI — the before/after redesign comparison inside .mockcard. Reads
+   as a generic software screenshot (English micro-copy, like real product
+   UI shown on marketing sites regardless of site language). "before" stays
+   flat gray to read as cluttered/dated; "after" gets one bordered card +
+   a small colored chip/stat row, the only place accent/yellow/green appear
+   here — same "limited touch" rule as .icontile. ══ */
+.mbar{display:block;height:.5rem;border-radius:99px;background:rgba(8,9,12,.13)}
+.mbar--sm{height:.38rem}
+.mbar--ink{background:var(--ink)}
+.mbar--accent{background:var(--accent)}
+.mbar--yellow{background:var(--yellow)}
+.mbar--green{background:var(--green)}
+.mini__avatar{width:1.4rem;height:1.4rem;border-radius:50%;background:rgba(8,9,12,.15);flex-shrink:0}
+.mini__head{display:flex;align-items:center;gap:.45rem;margin-block-end:.85rem}
+.mini__head .mbar{flex:1}
+.mini__icons{display:flex;gap:.3rem;margin-block-end:.85rem}
+.mini__icons span{display:block;width:1.05rem;height:1.05rem;border-radius:5px;background:rgba(8,9,12,.1)}
+.mini__row{display:flex;align-items:center;gap:.4rem;margin-block-end:.5rem}
+.mini__card{border:1.5px solid var(--line);border-radius:12px;padding:.55rem .65rem;margin-block-end:.6rem}
+.mini__card .mbar{margin-block-end:.4rem}
+.mini__cardrow{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.mini__cardrow .mbar{flex:1;margin-block-end:0}
+.mini__chip{display:inline-block;flex-shrink:0;padding:.1rem .5rem;border-radius:99px;background:var(--green);color:#fff;font-size:.62rem;font-weight:700}
+.mini__stats{display:flex;gap:.55rem}
+.mini__stats>div{flex:1;display:flex;flex-direction:column;gap:.25rem}
+@media (max-width:40rem){
+  .mini__head,.mini__icons{margin-block-end:.6rem}
+  .mini__row{margin-block-end:.35rem}
+  .mini__card{padding:.45rem .55rem;margin-block-end:.45rem}
+  .mini__stats{display:none}
+}
+
 .mockcard__divider{position:absolute;inset-block:0;inset-inline-start:50%;width:1.5px;background:var(--line);transform:translateX(-50%)}
 .mockcard__handle{position:absolute;top:50%;inset-inline-start:50%;transform:translate(-50%,-50%);width:2rem;height:2rem;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;box-shadow:0 8px 18px -6px rgba(8,9,12,.4)}
 .mockcard__handle svg{width:13px;height:13px}
@@ -283,15 +309,36 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
         <div class="herostage__glow"></div>
 
         <div class="mockcard">
-          <div class="mockcard__bar"><span></span><span></span><span></span><b>بازطراحی محصول</b></div>
+          <div class="mockcard__bar"><span></span><span></span><span></span><b class="lat">Product Redesign</b></div>
           <div class="mockcard__body">
             <div class="mockcard__half mockcard__half--before">
-              <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-              <span class="mockcard__tag mockcard__tag--before">قبل</span>
+              <div class="mini__head">
+                <span class="mini__avatar"></span>
+                <span class="mbar" style="width:55%"></span>
+              </div>
+              <div class="mini__icons"><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="mini__row"><span class="mbar" style="width:62%"></span><span class="mbar" style="width:20%"></span></div>
+              <div class="mini__row"><span class="mbar" style="width:40%"></span><span class="mbar" style="width:30%"></span></div>
+              <div class="mini__row"><span class="mbar" style="width:70%"></span><span class="mbar" style="width:18%"></span></div>
+              <span class="mockcard__tag mockcard__tag--before lat">Before</span>
             </div>
             <div class="mockcard__half mockcard__half--after">
-              <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-              <span class="mockcard__tag mockcard__tag--after">بعد</span>
+              <div class="mini__head">
+                <span class="mbar mbar--ink" style="width:50%"></span>
+                <span class="mbar mbar--accent" style="width:26%;height:.9rem"></span>
+              </div>
+              <div class="mini__card">
+                <span class="mbar mbar--ink" style="width:65%"></span>
+                <div class="mini__cardrow">
+                  <span class="mbar mbar--sm" style="width:38%"></span>
+                  <span class="mini__chip lat">New</span>
+                </div>
+              </div>
+              <div class="mini__stats">
+                <div><span class="mbar mbar--yellow" style="width:55%"></span><span class="mbar mbar--sm" style="width:75%"></span></div>
+                <div><span class="mbar mbar--green" style="width:55%"></span><span class="mbar mbar--sm" style="width:75%"></span></div>
+              </div>
+              <span class="mockcard__tag mockcard__tag--after lat">After</span>
             </div>
             <div class="mockcard__divider"></div>
             <div class="mockcard__handle">
