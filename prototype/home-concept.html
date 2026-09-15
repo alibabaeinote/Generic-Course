@@ -133,19 +133,19 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
   .hero__copy h1{font-size:clamp(2.4rem,4.2vw,3.6rem);line-height:1.22}
 }
 
-/* ══ hero stickynotes — small colored accent notes with short English
+/* ══ hero stickynotes — small square paper notes with short English
    taglines, standing in for the old hero graphic. Solid palette colors
    (yellow/green/blue/accent), same "limited touch" rule as .icontile —
-   this is the one deliberate splash of color in the hero. Modern sans
-   (reuses --lat, same face as every other Latin label on the site) and a
-   soft neutral-gray shadow, not a colored one — reads as professional
-   annotations, not stickers. Mobile: a centered wrapping row under the
-   CTAs. Desktop (≥64rem): .hero__copy's max-width leaves room in .wrap
-   either side, so the notes scatter loosely around the copy block at
-   staggered heights instead of pinned to its four corners. ══ */
+   this is the one deliberate splash of color in the hero. Square, small,
+   a real directional drop shadow (offset down-left + a tight contact
+   shadow) so each one reads as a physical piece of paper, not a flat
+   chip. Mobile: a centered wrapping row under the CTAs. Desktop (≥64rem):
+   .hero__copy's max-width leaves room in .wrap either side, so the notes
+   scatter loosely around the copy block — uneven rotation, balanced
+   left/right weight — instead of pinned to its four corners. ══ */
 .hero__stage{position:relative}
-.stickynotes{display:flex;flex-wrap:wrap;justify-content:center;gap:.85rem;margin-block-start:clamp(2rem,5vw,2.6rem)}
-.stickynote{display:inline-flex;align-items:center;font-family:var(--lat);font-weight:700;font-size:.98rem;letter-spacing:-.01em;line-height:1.3;padding:.85rem 1.15rem;border-radius:10px;box-shadow:0 18px 34px -16px rgba(15,23,42,.16),0 4px 10px -4px rgba(15,23,42,.08);transform:rotate(var(--r,0deg));direction:ltr;unicode-bidi:isolate}
+.stickynotes{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-block-start:clamp(2rem,5vw,2.6rem)}
+.stickynote{display:flex;align-items:center;justify-content:center;text-align:center;width:clamp(4.6rem,9vw,5.8rem);aspect-ratio:1/1;font-family:var(--lat);font-weight:700;font-size:.8rem;letter-spacing:-.01em;line-height:1.25;padding:.4rem;border-radius:3px;box-shadow:-9px 15px 18px -6px rgba(15,23,42,.32),-2px 4px 6px -2px rgba(15,23,42,.16),inset 0 1px 0 rgba(255,255,255,.18);transform:rotate(var(--r,0deg));direction:ltr;unicode-bidi:isolate}
 .stickynote--yellow{background:var(--yellow);color:var(--ink)}
 .stickynote--green{background:var(--green);color:#fff}
 .stickynote--blue{background:var(--blue-2);color:#fff}
@@ -157,10 +157,10 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
      resolution on that same element — physical keeps these deterministic */
   .stickynotes{position:absolute;inset:0;justify-content:normal;gap:0;margin:0;pointer-events:none}
   .stickynote{position:absolute}
-  .stickynote:nth-child(1){top:-6%;left:2%}
-  .stickynote:nth-child(2){top:48%;right:-1%}
-  .stickynote:nth-child(3){bottom:20%;left:-2%}
-  .stickynote:nth-child(4){bottom:-8%;right:3%}
+  .stickynote:nth-child(1){top:-3%;left:5%}
+  .stickynote:nth-child(2){top:45%;right:3%}
+  .stickynote:nth-child(3){bottom:17%;left:1%}
+  .stickynote:nth-child(4){bottom:-4%;right:8%}
 }
 
 .figs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;margin-block:clamp(3.5rem,8vw,5.5rem)}
@@ -250,10 +250,10 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
         </div>
 
         <div class="stickynotes">
-          <span class="stickynote stickynote--yellow" style="--r:-6deg">From idea to product.</span>
-          <span class="stickynote stickynote--green" style="--r:4deg">Real teamwork, real results.</span>
-          <span class="stickynote stickynote--blue" style="--r:-4deg">Solve the right problem.</span>
-          <span class="stickynote stickynote--accent" style="--r:5deg">Design that ships.</span>
+          <span class="stickynote stickynote--yellow" style="--r:-8deg">Idea to product</span>
+          <span class="stickynote stickynote--green" style="--r:6deg">Teamwork</span>
+          <span class="stickynote stickynote--blue" style="--r:-5deg">Solve problems</span>
+          <span class="stickynote stickynote--accent" style="--r:7deg">Ship it</span>
         </div>
       </div>
 
