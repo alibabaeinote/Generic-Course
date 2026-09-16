@@ -22,6 +22,7 @@
   --e2:cubic-bezier(.25,1,.5,1);
   --pad:clamp(1.1rem,4vw,3.5rem);
   --pill:999px;
+  --nav-h:5.5rem;
 
   --fs-label:.88rem;
   --fs-sm:1.12rem;
@@ -41,7 +42,7 @@
 }
 
 *{box-sizing:border-box}
-body{margin:0;background:var(--white);color:var(--ink);font-family:var(--fa);font-size:var(--fs-body);font-weight:300;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-block-start:5.5rem}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--fa);font-size:var(--fs-body);font-weight:300;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-block-start:var(--nav-h)}
 ::selection{background:var(--blue);color:#fff}
 h1,h2,h3{margin:0;font-weight:900;line-height:1.22;letter-spacing:-.03em;text-wrap:balance}
 p{margin:0;font-weight:300}ul,ol,dl{margin:0;padding:0;list-style:none}
@@ -116,11 +117,23 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
 .ghost[disabled],.ghost.is-soon{cursor:default;opacity:.55}
 
 /* ══ hero ══ */
-.hero{padding-block:clamp(3.2rem,7vw,5.2rem) 0}
+.hero{padding-block:0}
+/* .hero__fold fills exactly the first screen (viewport minus the fixed
+   nav), so hero__copy sits centered above the fold and .figs — coming
+   right after in the flow — always starts below it, on any screen size.
+   100svh (not 100vh) so mobile browser chrome never causes a jump; see
+   docs/design-system/style-guide.md §3.3 for the padding-block scale
+   reused here. */
+.hero__fold{min-height:calc(100svh - var(--nav-h));display:flex;flex-direction:column;align-items:center;justify-content:center;padding-block:clamp(3.2rem,7vw,5.2rem)}
 .hero__copy{max-width:44rem;margin-inline:auto;text-align:center}
 .hero__copy h1{margin-block:clamp(1.2rem,3vw,1.6rem) clamp(1.2rem,3vw,1.6rem)}
 .hero__copy .lede{margin-inline:auto}
 .hero__actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(1.2rem,3vw,1.8rem);margin-block-start:clamp(1.8rem,4vw,2.4rem)}
+
+.hero__scrollcue{display:flex;flex-direction:column;align-items:center;gap:.35rem;margin-block-start:clamp(2.4rem,6vw,4rem);color:var(--ink-2);font-size:var(--fs-label);opacity:.55;animation:hero-bob 2.2s ease-in-out infinite}
+.hero__scrollcue svg{width:16px;height:16px}
+@keyframes hero-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(.4rem)}}
+@media (prefers-reduced-motion:reduce){.hero__scrollcue{animation:none}}
 
 /* desktop: headline wraps to 1-2 lines (not 4) so the hero sits above
    the fold instead of requiring a scroll */
@@ -128,7 +141,7 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
   /* nav-to-hero gap reuses the design system's documented "ریتم سکشن" step
      (clamp(3.5rem,9vw,7rem) — docs/design-system/style-guide.md §3.3) rather
      than a one-off number */
-  .hero{padding-block:clamp(3.5rem,9vw,7rem) 0}
+  .hero__fold{padding-block:clamp(3.5rem,9vw,7rem)}
   .hero__copy{max-width:60rem}
   .hero__copy h1{font-size:clamp(2.4rem,4.2vw,3.6rem);line-height:1.22}
 }
@@ -204,6 +217,7 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
 <!-- ══ HERO ══ -->
 <section class="hero">
   <div class="wrap">
+    <div class="hero__fold">
       <div class="hero__copy">
         <span class="tag">مجموعه دوره‌های مهارت‌آموزی حوزه دیزاین</span>
         <h1>دوره‌هایی برای واقعیتِ بازار کار دیزاین.</h1>
@@ -217,6 +231,12 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
           </a>
         </div>
       </div>
+
+      <div class="hero__scrollcue" aria-hidden="true">
+        <span>اسکرول کن</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </div>
+    </div>
 
     <div class="figs">
       <div class="fig"><span class="n">+20</span><span class="c">سال کار دیزاین</span></div>
