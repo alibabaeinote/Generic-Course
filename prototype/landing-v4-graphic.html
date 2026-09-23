@@ -37,7 +37,7 @@
   --fs-h2:clamp(2rem,5.6vw,3.8rem);           /* section titles */
   --fs-h1:clamp(2.3rem,6.5vw,4.5rem);         /* hero title */
   --fs-display-sm:clamp(2.7rem,6vw,3.9rem); /* section-number display digits */
-  --fs-display-lg:clamp(4.1rem,10.5vw,6.6rem); /* stat figures */
+  --fs-display-lg:clamp(1.8rem,11.5vw - .5rem,6.6rem); /* stat figures */
 }
 
 *{box-sizing:border-box}
@@ -192,7 +192,7 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 /* ══ figures ══ */
 .figs{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
 @media (min-width:56rem){.figs{grid-template-columns:repeat(4,1fr)}}
-.fig{background:var(--white);border:1.5px solid var(--line);border-radius:26px;padding:clamp(2.2rem,5vw,3rem) clamp(1.4rem,3vw,2rem);min-height:clamp(12.5rem,19vw,15.5rem);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:1.1rem;transition:transform .45s var(--e),border-color .45s var(--e)}
+.fig{min-width:0;background:var(--white);border:1.5px solid var(--line);border-radius:26px;padding:clamp(2.2rem,5vw,3rem) clamp(1.4rem,3vw,2rem);min-height:clamp(12.5rem,19vw,15.5rem);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:1.1rem;transition:transform .45s var(--e),border-color .45s var(--e)}
 .fig:hover{transform:translateY(-5px);border-color:var(--ink)}
 .fig .n{font-family:var(--num);font-weight:300;font-size:var(--fs-display-lg);line-height:1;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate;white-space:nowrap}
 .fig .n .plus{display:inline-block}
@@ -318,6 +318,12 @@ footer{background:var(--ink);color:rgba(243,245,250,.62);padding-block:clamp(2.5
 .fend{margin-block-start:clamp(2.5rem,6vw,3.5rem);padding-block-start:1.6rem;border-block-start:1.5px solid var(--line-d);display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
 .fend b{color:var(--on-dark);font-size:var(--fs-h3);font-weight:900;letter-spacing:-.02em}
 .fend b i{font-style:normal;color:var(--accent)}
+/* the credit .tag's own text is a fixed, fairly long string ("© Ali Babaei ·
+   Graphic draft v4") — .tag is white-space:nowrap by default (3.2), which at
+   very narrow widths (<380px-ish) made this specific pill wider than the
+   viewport and leak past the left edge (real horizontal overflow, not just
+   clipped-and-hidden). Scoped override: let only this tag wrap. */
+.fend .tag{white-space:normal;text-align:center;max-width:100%}
 
 /* ══ sticky enroll bar ══ */
 .stickybar{position:fixed;inset-inline:clamp(1rem,4vw,2rem);bottom:clamp(1rem,3vw,1.5rem);z-index:30;background:var(--ink);border:1.5px solid var(--line-d);border-radius:22px;box-shadow:0 20px 45px rgba(8,9,12,.35);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;transform:translateY(calc(100% + 2rem)) scale(.94);opacity:0;will-change:transform,opacity;transition:transform .75s var(--e),opacity .55s var(--e2)}
