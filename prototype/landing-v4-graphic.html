@@ -37,7 +37,7 @@
   --fs-h2:clamp(2rem,5.6vw,3.8rem);           /* section titles */
   --fs-h1:clamp(2.3rem,6.5vw,4.5rem);         /* hero title */
   --fs-display-sm:clamp(2.7rem,6vw,3.9rem); /* section-number display digits */
-  --fs-display-lg:clamp(1.8rem,11.5vw - .5rem,6.6rem); /* stat figures */
+  --fs-display-lg:clamp(1.8rem,28cqi,6.6rem); /* stat figures — cqi = % of .fig's own content width (container query), so it self-adjusts to the real card width at any column count instead of guessing from viewport width */
 }
 
 *{box-sizing:border-box}
@@ -192,7 +192,7 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 /* ══ figures ══ */
 .figs{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
 @media (min-width:56rem){.figs{grid-template-columns:repeat(4,1fr)}}
-.fig{min-width:0;background:var(--white);border:1.5px solid var(--line);border-radius:26px;padding:clamp(2.2rem,5vw,3rem) clamp(1.4rem,3vw,2rem);min-height:clamp(12.5rem,19vw,15.5rem);display:flex;flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;gap:1.1rem;transition:transform .45s var(--e),border-color .45s var(--e)}
+.fig{min-width:0;container-type:inline-size;background:var(--white);border:1.5px solid var(--line);border-radius:26px;padding:clamp(2.2rem,5vw,3rem) clamp(1.4rem,3vw,2rem);min-height:clamp(12.5rem,19vw,15.5rem);display:flex;flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;gap:1.1rem;transition:transform .45s var(--e),border-color .45s var(--e)}
 .fig:hover{transform:translateY(-5px);border-color:var(--ink)}
 .fig .n{font-family:var(--num);font-weight:300;font-size:var(--fs-display-lg);line-height:1;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate;white-space:nowrap}
 .fig .n .plus{display:inline-block}
