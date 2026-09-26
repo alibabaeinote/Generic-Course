@@ -41,7 +41,7 @@
 }
 
 *{box-sizing:border-box}
-body{margin:0;background:var(--white);color:var(--ink);font-family:var(--fa);font-size:var(--fs-body);font-weight:300;line-height:1.9;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-block-start:5.5rem}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--fa);font-size:var(--fs-body);font-weight:300;line-height:1.9;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-block-start:5.2rem}
 ::selection{background:var(--blue);color:var(--white)}
 h1,h2,h3{margin:0;font-weight:900;line-height:1.28;letter-spacing:-.03em;text-wrap:balance}
 p{margin:0;font-weight:300}ul,ol,dl{margin:0;padding:0;list-style:none}
@@ -132,7 +132,7 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
 .acts{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
 
 /* ══ hero ══ */
-.hero{min-height:calc(100svh - 5.5rem);display:flex;flex-direction:column;justify-content:center;background:var(--white);padding-block:clamp(2rem,5vh,3rem) clamp(2.5rem,6vh,4rem);overflow:hidden;position:relative}
+.hero{min-height:calc(100svh - 5.2rem);display:flex;flex-direction:column;justify-content:center;background:var(--white);padding-block:clamp(2rem,5vh,3rem) clamp(2.5rem,6vh,4rem);overflow:hidden;position:relative}
 
 /* ══ site nav — flat, editorial: full-width hairline bar (no pill, no shadow,
    no blur), a thin vertical divider splits logo from a justified row of
@@ -140,10 +140,10 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.45;letter-spacing:-.02em
    (mono, letter-spacing, uppercase) rather than a floating card. Identical
    component to home-concept.html's header, repeated on every page ══ */
 .sitenav{position:fixed;inset-inline:0;top:0;z-index:40;background:var(--white);border-bottom:1.5px solid var(--line)}
-.topbar{display:flex;align-items:center;gap:1.6rem;padding-block:1.35rem}
+.topbar{display:flex;align-items:center;gap:1.6rem;padding-block:.9rem}
 .topbar__divider{width:1.5px;align-self:stretch;background:var(--line-2);flex-shrink:0}
 .brand{display:flex;align-items:center;gap:.7rem;font-family:var(--fa);font-weight:700;font-size:var(--fs-h3)}
-.brand .logo-mark{width:auto;height:4rem;border-radius:0;object-fit:contain;display:block}
+.brand .logo-mark{width:auto;height:3.2rem;border-radius:0;object-fit:contain;display:block}
 .navlinks{display:flex;align-items:center;justify-content:flex-end;gap:clamp(1.4rem,3vw,2.2rem);font-family:var(--fa);font-size:var(--fs-body);font-weight:700;color:var(--ink-2);flex:1}
 .menubtn{display:none;align-items:center;justify-content:center;width:2.8rem;height:2.8rem;color:var(--ink);flex-shrink:0;margin-inline-start:auto;transition:opacity .3s var(--e)}
 .menubtn svg{width:26px;height:26px;display:block}

@@ -23,7 +23,7 @@
   --e2:cubic-bezier(.25,1,.5,1);
   --pad:clamp(1.1rem,4vw,3.5rem);
   --pill:999px;
-  --nav-h:5.5rem;
+  --nav-h:5.2rem;
 
   --fs-label:.88rem;
   --fs-sm:1.12rem;
@@ -60,12 +60,11 @@ h3{font-size:var(--fs-h3);font-weight:800;line-height:1.4;letter-spacing:-.02em}
 /* ══ site nav — shared component, identical markup/CSS to home-concept.html
    and landing-v4-graphic.html; never redesign this in isolation ══ */
 .sitenav{position:fixed;inset-inline:0;top:0;z-index:40;background:var(--white);border-bottom:1.5px solid var(--line)}
-.topbar{display:flex;align-items:center;gap:1.6rem;padding-block:1.35rem}
+.topbar{display:flex;align-items:center;gap:1.6rem;padding-block:.9rem}
 .topbar__divider{width:1.5px;align-self:center;height:1.7rem;background:var(--line-2);flex-shrink:0}
 .brand{display:flex;align-items:center;gap:.7rem;font-family:var(--fa);font-weight:700;font-size:var(--fs-h3)}
 .brand img{width:3.2rem;height:3.2rem;border-radius:50%;object-fit:cover;display:block}
 .brand .logo-mark{width:auto;height:3.2rem;border-radius:0;object-fit:contain}
-.topbar .logo-mark{height:4rem}
 .navlinks{display:flex;align-items:center;justify-content:flex-end;gap:clamp(1.4rem,3vw,2.2rem);font-family:var(--fa);font-size:var(--fs-body);font-weight:700;color:var(--ink-2);flex:1}
 .menubtn{display:none;align-items:center;justify-content:center;width:2.8rem;height:2.8rem;color:var(--ink);flex-shrink:0;margin-inline-start:auto;transition:opacity .3s var(--e)}
 .menubtn svg{width:26px;height:26px;display:block}
