@@ -190,3 +190,9 @@ Section (با آرایهٔ Block به‌صورت ستون JSONB) واحد خوا
 نمونهٔ اول این مدل (schema + دادهٔ seed واقعی از چالش «پژوهش اکتشافی» + توابع access/search) در
 `content/atlas/` و `lib/atlas/` پیاده و با `npx tsc --noEmit` و اسکریپت `scripts/check-atlas.ts` تأیید شده
 است؛ هنوز به اپ Next.js یا دیتابیس واقعی وصل نیست — آن اتصال در M3.5 انجام می‌شود.
+
+**نمونهٔ تعاملی UI (ورود → نقشهٔ راه → خواندن)** با esbuild از همین فایل‌ها باندل می‌شود
+(`scripts/atlas-browser-entry.ts` + `scripts/build-atlas-bundle.mjs`) و به‌صورت یک `<script>` درون artifact
+جاسازی می‌شود — یعنی UI با همان کد واقعی دسترسی/جست‌وجو اجرا می‌شود، نه یک پیاده‌سازی موازی دست‌نویس در
+جاوااسکریپت صفحه. وقتی `content/atlas` یا `lib/atlas` عوض شود، باندل باید دوباره ساخته و در artifact
+جایگزین شود.
