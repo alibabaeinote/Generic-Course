@@ -1,0 +1,54 @@
+/* §4.1 — .cta (primary) / .ghost (secondary), ported from style-guide.md */
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--pill);
+  padding-block: 0.85rem;
+  padding-inline: 1.5rem;
+  font-family: var(--fa);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.4s var(--e);
+}
+.cta:hover {
+  background: var(--blue-2);
+}
+.cta:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: none;
+  color: var(--fg);
+  border: 1.5px solid var(--ln);
+  border-radius: var(--pill);
+  padding-block: 0.7rem;
+  padding-inline: 1.2rem;
+  font-family: var(--fa);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.4s var(--e),
+    color 0.4s var(--e);
+}
+.ghost:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+.ghost:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

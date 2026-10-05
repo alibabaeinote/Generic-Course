@@ -1,0 +1,59 @@
+/* §4.2 / §5 — one outer frame + thin divider between rows; default closed; grid-trick height
+   (0fr -> 1fr) instead of JS-measured height, per style-guide.md. */
+
+.acc {
+  border: 1.5px solid var(--ln);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.item + .item {
+  border-block-start: 1.5px solid var(--ln);
+}
+
+.btn {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  cursor: pointer;
+  padding: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-family: var(--fa);
+  font-weight: 700;
+  font-size: var(--fs-h3);
+  color: var(--fg);
+  box-sizing: border-box;
+}
+.btn[aria-expanded="true"] {
+  color: var(--blue);
+}
+
+.chev {
+  flex-shrink: 0;
+  transition: transform 0.4s var(--e);
+}
+.btn[aria-expanded="true"] .chev {
+  transform: rotate(180deg);
+}
+
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.55s var(--e);
+}
+.panel.open {
+  grid-template-rows: 1fr;
+}
+.panelInner {
+  overflow: hidden;
+}
+.panelContent {
+  padding-inline: clamp(1.1rem, 2.5vw, 1.6rem);
+  padding-block-end: clamp(1.1rem, 2.5vw, 1.6rem);
+  max-width: 58ch;
+  color: var(--fg-2);
+  font-size: 1rem;
+  line-height: 1.8;
+}

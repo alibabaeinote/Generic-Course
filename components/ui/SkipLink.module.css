@@ -1,0 +1,19 @@
+.skip {
+  position: absolute;
+  inset-inline-start: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--blue);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--pill);
+  font-family: var(--fa);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: top 0.3s var(--e);
+}
+
+.skip:focus-visible {
+  top: 1rem;
+}

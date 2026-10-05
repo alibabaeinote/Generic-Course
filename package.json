@@ -1,16 +1,36 @@
 {
-  "name": "design-aware-atlas",
+  "name": "design-aware",
   "private": true,
   "version": "0.0.0",
-  "description": "Content-model foundation for the Atlas module (jozveh portal). Not a running app yet — see docs/TECH-STACK.md §7 and docs/ROADMAP.md M3.5.",
+  "description": "Design,Aware — M1 app scaffold (Next.js/TS/Tailwind v4) plus the Atlas content-model foundation (content/atlas, lib/atlas). See docs/TECH-STACK.md and docs/ROADMAP.md.",
   "type": "module",
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "format": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "check:atlas": "tsx scripts/check-atlas.ts"
   },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@tailwindcss/postcss": "^4.3.0",
     "@types/node": "^22.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "esbuild": "^0.28.2",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "^16.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8.5.0",
+    "prettier": "^3.4.0",
+    "tailwindcss": "^4.3.0",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0"
   }

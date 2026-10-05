@@ -1,2 +1,5 @@
 node_modules/
 scripts/.atlas-bundle.js
+.next/
+next-env.d.ts
+*.tsbuildinfo

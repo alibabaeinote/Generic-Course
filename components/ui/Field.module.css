@@ -1,0 +1,33 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--fg-2);
+}
+
+.input {
+  width: 100%;
+  border: 1.5px solid var(--ln);
+  border-radius: 14px;
+  padding-block: 0.8rem;
+  padding-inline: 1rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--fa);
+  font-size: 1rem;
+}
+
+.input[aria-invalid="true"] {
+  border-color: var(--accent);
+}
+
+.err {
+  font-size: 0.82rem;
+  color: var(--accent);
+  min-height: 1.2em;
+}
