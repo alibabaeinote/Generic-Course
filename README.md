@@ -25,6 +25,7 @@
 | [`docs/content/visual-directions.md`](docs/content/visual-directions.md) | مقایسهٔ جهت‌های بصری (هنوز انتخاب نشده) |
 | [`docs/design-system/step-0.md`](docs/design-system/step-0.md) | قدم صفر دیزاین سیستم — ⏸ متوقف تا وجود استایل‌گاید |
 | [`docs/GOVERNANCE.md`](docs/GOVERNANCE.md) | قرارداد واحد همکاری عامل‌ها، معماری، منبع حقیقت و فرایند انتشار |
+| [`docs/WHAT-IF-WTF.md`](docs/WHAT-IF-WTF.md) | دفتر ایده‌های جسورانه/اکتشافی — **منبع حقیقت نیست**، فقط صف ورودی پیش از فیلتر |
 
 ## همکاری توسعه
 
